@@ -28,7 +28,7 @@ const Hero = () => {
       pt={"63px"}
       pb={"40px"}
       width={"100%"}
-      height={"fit-content"}
+      height={"600px"}
       sx={{
         backgroundImage:
           "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
