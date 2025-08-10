@@ -85,7 +85,7 @@ const Tabs = () => {
           justifyContent={"center"}
         >
           <Grid
-            size={10}
+            size={12}
             container
             flexDirection={"row"}
             border={"1px solid #BDBCC7"}
