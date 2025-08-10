@@ -35,3 +35,12 @@ export const models = [
     image: images.FEA,
   },
 ];
+
+export const CFD = [
+  { id: 1, title: "Structural Analysis", img: images.SA },
+  { id: 2, title: "Composite Analysis", img: images.CA },
+  { id: 3, title: "Dynamic Analysis", img: images.DA },
+  { id: 4, title: "Nonlinear Analysis", img: images.NA },
+  { id: 5, title: "Fatigue & Fracture", img: images.FF },
+  { id: 6, title: "Thermal Analysis", img: images.TA },
+];

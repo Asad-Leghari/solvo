@@ -4,10 +4,11 @@ import Navbar from "@/components/core/Navbar";
 import Hero from "@/components/home/hero-section/Hero";
 import Clients from "@/components/home/clients/Clients";
 import Services from "@/components/home/services/Services";
+import CaseStudies from "@/components/home/case-studies/CaseStudies";
 
 const Home = () => {
   return (
-    <Grid container flexDirection={"column"} width={"100%"} height={"100%"}>
+    <Grid container flexDirection={"column"} width={"100%"} flexWrap={"nowrap"}>
       <Hero />
       <Grid
         container
@@ -21,6 +22,7 @@ const Home = () => {
         <Clients />
         <Services />
       </Grid>
+      <CaseStudies />
     </Grid>
   );
 };

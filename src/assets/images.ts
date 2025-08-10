@@ -13,6 +13,15 @@ import CAD from "./images/cad.png";
 import CFD from "./images/cfd.png";
 import FEA from "./images/fea.png";
 
+import SA from "./images/SA.png";
+import CA from "./images/CA.png";
+import DA from "./images/DA.png";
+import NA from "./images/NA.png";
+import FF from "./images/FF.png";
+import TA from "./images/TA.png";
+
+import FFPic from "./images/FFPic.png";
+
 const images = {
   Logo,
   Hero,
@@ -26,6 +35,13 @@ const images = {
   CAD,
   CFD,
   FEA,
+  SA,
+  CA,
+  DA,
+  NA,
+  FF,
+  TA,
+  FFPic,
 };
 
 export default images;
