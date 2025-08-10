@@ -6,7 +6,7 @@ type GlobalState = {
 };
 
 const useGlobal = create<GlobalState>((set) => ({
-  DarkMode: true,
+  DarkMode: false,
   setDarkMode: (value) => set({ DarkMode: value }),
 }));
 

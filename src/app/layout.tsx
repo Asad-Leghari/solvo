@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SolvoTheme from "@/application/contexts/SolvoTheme";
+import { Box, Grid } from "@mui/material";
+import Navbar from "@/components/core/Navbar";
 
 export const metadata: Metadata = {
   title: "Solvo Engineers",
@@ -15,7 +17,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SolvoTheme>{children}</SolvoTheme>
+        <SolvoTheme>
+          <Grid
+            container
+            flexDirection={"column"}
+            minHeight={`calc(100vh - 64px)`}
+          >
+            <Navbar />
+            <Box flex={1}>{children}</Box>
+          </Grid>
+        </SolvoTheme>
       </body>
     </html>
   );
