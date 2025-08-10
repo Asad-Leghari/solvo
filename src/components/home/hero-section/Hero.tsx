@@ -113,13 +113,36 @@ const Hero = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid flex={1}>
+        <Grid flex={1} sx={{ position: "relative" }}>
+          {/* Spiral behind (first in DOM) */}
+          <Image
+            src={images.Spiral}
+            alt="Spiral"
+            width={500}
+            height={500}
+            style={{
+              objectFit: "contain",
+              width: "1000px",
+              height: "600px",
+              position: "absolute",
+              top: "-45%",
+              left: "5%",
+            }}
+          />
+
+          {/* Hero in front */}
           <Image
             src={images.Hero}
             alt="Hero"
             width={539}
             height={334}
-            style={{ objectFit: "contain", width: "100%", height: "100%" }}
+            style={{
+              objectFit: "contain",
+              width: "100%",
+              height: "100%",
+              position: "relative", // keeps it above without breaking layout
+              zIndex: 1,
+            }}
           />
         </Grid>
       </Grid>
