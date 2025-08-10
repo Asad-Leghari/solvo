@@ -13,6 +13,7 @@ const Tabs = () => {
       gap={"16px"}
       size={12}
       px={"108px"}
+      pt={"0px"}
     >
       <Grid container flexDirection={"row"} gap={"10px"} size={12}>
         <Button

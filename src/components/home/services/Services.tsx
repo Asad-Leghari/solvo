@@ -11,7 +11,7 @@ const Services = () => {
       flexDirection={"column"}
       alignItems={"center"}
       gap={"50px"}
-      mt={"26px"}
+      mt={"50px"}
     >
       <Grid
         container

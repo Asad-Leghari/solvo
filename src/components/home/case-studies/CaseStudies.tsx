@@ -19,7 +19,7 @@ const CaseStudies = () => {
       px={"175px"}
       sx={{
         backgroundImage:
-          "linear-gradient(179deg, rgba(255, 255, 255, 0) 0%, #88D8E8 100%)",
+          "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
       }}
       py={"60px"}
       gap={"10px"}
@@ -51,7 +51,7 @@ const CaseStudies = () => {
         borderRadius={"8px"}
       >
         <Grid flexDirection={"column"} container gap={"16px"} flex={1}>
-          <Typography variant="h5" fontWeight={600}>
+          <Typography variant="h4" fontWeight={600}>
             CFD Analysis of Supersonic Tandem <br /> vs. Single Wing
             Configurations in Aircraft <br /> Design
           </Typography>

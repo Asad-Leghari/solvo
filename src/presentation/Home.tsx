@@ -5,6 +5,7 @@ import Hero from "@/components/home/hero-section/Hero";
 import Clients from "@/components/home/clients/Clients";
 import Services from "@/components/home/services/Services";
 import CaseStudies from "@/components/home/case-studies/CaseStudies";
+import Reviews from "@/components/home/reviews/Reviews";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         <Services />
       </Grid>
       <CaseStudies />
+      <Reviews />
     </Grid>
   );
 };
