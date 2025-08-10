@@ -93,11 +93,11 @@ const Tabs = () => {
             p={"16px"}
             borderRadius={"8px"}
           >
-            <Grid flexDirection={"column"} container gap={"16px"} flex={1}>
+            <Grid flexDirection={"column"} container gap={"16px"} size={7}>
               <Typography variant="h6" fontWeight={600}>
                 Solvo’s Premium EFA, CFD & CAD <br /> Modeling Services
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" textAlign={"justify"}>
                 Delivering presision and innovation with our premium customer
                 engineering solutions, Delivering presision and innovation with
                 our premium customer engineering solutions, Delivering presision
@@ -123,7 +123,7 @@ const Tabs = () => {
               </Button>
             </Grid>
             <Grid
-              flex={1}
+              size={5}
               container
               justifyContent="center"
               alignItems="center"

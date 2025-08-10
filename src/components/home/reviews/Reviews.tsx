@@ -20,13 +20,13 @@ const Reviews = () => {
     >
       <Grid container flexDirection={"column"} gap={"16px"} flex={1}>
         <HeadingButton title="Solvo's Premium" />
-        <Typography variant="h4" textAlign={"start"}>
+        <Typography variant="h5" textAlign={"start"}>
           What our{" "}
           <span style={{ color: "#0273BD" }}>
             Our Clients Say <br />
           </span>
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body1" textAlign={"justify"}>
           orem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -34,17 +34,12 @@ const Reviews = () => {
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           orem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          orem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
         </Typography>
         <Box>
-          <Typography variant="h4" textAlign={"start"}>
+          <Typography variant="h5" textAlign={"start"}>
             Client Name
           </Typography>
-          <Typography variant="h5" textAlign={"start"} color="#0273BD">
+          <Typography variant="h6" textAlign={"start"} color="#0273BD">
             Founder & Co-Founder
           </Typography>
         </Box>

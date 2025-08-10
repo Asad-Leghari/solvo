@@ -45,7 +45,7 @@ const Hero = () => {
         <Grid container flexDirection={"column"} flexWrap={"nowrap"} flex={1}>
           <Grid container flexDirection={"column"} gap={"8px"}>
             <HeadingButton title="Our Most In-Demand CFD Services" />
-            <Typography variant="h2" fontWeight={600}>
+            <Typography variant="h3" fontWeight={600}>
               Computation Fluid <br /> Dynamics-CFD
             </Typography>
           </Grid>
