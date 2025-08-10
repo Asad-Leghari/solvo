@@ -5,7 +5,7 @@ import Hero from "@/components/home/hero-section/Hero";
 
 const Home = () => {
   return (
-    <Grid container flexDirection={"column"}>
+    <Grid container flexDirection={"column"} width={"100%"} height={"100%"}>
       <Hero />
     </Grid>
   );

@@ -21,6 +21,10 @@ const HeadingButton = ({ title }: HeadingButtonProps) => {
         color: "black",
         border: "none",
         borderRadius: "25px",
+        width: "fit-content",
+        fontWeight: 500,
+        fontSize: "14px",
+        textTransform: "capitalize",
       }}
     >
       {title}
