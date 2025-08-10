@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SolvoTheme from "@/application/contexts/SolvoTheme";
 
 export const metadata: Metadata = {
   title: "Solvo Engineers",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SolvoTheme>{children}</SolvoTheme>
+      </body>
     </html>
   );
 }
