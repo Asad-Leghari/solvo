@@ -6,6 +6,7 @@ import Image from "next/image";
 import React from "react";
 import RouterButton from "./RouterButton";
 import ContactButton from "./ContactButton";
+import ToggleThemeBtn from "./ToggleThemeBtn";
 
 const Navbar = () => {
   return (
@@ -30,6 +31,7 @@ const Navbar = () => {
           </RouterButton>
         ))}
         <ContactButton href="/contact">Contact Us</ContactButton>
+        {/* <ToggleThemeBtn /> */}
       </Grid>
     </Grid>
   );
