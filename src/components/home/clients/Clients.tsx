@@ -10,7 +10,13 @@ const Clients = () => {
   return (
     <Grid container flexDirection="column" alignItems="center" gap="10px">
       {/* Heading */}
-      <Grid container flexDirection="column" alignItems="center" gap="10px">
+      <Grid
+        container
+        flexDirection="column"
+        alignItems="center"
+        gap="10px"
+        pt={"60px"}
+      >
         <HeadingButton title="Our Best Clients" />
         <Typography variant="h6">
           Trusted by{" "}

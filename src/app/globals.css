@@ -24,6 +24,7 @@ body {
 .swiper {
   width: 100vw;
   height: 100%;
+  padding-bottom: 50px;
 }
 
 .swiper-slide {
@@ -41,4 +42,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.swiper-pagination {
+  padding-bottom: 40px;
 }

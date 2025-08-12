@@ -31,425 +31,423 @@ import { Pagination } from "swiper/modules";
 
 const Hero = () => {
   return (
-    <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-      <SwiperSlide>
-        <Grid
-          container
-          flexDirection={{ xs: "column", md: "row" }}
-          gap={"12px"}
-          px={"175px"}
-          pt={"63px"}
-          pb={"40px"}
-          width={"100%"}
-          sx={{
-            backgroundImage:
-              "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
-          }}
-        >
+    <Grid container>
+      <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+        <SwiperSlide>
           <Grid
             container
             flexDirection={{ xs: "column", md: "row" }}
             gap={"12px"}
-            justifyContent={"center"}
-            flexWrap={"nowrap"}
-            height={"375px"}
+            px={"175px"}
+            pt={"63px"}
+            pb={"40px"}
+            width={"100%"}
+            sx={{
+              backgroundImage:
+                "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+            }}
           >
             <Grid
               container
-              flexDirection={"column"}
+              flexDirection={{ xs: "column", md: "row" }}
+              gap={"12px"}
+              justifyContent={"center"}
               flexWrap={"nowrap"}
-              flex={1}
+              height={"425px"}
+              size={12}
             >
-              <Grid container flexDirection={"column"} gap={"8px"}>
-                <HeadingButton title="Our Most In-Demand CFD Services" />
-                <Typography variant="h3" fontWeight={600}>
-                  Computation Fluid <br /> Dynamics-CFD
-                </Typography>
-              </Grid>
-              <Grid container flexDirection={"column"} gap={"25px"}>
-                <Grid
-                  container
-                  flexDirection={"column"}
-                  flexWrap={"nowrap"}
-                  mt={"26px"}
-                >
+              <Grid container flexDirection={"column"} flexWrap={"nowrap"}>
+                <Grid container flexDirection={"column"} gap={"8px"}>
+                  <HeadingButton title="Our Most In-Demand CFD Services" />
+                  <Typography variant="h3" fontWeight={600} textAlign={"left"}>
+                    Computation Fluid <br /> Dynamics-CFD
+                  </Typography>
+                </Grid>
+                <Grid container flexDirection={"column"} gap={"25px"}>
                   <Grid
                     container
-                    flexDirection={"row"}
-                    justifyContent={"start"}
+                    flexDirection={"column"}
                     flexWrap={"nowrap"}
-                    gap={"12px"}
+                    mt={"26px"}
                   >
-                    {heroCTAButtons.slice(0, 2).map((button) => (
-                      <CTAButton key={button.id} title={button.title} />
-                    ))}
+                    <Grid
+                      container
+                      flexDirection={"row"}
+                      justifyContent={"start"}
+                      flexWrap={"nowrap"}
+                      gap={"12px"}
+                    >
+                      {heroCTAButtons.slice(0, 2).map((button) => (
+                        <CTAButton key={button.id} title={button.title} />
+                      ))}
+                    </Grid>
+                    <Grid
+                      container
+                      flexDirection={"row"}
+                      justifyContent={"start"}
+                      flexWrap={"nowrap"}
+                      gap={"22px"}
+                    >
+                      {heroCTAButtons.slice(2, 4).map((button) => (
+                        <CTAButton key={button.id} title={button.title} />
+                      ))}
+                    </Grid>
                   </Grid>
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"start"}
-                    flexWrap={"nowrap"}
-                    gap={"22px"}
-                  >
-                    {heroCTAButtons.slice(2, 4).map((button) => (
-                      <CTAButton key={button.id} title={button.title} />
-                    ))}
+                  <Grid container flexDirection={"row"} gap={"10px"}>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        bgcolor: "#0273BD",
+                        color: "white",
+                        textTransform: "capitalize",
+                        height: "42px",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                      }}
+                      endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
+                    >
+                      Place your order
+                    </Button>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        bgcolor: "#ffffff",
+                        color: "#0273BD",
+                        textTransform: "capitalize",
+                        height: "42px",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                      }}
+                      endIcon={<ArrowRightIcon sx={{ color: "#0273BD" }} />}
+                    >
+                      Our Services
+                    </Button>
                   </Grid>
-                </Grid>
-                <Grid container flexDirection={"row"} gap={"10px"}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#0273BD",
-                      color: "white",
-                      textTransform: "capitalize",
-                      height: "42px",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                    }}
-                    endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
-                  >
-                    Place your order
-                  </Button>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#ffffff",
-                      color: "#0273BD",
-                      textTransform: "capitalize",
-                      height: "42px",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                    }}
-                    endIcon={<ArrowRightIcon sx={{ color: "#0273BD" }} />}
-                  >
-                    Our Services
-                  </Button>
                 </Grid>
               </Grid>
-            </Grid>
-            <Grid flex={1} sx={{ position: "relative" }}>
-              {/* Spiral behind (first in DOM) */}
-              <Box
-                sx={{
-                  display: { xs: "none", md: "block" },
-                }}
+              <Grid
+                container
+                alignItems={"center"}
+                flex={1}
+                sx={{ position: "relative" }}
+                justifyContent={"flex-end"}
               >
+                {/* Spiral behind (first in DOM) */}
                 <Image
                   src={images.Spiral}
                   alt="Spiral"
-                  width={500}
-                  height={500}
+                  width={600}
+                  height={600}
                   style={{
                     objectFit: "contain",
                     width: "1000px",
                     height: "600px",
                     position: "absolute",
-                    top: "-45%",
-                    left: "5%",
+                    top: "-35%",
+                    left: "42%",
                   }}
                 />
-              </Box>
 
-              {/* Hero in front */}
-              <Image
-                src={images.Hero}
-                alt="Hero"
-                width={539}
-                height={334}
-                style={{
-                  objectFit: "contain",
-                  width: "100%",
-                  height: "100%",
-                  position: "relative", // keeps it above without breaking layout
-                  zIndex: 1,
-                }}
-              />
+                {/* Hero in front */}
+                <Image
+                  src={images.Hero}
+                  alt="Hero"
+                  width={539}
+                  height={334}
+                  style={{
+                    objectFit: "contain",
+                    width: "600px",
+                    height: "100%",
+                    position: "relative", // keeps it above without breaking layout
+                    zIndex: 1,
+                  }}
+                />
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Grid
-          container
-          flexDirection={{ xs: "column", md: "row" }}
-          gap={"12px"}
-          px={"175px"}
-          pt={"63px"}
-          pb={"40px"}
-          width={"100%"}
-          sx={{
-            backgroundImage:
-              "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
-          }}
-        >
+        </SwiperSlide>
+        <SwiperSlide>
           <Grid
             container
             flexDirection={{ xs: "column", md: "row" }}
             gap={"12px"}
-            justifyContent={"center"}
-            flexWrap={"nowrap"}
-            height={"375px"}
+            px={"175px"}
+            pt={"63px"}
+            pb={"40px"}
+            width={"100%"}
+            sx={{
+              backgroundImage:
+                "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+            }}
           >
             <Grid
               container
-              flexDirection={"column"}
+              flexDirection={{ xs: "column", md: "row" }}
+              gap={"12px"}
+              justifyContent={"center"}
               flexWrap={"nowrap"}
-              flex={1}
+              height={"375px"}
             >
-              <Grid container flexDirection={"column"} gap={"8px"}>
-                <HeadingButton title="Our Most In-Demand CFD Services" />
-                <Typography variant="h3" fontWeight={600}>
-                  Computation Fluid <br /> Dynamics-CFD
-                </Typography>
-              </Grid>
-              <Grid container flexDirection={"column"} gap={"25px"}>
-                <Grid
-                  container
-                  flexDirection={"column"}
-                  flexWrap={"nowrap"}
-                  mt={"26px"}
-                >
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"start"}
-                    flexWrap={"nowrap"}
-                    gap={"12px"}
-                  >
-                    {heroCTAButtons.slice(0, 2).map((button) => (
-                      <CTAButton key={button.id} title={button.title} />
-                    ))}
-                  </Grid>
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"start"}
-                    flexWrap={"nowrap"}
-                    gap={"22px"}
-                  >
-                    {heroCTAButtons.slice(2, 4).map((button) => (
-                      <CTAButton key={button.id} title={button.title} />
-                    ))}
-                  </Grid>
-                </Grid>
-                <Grid container flexDirection={"row"} gap={"10px"}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#0273BD",
-                      color: "white",
-                      textTransform: "capitalize",
-                      height: "42px",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                    }}
-                    endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
-                  >
-                    Place your order
-                  </Button>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#ffffff",
-                      color: "#0273BD",
-                      textTransform: "capitalize",
-                      height: "42px",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                    }}
-                    endIcon={<ArrowRightIcon sx={{ color: "#0273BD" }} />}
-                  >
-                    Our Services
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid flex={1} sx={{ position: "relative" }}>
-              {/* Spiral behind (first in DOM) */}
-              <Box
-                sx={{
-                  display: { xs: "none", md: "block" },
-                }}
+              <Grid
+                container
+                flexDirection={"column"}
+                flexWrap={"nowrap"}
+                flex={1}
               >
+                <Grid container flexDirection={"column"} gap={"8px"}>
+                  <HeadingButton title="Our Most In-Demand CFD Services" />
+                  <Typography variant="h3" fontWeight={600}>
+                    Computation Fluid <br /> Dynamics-CFD
+                  </Typography>
+                </Grid>
+                <Grid container flexDirection={"column"} gap={"25px"}>
+                  <Grid
+                    container
+                    flexDirection={"column"}
+                    flexWrap={"nowrap"}
+                    mt={"26px"}
+                  >
+                    <Grid
+                      container
+                      flexDirection={"row"}
+                      justifyContent={"start"}
+                      flexWrap={"nowrap"}
+                      gap={"12px"}
+                    >
+                      {heroCTAButtons.slice(0, 2).map((button) => (
+                        <CTAButton key={button.id} title={button.title} />
+                      ))}
+                    </Grid>
+                    <Grid
+                      container
+                      flexDirection={"row"}
+                      justifyContent={"start"}
+                      flexWrap={"nowrap"}
+                      gap={"22px"}
+                    >
+                      {heroCTAButtons.slice(2, 4).map((button) => (
+                        <CTAButton key={button.id} title={button.title} />
+                      ))}
+                    </Grid>
+                  </Grid>
+                  <Grid container flexDirection={"row"} gap={"10px"}>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        bgcolor: "#0273BD",
+                        color: "white",
+                        textTransform: "capitalize",
+                        height: "42px",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                      }}
+                      endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
+                    >
+                      Place your order
+                    </Button>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        bgcolor: "#ffffff",
+                        color: "#0273BD",
+                        textTransform: "capitalize",
+                        height: "42px",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                      }}
+                      endIcon={<ArrowRightIcon sx={{ color: "#0273BD" }} />}
+                    >
+                      Our Services
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid flex={1} sx={{ position: "relative" }}>
+                {/* Spiral behind (first in DOM) */}
+                <Box
+                  sx={{
+                    display: { xs: "none", md: "block" },
+                  }}
+                >
+                  <Image
+                    src={images.Spiral}
+                    alt="Spiral"
+                    width={500}
+                    height={500}
+                    style={{
+                      objectFit: "contain",
+                      width: "1000px",
+                      height: "600px",
+                      position: "absolute",
+                      top: "-45%",
+                      left: "5%",
+                    }}
+                  />
+                </Box>
+
+                {/* Hero in front */}
                 <Image
-                  src={images.Spiral}
-                  alt="Spiral"
-                  width={500}
-                  height={500}
+                  src={images.Hero}
+                  alt="Hero"
+                  width={539}
+                  height={334}
                   style={{
                     objectFit: "contain",
-                    width: "1000px",
-                    height: "600px",
-                    position: "absolute",
-                    top: "-45%",
-                    left: "5%",
+                    width: "100%",
+                    height: "100%",
+                    position: "relative", // keeps it above without breaking layout
+                    zIndex: 1,
                   }}
                 />
-              </Box>
-
-              {/* Hero in front */}
-              <Image
-                src={images.Hero}
-                alt="Hero"
-                width={539}
-                height={334}
-                style={{
-                  objectFit: "contain",
-                  width: "100%",
-                  height: "100%",
-                  position: "relative", // keeps it above without breaking layout
-                  zIndex: 1,
-                }}
-              />
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Grid
-          container
-          flexDirection={{ xs: "column", md: "row" }}
-          gap={"12px"}
-          px={"175px"}
-          pt={"63px"}
-          pb={"40px"}
-          width={"100%"}
-          sx={{
-            backgroundImage:
-              "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
-          }}
-        >
+        </SwiperSlide>
+        <SwiperSlide>
           <Grid
             container
             flexDirection={{ xs: "column", md: "row" }}
             gap={"12px"}
-            justifyContent={"center"}
-            flexWrap={"nowrap"}
-            height={"375px"}
+            px={"175px"}
+            pt={"63px"}
+            pb={"40px"}
+            width={"100%"}
+            sx={{
+              backgroundImage:
+                "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+            }}
           >
             <Grid
               container
-              flexDirection={"column"}
+              flexDirection={{ xs: "column", md: "row" }}
+              gap={"12px"}
+              justifyContent={"center"}
               flexWrap={"nowrap"}
-              flex={1}
+              height={"375px"}
             >
-              <Grid container flexDirection={"column"} gap={"8px"}>
-                <HeadingButton title="Our Most In-Demand CFD Services" />
-                <Typography variant="h3" fontWeight={600}>
-                  Computation Fluid <br /> Dynamics-CFD
-                </Typography>
-              </Grid>
-              <Grid container flexDirection={"column"} gap={"25px"}>
-                <Grid
-                  container
-                  flexDirection={"column"}
-                  flexWrap={"nowrap"}
-                  mt={"26px"}
-                >
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"start"}
-                    flexWrap={"nowrap"}
-                    gap={"12px"}
-                  >
-                    {heroCTAButtons.slice(0, 2).map((button) => (
-                      <CTAButton key={button.id} title={button.title} />
-                    ))}
-                  </Grid>
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"start"}
-                    flexWrap={"nowrap"}
-                    gap={"22px"}
-                  >
-                    {heroCTAButtons.slice(2, 4).map((button) => (
-                      <CTAButton key={button.id} title={button.title} />
-                    ))}
-                  </Grid>
-                </Grid>
-                <Grid container flexDirection={"row"} gap={"10px"}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#0273BD",
-                      color: "white",
-                      textTransform: "capitalize",
-                      height: "42px",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                    }}
-                    endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
-                  >
-                    Place your order
-                  </Button>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#ffffff",
-                      color: "#0273BD",
-                      textTransform: "capitalize",
-                      height: "42px",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                    }}
-                    endIcon={<ArrowRightIcon sx={{ color: "#0273BD" }} />}
-                  >
-                    Our Services
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid flex={1} sx={{ position: "relative" }}>
-              {/* Spiral behind (first in DOM) */}
-              <Box
-                sx={{
-                  display: { xs: "none", md: "block" },
-                }}
+              <Grid
+                container
+                flexDirection={"column"}
+                flexWrap={"nowrap"}
+                flex={1}
               >
+                <Grid container flexDirection={"column"} gap={"8px"}>
+                  <HeadingButton title="Our Most In-Demand CFD Services" />
+                  <Typography variant="h3" fontWeight={600}>
+                    Computation Fluid <br /> Dynamics-CFD
+                  </Typography>
+                </Grid>
+                <Grid container flexDirection={"column"} gap={"25px"}>
+                  <Grid
+                    container
+                    flexDirection={"column"}
+                    flexWrap={"nowrap"}
+                    mt={"26px"}
+                  >
+                    <Grid
+                      container
+                      flexDirection={"row"}
+                      justifyContent={"start"}
+                      flexWrap={"nowrap"}
+                      gap={"12px"}
+                    >
+                      {heroCTAButtons.slice(0, 2).map((button) => (
+                        <CTAButton key={button.id} title={button.title} />
+                      ))}
+                    </Grid>
+                    <Grid
+                      container
+                      flexDirection={"row"}
+                      justifyContent={"start"}
+                      flexWrap={"nowrap"}
+                      gap={"22px"}
+                    >
+                      {heroCTAButtons.slice(2, 4).map((button) => (
+                        <CTAButton key={button.id} title={button.title} />
+                      ))}
+                    </Grid>
+                  </Grid>
+                  <Grid container flexDirection={"row"} gap={"10px"}>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        bgcolor: "#0273BD",
+                        color: "white",
+                        textTransform: "capitalize",
+                        height: "42px",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                      }}
+                      endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
+                    >
+                      Place your order
+                    </Button>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        bgcolor: "#ffffff",
+                        color: "#0273BD",
+                        textTransform: "capitalize",
+                        height: "42px",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                      }}
+                      endIcon={<ArrowRightIcon sx={{ color: "#0273BD" }} />}
+                    >
+                      Our Services
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid flex={1} sx={{ position: "relative" }}>
+                {/* Spiral behind (first in DOM) */}
+                <Box
+                  sx={{
+                    display: { xs: "none", md: "block" },
+                  }}
+                >
+                  <Image
+                    src={images.Spiral}
+                    alt="Spiral"
+                    width={500}
+                    height={500}
+                    style={{
+                      objectFit: "contain",
+                      width: "1000px",
+                      height: "600px",
+                      position: "absolute",
+                      top: "-45%",
+                      left: "5%",
+                    }}
+                  />
+                </Box>
+
+                {/* Hero in front */}
                 <Image
-                  src={images.Spiral}
-                  alt="Spiral"
-                  width={500}
-                  height={500}
+                  src={images.Hero}
+                  alt="Hero"
+                  width={539}
+                  height={334}
                   style={{
                     objectFit: "contain",
-                    width: "1000px",
-                    height: "600px",
-                    position: "absolute",
-                    top: "-45%",
-                    left: "5%",
+                    width: "100%",
+                    height: "100%",
+                    position: "relative", // keeps it above without breaking layout
+                    zIndex: 1,
                   }}
                 />
-              </Box>
-
-              {/* Hero in front */}
-              <Image
-                src={images.Hero}
-                alt="Hero"
-                width={539}
-                height={334}
-                style={{
-                  objectFit: "contain",
-                  width: "100%",
-                  height: "100%",
-                  position: "relative", // keeps it above without breaking layout
-                  zIndex: 1,
-                }}
-              />
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </SwiperSlide>
-    </Swiper>
+        </SwiperSlide>
+      </Swiper>
+    </Grid>
   );
 };
 

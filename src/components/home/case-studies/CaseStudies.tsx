@@ -31,20 +31,21 @@ const CaseStudies = () => {
           alignItems={"center"}
           width={"100%"}
           px={"175px"}
+          pb={"40px"}
           sx={{
             // backgroundImage:
             //   "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
             backgroundImage:
               "linear-gradient(0deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 100%, rgba(136, 216, 232, 0.53) 100%)",
           }}
-          py={"60px"}
-          gap={"10px"}
+          gap={"20px"}
         >
           <Grid
             container
             flexDirection={"column"}
             alignItems={"center"}
             gap={"10px"}
+            mt={"40px"}
           >
             <HeadingButton title="Case Studies" />
             <Typography variant="h5" textAlign={"center"}>
@@ -64,10 +65,11 @@ const CaseStudies = () => {
             flexDirection={"row"}
             border={"1px solid #0273BD"}
             p={"50px"}
+            marginBottom={"80px"}
             borderRadius={"8px"}
           >
             <Grid flexDirection={"column"} container gap={"16px"} flex={1}>
-              <Typography variant="h5" fontWeight={600}>
+              <Typography variant="h5" fontWeight={600} textAlign={"left"}>
                 CFD Analysis of Supersonic Tandem <br /> vs. Single Wing
                 Configurations in Aircraft <br /> Design
               </Typography>

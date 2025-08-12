@@ -17,7 +17,7 @@ const Home = () => {
         sx={{ bgcolor: "white", borderRadius: "60px 60px 0px 0px" }}
         mt={"-50px"}
         mx={"0px"}
-        px={"67px"}
+        // px={"67px"}
         py={"60px"}
       >
         <Clients />
