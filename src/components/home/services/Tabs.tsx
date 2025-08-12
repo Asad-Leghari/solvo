@@ -1,11 +1,16 @@
+"use client";
+
 import { CFD } from "@/domain/home";
 import { Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import images from "@/assets/images";
 
 const Tabs = () => {
+  const [selectedTab, setSelectedTab] = useState<"CFD" | "CAD" | "FEA">("CFD");
+  const [selectedCFD, setSelectedCFD] = useState<number | null>(1); // default selected id = 1
+
   return (
     <Grid
       container
@@ -15,39 +20,29 @@ const Tabs = () => {
       px={"108px"}
       pt={"0px"}
     >
+      {/* Top Tab Buttons */}
       <Grid container flexDirection={"row"} gap={"10px"} size={12}>
-        <Button
-          variant="outlined"
-          sx={{
-            border: "1px solid #E0E0E0",
-            bgcolor: "#F2F3F5",
-            color: "black",
-          }}
-        >
-          CFD
-        </Button>
-        <Button
-          variant="outlined"
-          sx={{
-            border: "1px solid #E0E0E0",
-            bgcolor: "#F2F3F5",
-            color: "black",
-          }}
-        >
-          CAD
-        </Button>
-        <Button
-          variant="outlined"
-          sx={{
-            border: "1px solid #E0E0E0",
-            bgcolor: "#F2F3F5",
-            color: "black",
-          }}
-        >
-          FEA
-        </Button>
+        {["CFD", "CAD", "FEA"].map((tab) => (
+          <Button
+            key={tab}
+            variant="outlined"
+            onClick={() => setSelectedTab(tab as "CFD" | "CAD" | "FEA")}
+            sx={{
+              border: "1px solid #E0E0E0",
+              bgcolor: selectedTab === tab ? "#007BFF" : "#F2F3F5",
+              color: selectedTab === tab ? "white" : "black",
+              fontWeight: selectedTab === tab ? 600 : 400,
+              textTransform: "capitalize",
+            }}
+          >
+            {tab}
+          </Button>
+        ))}
       </Grid>
+
+      {/* Main Content */}
       <Grid container flexDirection={"row"} gap={"40px"} size={12}>
+        {/* Left Tab Content */}
         <Grid
           container
           flexDirection={"column"}
@@ -58,6 +53,7 @@ const Tabs = () => {
           {CFD.map((item) => (
             <Button
               key={item.id}
+              onClick={() => setSelectedCFD(item.id)}
               variant="outlined"
               startIcon={
                 <Image src={item.img} alt={item.title} width={20} height={20} />
@@ -66,19 +62,24 @@ const Tabs = () => {
                 border: "1px solid #BDBCC7",
                 fontSize: "16px",
                 fontWeight: 500,
-                color: item.id === 1 ? "white" : "black",
-                bgcolor: item.id === 1 ? "#007BFF" : "white",
+                color: selectedCFD === item.id ? "white" : "black",
+                bgcolor: selectedCFD === item.id ? "#007BFF" : "white",
                 textTransform: "capitalize",
                 height: "50px",
                 borderRadius: "8px",
                 justifyContent: "flex-start",
                 width: "100%",
+                "&:hover": {
+                  bgcolor: selectedCFD === item.id ? "#007BFF" : "#f5f5f5",
+                },
               }}
             >
               {item.title}
             </Button>
           ))}
         </Grid>
+
+        {/* Right Description + Image */}
         <Grid
           flex={1}
           container
@@ -103,7 +104,7 @@ const Tabs = () => {
                 our premium customer engineering solutions, Delivering presision
                 and innovation with our premium customer engineering solutions,
                 Delivering presision and innovation with our premium customer
-                engineering solutions.{" "}
+                engineering solutions.
               </Typography>
               <Button
                 variant="contained"

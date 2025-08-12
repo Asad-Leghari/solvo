@@ -8,11 +8,11 @@ export const heroCTAButtons = [
 ];
 
 export const clientLogos = [
-  { id: 1, src: images.L1, alt: "Client Logo 1" },
-  { id: 2, src: images.L2, alt: "Client Logo 2" },
-  { id: 3, src: images.L3, alt: "Client Logo 3" },
-  { id: 4, src: images.L4, alt: "Client Logo 4" },
-  { id: 5, src: images.L5, alt: "Client Logo 5" },
+  { id: 1, src: images.L1, alt: "Client Logo 1", width: 150, height: 150 },
+  { id: 2, src: images.L2, alt: "Client Logo 2", width: 150, height: 150 },
+  { id: 3, src: images.L3, alt: "Client Logo 3", width: 150, height: 150 },
+  { id: 4, src: images.L4, alt: "Client Logo 4", width: 150, height: 150 },
+  { id: 5, src: images.L5, alt: "Client Logo 5", width: 150, height: 150 },
 ];
 
 export const models = [
