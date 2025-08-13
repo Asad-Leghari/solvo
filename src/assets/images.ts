@@ -25,6 +25,9 @@ import FFPic from "./images/FFPic.png";
 import Info1 from "./images/info-1.png";
 import Info2 from "./images/info-2.png";
 
+import ContactImg from "./images/contactimg.png";
+import ContactFooterImg from "./images/contactFooterImg.png";
+
 const images = {
   Logo,
   Hero,
@@ -47,6 +50,8 @@ const images = {
   FFPic,
   Info1,
   Info2,
+  ContactImg,
+  ContactFooterImg,
 };
 
 export default images;

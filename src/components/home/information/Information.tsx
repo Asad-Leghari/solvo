@@ -22,7 +22,7 @@ const Information = () => {
       gap={"10px"}
       bgcolor={"#ffffff"}
       borderRadius={"0 0 29px 29px"}
-      sx={{ boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)" }}
+      sx={{ boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)", zIndex: 2 }}
     >
       <Container maxWidth="xl" sx={{ py: "50px" }}>
         <HeadingButton title="Case Studies" />
