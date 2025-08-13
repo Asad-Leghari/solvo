@@ -4,15 +4,27 @@ import {
   footer_resources,
   footer_solutions,
 } from "@/domain/footer";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import XIcon from "@mui/icons-material/X";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import CopyrightIcon from "@mui/icons-material/Copyright";
 
 const Footer = () => {
   return (
     <Box
-      p={"50px"}
+      p={"100px 50px 50px 50px"}
       sx={{
         backgroundImage:
           "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
@@ -27,7 +39,13 @@ const Footer = () => {
             flexWrap={"nowrap"}
             justifyContent={"space-between"}
           >
-            <Grid container flexDirection={"column"} gap={"20px"} flex={1}>
+            <Grid
+              container
+              flexDirection={"column"}
+              gap={"20px"}
+              flex={1}
+              justifyContent={"space-between"}
+            >
               <Image
                 src={images.Logo}
                 alt="logo"
@@ -53,7 +71,7 @@ const Footer = () => {
                 container
                 flexDirection={"row"}
                 gap={"24px"}
-                justifyContent={"space-between"}
+                justifyContent={"space-around"}
               >
                 <Grid container flexDirection={"column"} gap={"16px"}>
                   <Typography variant="h6" fontWeight={600}>
@@ -107,7 +125,98 @@ const Footer = () => {
                   })}
                 </Grid>
               </Grid>
+              <Grid
+                container
+                flexDirection={"row"}
+                gap={"10px"}
+                justifyContent={"end"}
+              >
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+
+                    bgcolor: "#0273BD",
+                    color: "white",
+                    "&:hover": {
+                      bgcolor: "#0273BD",
+                      opacity: 0.8,
+                    },
+                  }}
+                >
+                  <FacebookIcon />
+                </IconButton>
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+
+                    bgcolor: "#0273BD",
+                    color: "white",
+                    "&:hover": {
+                      bgcolor: "#0273BD",
+                      opacity: 0.8,
+                    },
+                  }}
+                >
+                  <InstagramIcon />
+                </IconButton>
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+
+                    bgcolor: "#0273BD",
+                    color: "white",
+                    "&:hover": {
+                      bgcolor: "#0273BD",
+                      opacity: 0.8,
+                    },
+                  }}
+                >
+                  <XIcon />
+                </IconButton>
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+
+                    bgcolor: "#0273BD",
+                    color: "white",
+                    "&:hover": {
+                      bgcolor: "#0273BD",
+                      opacity: 0.8,
+                    },
+                  }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Grid>
             </Grid>
+          </Grid>
+          <Divider sx={{ bgcolor: "#CAC4D0" }} />
+          <Grid
+            container
+            flexDirection={"row"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+          >
+            <Typography variant="h6">Privacy Policy</Typography>
+            <Grid
+              container
+              flexDirection={"row"}
+              alignItems={"center"}
+              gap={"8px"}
+            >
+              <Typography variant="h6">All right reserved</Typography>
+              <CopyrightIcon />
+              <Typography variant="h6">Solvo Engineering 2025</Typography>
+            </Grid>
+            <Typography variant="h6">Term of service</Typography>
           </Grid>
         </Grid>
       </Container>
