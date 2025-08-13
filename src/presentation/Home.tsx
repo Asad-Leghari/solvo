@@ -22,8 +22,8 @@ const Home = () => {
       <Hero />
       <Clients />
       <Services />
-      {/* <CaseStudies /> */}
-      {/* <Reviews /> */}
+      <CaseStudies />
+      <Reviews />
       {/* <Information /> */}
       {/* <Contact /> */}
     </Grid>
