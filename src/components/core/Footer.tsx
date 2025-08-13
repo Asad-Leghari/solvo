@@ -205,6 +205,7 @@ const Footer = () => {
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
+            display={{ xs: "none", md: "flex" }}
           >
             <Typography variant="h6">Privacy Policy</Typography>
             <Grid
@@ -218,6 +219,28 @@ const Footer = () => {
               <Typography variant="h6">Solvo Engineering 2025</Typography>
             </Grid>
             <Typography variant="h6">Term of service</Typography>
+          </Grid>
+          <Grid
+            container
+            flexDirection={"row"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            display={{ xs: "flex", md: "none" }}
+          >
+            <Typography variant="h6">Privacy Policy</Typography>
+            <Typography variant="h6">Term of service</Typography>
+            <Grid
+              container
+              flexDirection={"row"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              gap={"8px"}
+              width={"100%"}
+            >
+              <Typography variant="h6">All right reserved</Typography>
+              <CopyrightIcon />
+              <Typography variant="h6">Solvo Engineering 2025</Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
