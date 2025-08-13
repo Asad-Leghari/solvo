@@ -67,7 +67,7 @@ const Reviews = () => {
           flexDirection={"row"}
           flex={1}
           gap={"10px"}
-          justifyContent={"end"}
+          justifyContent={{ xs: "center", md: "end" }}
           alignItems={"center"}
           pr={{ xs: "0px", md: "50px" }}
         >

@@ -24,8 +24,8 @@ const Home = () => {
       <Services />
       <CaseStudies />
       <Reviews />
-      {/* <Information /> */}
-      {/* <Contact /> */}
+      <Information />
+      <Contact />
     </Grid>
   );
 };

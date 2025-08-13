@@ -29,8 +29,19 @@ const Contact = () => {
     >
       <Container maxWidth="xl">
         <Grid container flexDirection={"column"} gap={"40px"}>
-          <Grid container flexDirection={"row"} gap={"40px"}>
-            <Grid container flexDirection={"column"} flex={1} gap={"10px"}>
+          <Grid
+            container
+            flexDirection={{ xs: "column", lg: "row" }}
+            alignItems={{ xs: "center", lg: "start" }}
+            gap={"40px"}
+          >
+            <Grid
+              container
+              flexDirection={"column"}
+              flex={1}
+              gap={"10px"}
+              width={"100%"}
+            >
               <HeadingButton title="Solvo's Premium" />
               <Typography variant="h4" textAlign={"start"} fontWeight={600}>
                 How Can We <span style={{ color: "#0273BD" }}>Help You?</span>
@@ -42,8 +53,13 @@ const Contact = () => {
                 p={"20px"}
                 border={"1px solid #608EF1"}
                 borderRadius={"20px"}
+                // width={"100%"}
               >
-                <Grid flexDirection={"row"} container gap={"10px"}>
+                <Grid
+                  flexDirection={{ xs: "column", lg: "row" }}
+                  container
+                  gap={"10px"}
+                >
                   <Grid flexDirection={"column"} container flex={1}>
                     <Typography variant="h6" fontWeight={600}>
                       I am Looking For
@@ -63,7 +79,11 @@ const Contact = () => {
                     <TextField variant="outlined" placeholder="Ansys" />
                   </Grid>
                 </Grid>
-                <Grid flexDirection={"row"} container gap={"10px"}>
+                <Grid
+                  flexDirection={{ xs: "column", lg: "row" }}
+                  container
+                  gap={"10px"}
+                >
                   <Grid flexDirection={"column"} container flex={1}>
                     <Typography variant="h6" fontWeight={600}>
                       Full Name
@@ -145,7 +165,7 @@ const Contact = () => {
               elevation={4}
               sx={{
                 borderRadius: "29px",
-                width: "400px",
+                maxWidth: "400px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "start",
@@ -198,19 +218,32 @@ const Contact = () => {
           </Grid>
           <Grid
             container
-            flexDirection={"row"}
+            flexDirection={{ xs: "column", md: "row" }}
             justifyContent={"space-between"}
             bgcolor={"#0273BD"}
-            p={"45px"}
+            p={{ xs: "8px", sm: "45px 100px" }}
+            gap={{ xs: "20px", md: "0px" }}
             borderRadius={"24px"}
           >
-            <Image
-              src={images.ContactFooterImg}
-              alt="contact-footer-img"
-              width={200}
-              height={330}
-              objectFit="contain"
-            />
+            <Box sx={{ display: { xs: "none", md: "block" } }}>
+              <Image
+                src={images.ContactFooterImg}
+                alt="contact-footer-img"
+                width={200}
+                height={330}
+                objectFit="contain"
+              />
+            </Box>
+            <Box sx={{ display: { xs: "block", md: "none" } }}>
+              <Image
+                src={images.ContactFooterImg90}
+                alt="contact-footer-img"
+                width={200}
+                height={200}
+                objectFit="contain"
+                style={{ width: "100%" }}
+              />
+            </Box>
             <Grid
               flex={1}
               container
@@ -219,9 +252,23 @@ const Contact = () => {
               alignItems={"center"}
               gap={"20px"}
             >
-              <Typography variant="h4" color="white" textAlign={"center"}>
+              <Typography
+                variant="h4"
+                color="white"
+                textAlign={"center"}
+                display={{ xs: "none", md: "block" }}
+              >
                 Discover your potential in a <br /> supportive, growth-focused{" "}
                 <br />
+                environment.
+              </Typography>
+              <Typography
+                variant="h4"
+                color="white"
+                textAlign={"center"}
+                display={{ xs: "block", md: "none" }}
+              >
+                Discover your potential in a supportive, growth-focused
                 environment.
               </Typography>
               <Button
@@ -238,13 +285,25 @@ const Contact = () => {
                 Apply For Job
               </Button>
             </Grid>
-            <Image
-              src={images.ContactFooterImg}
-              alt="contact-footer-img"
-              width={200}
-              height={330}
-              objectFit="contain"
-            />
+            <Box sx={{ display: { xs: "none", md: "block" } }}>
+              <Image
+                src={images.ContactFooterImg}
+                alt="contact-footer-img"
+                width={200}
+                height={330}
+                objectFit="contain"
+              />
+            </Box>
+            <Box sx={{ display: { xs: "block", md: "none" } }}>
+              <Image
+                src={images.ContactFooterImg90}
+                alt="contact-footer-img"
+                width={200}
+                height={200}
+                objectFit="contain"
+                style={{ width: "100%" }}
+              />
+            </Box>
           </Grid>
         </Grid>
       </Container>

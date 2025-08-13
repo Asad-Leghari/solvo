@@ -27,6 +27,7 @@ import Info2 from "./images/info-2.png";
 
 import ContactImg from "./images/contactimg.png";
 import ContactFooterImg from "./images/contactFooterImg.png";
+import ContactFooterImg90 from "./images/contactImg90.png";
 
 const images = {
   Logo,
@@ -52,6 +53,7 @@ const images = {
   Info2,
   ContactImg,
   ContactFooterImg,
+  ContactFooterImg90,
 };
 
 export default images;

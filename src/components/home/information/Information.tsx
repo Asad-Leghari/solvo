@@ -35,15 +35,26 @@ const Information = () => {
         <Grid
           container
           flexDirection={"row"}
-          justifyContent={"space-between"}
+          justifyContent={{ xs: "center", md: "space-between" }}
           size={12}
           mt={"10px"}
         >
-          <Grid container flexDirection={"column"} gap={"8px"} flex={1}>
-            <Typography variant="h6">
+          <Grid
+            container
+            flexDirection={"column"}
+            gap={"8px"}
+            flex={1}
+            alignItems={{ xs: "center", md: "start" }}
+          >
+            <Typography variant="h6" width={"100%"}>
               Information Gathering & Requirement
             </Typography>
-            <Grid container flexDirection={"row"} gap={"16px"}>
+            <Grid
+              container
+              flexDirection={"row"}
+              gap={{ xs: "8px", md: "16px" }}
+              width={"100%"}
+            >
               <Button
                 variant="text"
                 sx={{ color: "black" }}
@@ -73,6 +84,7 @@ const Information = () => {
             gap={"8px"}
             flex={1}
             alignItems={"end"}
+            display={{ xs: "none", md: "flex" }}
           >
             <Grid
               container
