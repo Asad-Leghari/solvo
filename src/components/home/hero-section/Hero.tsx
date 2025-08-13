@@ -32,16 +32,13 @@ import { Pagination } from "swiper/modules";
 
 const Hero = () => {
   return (
-    <Grid container>
+    <Grid container size={12}>
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
         <SwiperSlide>
           <Grid
             container
             flexDirection={{ xs: "column", md: "row" }}
             gap={"12px"}
-            // px={"175px"}
-            // pt={"63px"}
-            // pb={"40px"}
             width={"100%"}
             sx={{
               backgroundImage:

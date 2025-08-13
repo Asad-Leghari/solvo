@@ -16,6 +16,7 @@ const Navbar = () => {
       px={"20px"}
       py={"16px"}
       alignItems={"center"}
+      size={12}
     >
       <Image src={images.Logo} alt="Logo" width={136} height={50} />
       <Grid

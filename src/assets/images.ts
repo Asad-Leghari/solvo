@@ -22,6 +22,9 @@ import TA from "./images/TA.png";
 
 import FFPic from "./images/FFPic.png";
 
+import Info1 from "./images/info-1.png";
+import Info2 from "./images/info-2.png";
+
 const images = {
   Logo,
   Hero,
@@ -42,6 +45,8 @@ const images = {
   FF,
   TA,
   FFPic,
+  Info1,
+  Info2,
 };
 
 export default images;

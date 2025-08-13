@@ -22,6 +22,7 @@ export default function RootLayout({
             container
             flexDirection={"column"}
             minHeight={`calc(100vh - 64px)`}
+            size={12}
           >
             <Navbar />
             <Box flex={1}>{children}</Box>
