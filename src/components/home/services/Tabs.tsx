@@ -21,7 +21,13 @@ const Tabs = () => {
       pt={"0px"}
     >
       {/* Top Tab Buttons */}
-      <Grid container flexDirection={"row"} gap={"10px"} size={12}>
+      <Grid
+        container
+        flexDirection={"row"}
+        gap={"10px"}
+        size={12}
+        justifyContent={{ xs: "center !important", sm: "start" }}
+      >
         {["CFD", "CAD", "FEA"].map((tab) => (
           <Button
             key={tab}
@@ -41,14 +47,22 @@ const Tabs = () => {
       </Grid>
 
       {/* Main Content */}
-      <Grid container flexDirection={"row"} gap={"40px"} size={12}>
+      <Grid
+        container
+        flexDirection={{ xs: "column", lg: "row" }}
+        gap={"40px"}
+        size={12}
+        alignItems={"center"}
+      >
         {/* Left Tab Content */}
         <Grid
           container
           flexDirection={"column"}
           gap={"10px"}
-          size={4}
+          size={{ xs: 12, sm: 8, lg: 4 }}
+          justifyContent={"space-between"}
           alignItems={"center"}
+          // border={"1px solid red"}
         >
           {CFD.map((item) => (
             <Button
@@ -89,7 +103,8 @@ const Tabs = () => {
           <Grid
             size={12}
             container
-            flexDirection={"row"}
+            flexDirection={{ xs: "column", md: "row" }}
+            gap={{ xs: "40px", md: "0px" }}
             border={"1px solid #BDBCC7"}
             p={"16px"}
             borderRadius={"8px"}
@@ -98,10 +113,14 @@ const Tabs = () => {
               flexDirection={"column"}
               container
               gap={"16px"}
-              size={7}
+              size={{ xs: 12, lg: 7 }}
               justifyContent={"space-between"}
             >
-              <Typography variant="h5" fontWeight={600}>
+              <Typography
+                variant="h5"
+                fontWeight={600}
+                textAlign={{ xs: "center", lg: "start" }}
+              >
                 Solvo’s Premium EFA, CFD & CAD <br /> Modeling Services
               </Typography>
               <Typography variant="h6" textAlign={"justify"}>
@@ -130,7 +149,7 @@ const Tabs = () => {
               </Button>
             </Grid>
             <Grid
-              size={5}
+              size={{ xs: 12, lg: 5 }}
               container
               justifyContent="center"
               alignItems="center"

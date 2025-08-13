@@ -24,17 +24,18 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 const Footer = () => {
   return (
     <Box
-      p={"100px 50px 50px 50px"}
+      p={{ xs: "50px 8px", md: "100px 50px 50px 50px" }}
       sx={{
         backgroundImage:
           "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+        width: "100%",
       }}
     >
       <Container maxWidth="xl">
         <Grid container flexDirection={"column"} gap={"24px"}>
           <Grid
             container
-            flexDirection={"row"}
+            flexDirection={{ xs: "column", lg: "row" }}
             gap={"34px"}
             flexWrap={"nowrap"}
             justifyContent={"space-between"}
@@ -69,7 +70,7 @@ const Footer = () => {
             <Grid container flexDirection={"column"} gap={"24px"} flex={1}>
               <Grid
                 container
-                flexDirection={"row"}
+                flexDirection={{ xs: "column", md: "row" }}
                 gap={"24px"}
                 justifyContent={"space-around"}
               >
@@ -129,7 +130,7 @@ const Footer = () => {
                 container
                 flexDirection={"row"}
                 gap={"10px"}
-                justifyContent={"end"}
+                justifyContent={{ xs: "start", md: "end" }}
               >
                 <IconButton
                   sx={{

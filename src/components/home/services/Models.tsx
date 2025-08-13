@@ -7,8 +7,9 @@ const Models = () => {
   return (
     <Grid
       container
-      flexDirection={"row"}
-      justifyContent={"space-between"}
+      flexDirection={{ xs: "column", md: "row" }}
+      justifyContent={{ xs: "center", md: "space-between" }}
+      alignItems={"center"}
       size={12}
       // px={"108px"}
     >
@@ -16,7 +17,8 @@ const Models = () => {
         container
         flexDirection={"column"}
         alignItems={"center"}
-        width={"300px"}
+        maxWidth={"300px"}
+        flex={1}
         p={1}
         gap={"10px"}
       >
@@ -41,7 +43,8 @@ const Models = () => {
         container
         flexDirection={"column"}
         alignItems={"center"}
-        width={"300px"}
+        maxWidth={"300px"}
+        flex={1}
         p={1}
         gap={"10px"}
       >
@@ -66,7 +69,8 @@ const Models = () => {
         container
         flexDirection={"column"}
         alignItems={"center"}
-        width={"300px"}
+        maxWidth={"300px"}
+        flex={1}
         p={1}
         gap={"10px"}
       >

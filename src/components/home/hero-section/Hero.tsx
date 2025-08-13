@@ -45,14 +45,14 @@ const Hero = () => {
                 "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
             }}
           >
-            <Container maxWidth="xl" sx={{ py: "63px" }}>
+            <Container maxWidth="xl" sx={{ py: { xs: "63px", md: "63px" } }}>
               <Grid
                 container
-                flexDirection={{ xs: "column", md: "row" }}
+                flexDirection={{ xs: "column", lg: "row" }}
                 gap={"12px"}
                 justifyContent={"center"}
                 flexWrap={"nowrap"}
-                height={"425px"}
+                minHeight={"425px"}
                 size={12}
               >
                 <Grid container flexDirection={"column"} flexWrap={"nowrap"}>
@@ -72,12 +72,13 @@ const Hero = () => {
                       flexDirection={"column"}
                       flexWrap={"nowrap"}
                       mt={"26px"}
+                      gap={{ xs: "12px", sm: "0px" }}
                     >
                       <Grid
                         container
                         flexDirection={"row"}
                         justifyContent={"start"}
-                        flexWrap={"nowrap"}
+                        // flexWrap={"nowrap"}
                         gap={"12px"}
                       >
                         {heroCTAButtons.slice(0, 2).map((button) => (
@@ -88,8 +89,8 @@ const Hero = () => {
                         container
                         flexDirection={"row"}
                         justifyContent={"start"}
-                        flexWrap={"nowrap"}
-                        gap={"22px"}
+                        // flexWrap={"nowrap"}
+                        gap={{ xs: "12px", sm: "22px" }}
                       >
                         {heroCTAButtons.slice(2, 4).map((button) => (
                           <CTAButton key={button.id} title={button.title} />
@@ -135,7 +136,7 @@ const Hero = () => {
                   alignItems={"center"}
                   flex={1}
                   sx={{ position: "relative" }}
-                  justifyContent={"flex-end"}
+                  justifyContent={{ xs: "center", lg: "flex-end" }}
                 >
                   {/* Spiral behind (first in DOM) */}
                   <Image

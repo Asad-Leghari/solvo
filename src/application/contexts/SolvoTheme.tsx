@@ -1,19 +1,27 @@
 "use client";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import useGlobal from "../stores/useGlobal";
 
-const darkTheme = createTheme({
+let darkTheme = createTheme({
   palette: {
     mode: "dark",
   },
 });
 
-const lightTheme = createTheme({
+darkTheme = responsiveFontSizes(darkTheme);
+
+let lightTheme = createTheme({
   palette: {
     mode: "light",
   },
 });
+
+lightTheme = responsiveFontSizes(lightTheme);
 
 export default function SolvoTheme({
   children,
