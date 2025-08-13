@@ -26,7 +26,7 @@ const Tabs = () => {
         flexDirection={"row"}
         gap={"10px"}
         size={12}
-        justifyContent={{ xs: "center !important", sm: "start" }}
+        justifyContent={{ xs: "center !important", sm: "start !important" }}
       >
         {["CFD", "CAD", "FEA"].map((tab) => (
           <Button

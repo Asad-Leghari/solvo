@@ -11,6 +11,16 @@ let darkTheme = createTheme({
   palette: {
     mode: "dark",
   },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: "24px", // Your custom left padding
+          paddingRight: "24px", // Your custom right padding
+        },
+      },
+    },
+  },
 });
 
 darkTheme = responsiveFontSizes(darkTheme);
@@ -18,6 +28,16 @@ darkTheme = responsiveFontSizes(darkTheme);
 let lightTheme = createTheme({
   palette: {
     mode: "light",
+  },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: "24px", // Your custom left padding
+          paddingRight: "24px", // Your custom right padding
+        },
+      },
+    },
   },
 });
 

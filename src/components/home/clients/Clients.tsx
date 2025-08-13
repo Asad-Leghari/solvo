@@ -1,6 +1,6 @@
 "use client";
 
-import { Divider, Grid, Typography } from "@mui/material";
+import { Container, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 import HeadingButton from "../HeadingButton";
 import { clientLogos } from "@/domain/home";
@@ -8,7 +8,15 @@ import Image from "next/image";
 
 const Clients = () => {
   return (
-    <Grid container flexDirection="column" alignItems="center" gap="10px">
+    <Container
+      maxWidth="xl"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "10px",
+      }}
+    >
       {/* Heading */}
       <Grid
         container
@@ -30,7 +38,7 @@ const Clients = () => {
         sx={{
           overflow: "hidden",
           position: "relative",
-          width: "98vw",
+          width: "72vw",
         }}
       >
         <Grid
@@ -72,7 +80,7 @@ const Clients = () => {
 
       {/* Divider */}
       <Divider sx={{ width: "100%", bgcolor: "#E0E0E0", mt: "20px" }} />
-    </Grid>
+    </Container>
   );
 };
 

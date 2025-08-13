@@ -26,7 +26,7 @@ const Information = () => {
     >
       <Container maxWidth="xl" sx={{ py: "50px" }}>
         <HeadingButton title="Case Studies" />
-        <Typography variant="h4" textAlign={"start"}>
+        <Typography variant="h4" textAlign={"start"} mt={"8px"}>
           Our Customer{" "}
           <span style={{ color: "#0273BD" }}>
             Simulation Process <br />
