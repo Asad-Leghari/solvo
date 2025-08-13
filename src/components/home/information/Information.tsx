@@ -22,11 +22,11 @@ const Information = () => {
       gap={"10px"}
       bgcolor={"#ffffff"}
       borderRadius={"0 0 29px 29px"}
-      sx={{ boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)", zIndex: 2 }}
+      sx={{ boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)", zIndex: 3 }}
     >
       <Container maxWidth="xl" sx={{ py: "50px" }}>
         <HeadingButton title="Case Studies" />
-        <Typography variant="h4" textAlign={"center"}>
+        <Typography variant="h4" textAlign={"start"}>
           Our Customer{" "}
           <span style={{ color: "#0273BD" }}>
             Simulation Process <br />
@@ -63,7 +63,7 @@ const Information = () => {
               src={images.Info1}
               alt=""
               width={250}
-              height={250}
+              height={350}
               style={{ objectFit: "contain" }}
             />
           </Grid>
@@ -109,7 +109,7 @@ const Information = () => {
                   src={images.Info2}
                   alt=""
                   width={350}
-                  height={250}
+                  height={350}
                   style={{ objectFit: "contain" }}
                 />
               </Grid>

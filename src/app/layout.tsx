@@ -3,6 +3,7 @@ import "./globals.css";
 import SolvoTheme from "@/application/contexts/SolvoTheme";
 import { Box, Grid } from "@mui/material";
 import Navbar from "@/components/core/Navbar";
+import Footer from "@/components/core/Footer";
 
 export const metadata: Metadata = {
   title: "Solvo Engineers",
@@ -26,6 +27,7 @@ export default function RootLayout({
           >
             <Navbar />
             <Box flex={1}>{children}</Box>
+            <Footer />
           </Grid>
         </SolvoTheme>
       </body>

@@ -24,6 +24,8 @@ const Contact = () => {
       bgcolor={"#ffffff"}
       boxShadow={"0px 24px 34px rgba(0, 0, 0, 0.11)"}
       borderRadius={"0 0 29px 29px"}
+      zIndex={2}
+      pt={"100px"}
     >
       <Container maxWidth="xl">
         <Grid container flexDirection={"column"} gap={"40px"}>
