@@ -6,25 +6,17 @@ import Clients from "@/components/home/clients/Clients";
 import Services from "@/components/home/services/Services";
 import CaseStudies from "@/components/home/case-studies/CaseStudies";
 import Reviews from "@/components/home/reviews/Reviews";
+import Information from "@/components/home/information/Information";
 
 const Home = () => {
   return (
     <Grid container flexDirection={"column"} width={"100%"} flexWrap={"nowrap"}>
       <Hero />
-      <Grid
-        container
-        flexDirection={"column"}
-        sx={{ bgcolor: "white", borderRadius: "60px 60px 0px 0px" }}
-        mt={"-50px"}
-        mx={"0px"}
-        // px={"67px"}
-        py={"60px"}
-      >
-        <Clients />
-        <Services />
-      </Grid>
+      <Clients />
+      <Services />
       <CaseStudies />
       <Reviews />
+      <Information />
     </Grid>
   );
 };

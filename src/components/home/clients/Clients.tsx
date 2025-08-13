@@ -18,7 +18,7 @@ const Clients = () => {
         pt={"60px"}
       >
         <HeadingButton title="Our Best Clients" />
-        <Typography variant="h6">
+        <Typography variant="h5">
           Trusted by{" "}
           <span style={{ color: "#0273BD" }}>3,000+ globally companies.</span>
         </Typography>

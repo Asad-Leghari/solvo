@@ -19,7 +19,7 @@ const CTAButton = ({ title }: CTAButtonProps) => {
         border: "none",
         width: "fit-content",
         fontWeight: 600,
-        fontSize: "14px",
+        // fontSize: "16px",
         textTransform: "capitalize",
       }}
     >

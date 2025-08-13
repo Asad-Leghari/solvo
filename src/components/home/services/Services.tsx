@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import HeadingButton from "../HeadingButton";
 import Models from "./Models";
@@ -11,7 +11,7 @@ const Services = () => {
       flexDirection={"column"}
       alignItems={"center"}
       gap={"50px"}
-      mt={"50px"}
+      my={"50px"}
     >
       <Grid
         container
@@ -20,7 +20,7 @@ const Services = () => {
         gap={"10px"}
       >
         <HeadingButton title="Our Best Services" />
-        <Typography variant="h6" textAlign={"center"}>
+        <Typography variant="h5" textAlign={"center"}>
           Run entire Engineering{" "}
           <span style={{ color: "#0273BD" }}>
             AI & Simulation <br /> Workflows
@@ -28,8 +28,18 @@ const Services = () => {
           in your Browser
         </Typography>
       </Grid>
-      <Models />
-      <Tabs />
+      <Container
+        maxWidth="xl"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "50px",
+        }}
+      >
+        <Models />
+        <Tabs />
+      </Container>
     </Grid>
   );
 };

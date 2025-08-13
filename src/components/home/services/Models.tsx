@@ -10,7 +10,7 @@ const Models = () => {
       flexDirection={"row"}
       justifyContent={"space-between"}
       size={12}
-      px={"108px"}
+      // px={"108px"}
     >
       <Grid
         container
@@ -29,11 +29,11 @@ const Models = () => {
             objectFit: "contain",
           }}
         />
-        <Typography variant="h6" textAlign={"center"} fontWeight={600}>
+        <Typography variant="h5" textAlign={"center"} fontWeight={600}>
           Computational Fluid <br /> Dynamics (CFD)
         </Typography>
         <Divider sx={{ width: "100%" }} />
-        <Typography variant="body2" textAlign={"center"}>
+        <Typography variant="body1" textAlign={"center"}>
           {models[0].description}
         </Typography>
       </Grid>
@@ -54,11 +54,11 @@ const Models = () => {
             objectFit: "contain",
           }}
         />
-        <Typography variant="h6" textAlign={"center"} fontWeight={600}>
+        <Typography variant="h5" textAlign={"center"} fontWeight={600}>
           2D/3D Modeling & <br /> Rendering (CAD)
         </Typography>
         <Divider sx={{ width: "100%" }} />
-        <Typography variant="body2" textAlign={"center"}>
+        <Typography variant="body1" textAlign={"center"}>
           {models[1].description}
         </Typography>
       </Grid>
@@ -79,11 +79,11 @@ const Models = () => {
             objectFit: "contain",
           }}
         />
-        <Typography variant="h6" textAlign={"center"} fontWeight={600}>
+        <Typography variant="h5" textAlign={"center"} fontWeight={600}>
           Finite Element <br /> Analysis (FEA)
         </Typography>
         <Divider sx={{ width: "100%" }} />
-        <Typography variant="body2" textAlign={"center"}>
+        <Typography variant="body1" textAlign={"center"}>
           {models[2].description}
         </Typography>
       </Grid>

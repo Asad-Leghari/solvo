@@ -17,7 +17,7 @@ const Tabs = () => {
       flexDirection={"column"}
       gap={"16px"}
       size={12}
-      px={"108px"}
+      // px={"108px"}
       pt={"0px"}
     >
       {/* Top Tab Buttons */}
@@ -65,7 +65,7 @@ const Tabs = () => {
                 color: selectedCFD === item.id ? "white" : "black",
                 bgcolor: selectedCFD === item.id ? "#007BFF" : "white",
                 textTransform: "capitalize",
-                height: "50px",
+                height: "60px",
                 borderRadius: "8px",
                 justifyContent: "flex-start",
                 width: "100%",
@@ -94,11 +94,17 @@ const Tabs = () => {
             p={"16px"}
             borderRadius={"8px"}
           >
-            <Grid flexDirection={"column"} container gap={"16px"} size={7}>
-              <Typography variant="h6" fontWeight={600}>
+            <Grid
+              flexDirection={"column"}
+              container
+              gap={"16px"}
+              size={7}
+              justifyContent={"space-between"}
+            >
+              <Typography variant="h5" fontWeight={600}>
                 Solvo’s Premium EFA, CFD & CAD <br /> Modeling Services
               </Typography>
-              <Typography variant="body1" textAlign={"justify"}>
+              <Typography variant="h6" textAlign={"justify"}>
                 Delivering presision and innovation with our premium customer
                 engineering solutions, Delivering presision and innovation with
                 our premium customer engineering solutions, Delivering presision
