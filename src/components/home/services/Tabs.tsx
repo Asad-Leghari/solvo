@@ -1,6 +1,6 @@
 "use client";
 
-import { CFD } from "@/domain/home";
+import { CFD, CAD, FEA, contentData } from "@/domain/home";
 import { Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -9,7 +9,31 @@ import images from "@/assets/images";
 
 const Tabs = () => {
   const [selectedTab, setSelectedTab] = useState<"CFD" | "CAD" | "FEA">("CFD");
-  const [selectedCFD, setSelectedCFD] = useState<number | null>(1); // default selected id = 1
+  const [selectedItem, setSelectedItem] = useState<number | null>(1);
+
+  const getDataForSelectedTab = () => {
+    if (selectedTab === "CFD") {
+      return CFD;
+    } else if (selectedTab === "CAD") {
+      return CAD;
+    } else {
+      return FEA;
+    }
+  };
+
+  const getContentDataForSelectedTab = () => {
+    if (selectedTab === "CFD") {
+      return contentData.CFD;
+    } else if (selectedTab === "CAD") {
+      return contentData.CAD;
+    } else {
+      return contentData.FEA;
+    }
+  };
+
+  const selectedData = getContentDataForSelectedTab();
+
+  const selectedContent = selectedData.find((item) => item.id === selectedItem);
 
   return (
     <Grid
@@ -64,7 +88,7 @@ const Tabs = () => {
           alignItems={"center"}
           // border={"1px solid red"}
         >
-          {CFD.map((item) => (
+          {/* {CFD.map((item) => (
             <Button
               key={item.id}
               onClick={() => setSelectedCFD(item.id)}
@@ -90,6 +114,33 @@ const Tabs = () => {
             >
               {item.title}
             </Button>
+          ))} */}
+          {getDataForSelectedTab().map((item) => (
+            <Button
+              key={item.id}
+              onClick={() => setSelectedItem(item.id)}
+              variant="outlined"
+              startIcon={
+                <Image src={item.img} alt={item.title} width={20} height={20} />
+              }
+              sx={{
+                border: "1px solid #BDBCC7",
+                fontSize: "16px",
+                fontWeight: 500,
+                color: selectedItem === item.id ? "white" : "black",
+                bgcolor: selectedItem === item.id ? "#007BFF" : "white",
+                textTransform: "capitalize",
+                height: "60px",
+                borderRadius: "8px",
+                justifyContent: "flex-start",
+                width: "100%",
+                "&:hover": {
+                  bgcolor: selectedItem === item.id ? "#007BFF" : "#f5f5f5",
+                },
+              }}
+            >
+              {item.title}
+            </Button>
           ))}
         </Grid>
 
@@ -108,6 +159,9 @@ const Tabs = () => {
             border={"1px solid #BDBCC7"}
             p={"16px"}
             borderRadius={"8px"}
+            sx={{
+              minHeight: "400px", // <-- lock height so it doesn't shrink
+            }}
           >
             <Grid
               flexDirection={"column"}
@@ -116,21 +170,29 @@ const Tabs = () => {
               size={{ xs: 12, lg: 7 }}
               justifyContent={"space-between"}
             >
-              <Typography
-                variant="h5"
-                fontWeight={600}
-                textAlign={{ xs: "center", lg: "start" }}
-              >
-                Solvo’s Premium EFA, CFD & CAD <br /> Modeling Services
-              </Typography>
-              <Typography variant="h6" textAlign={"justify"}>
-                Delivering presision and innovation with our premium customer
-                engineering solutions, Delivering presision and innovation with
-                our premium customer engineering solutions, Delivering presision
-                and innovation with our premium customer engineering solutions,
-                Delivering presision and innovation with our premium customer
-                engineering solutions.
-              </Typography>
+              <div>
+                <Typography
+                  variant="h5"
+                  fontWeight={600}
+                  textAlign={{ xs: "center", lg: "start" }}
+                >
+                  {selectedContent
+                    ? selectedContent?.title
+                    : "Solvo’s Premium Modeling Services"}
+                </Typography>
+                <div
+                  style={{
+                    opacity: 0,
+                  }}
+                >
+                  xyz
+                </div>
+                <Typography variant="h6" textAlign={"justify"}>
+                  {selectedContent
+                    ? selectedContent.description
+                    : "Delivering precision and innovation with our premium customer engineering solutions."}
+                </Typography>
+              </div>
               <Button
                 variant="contained"
                 sx={{
@@ -145,7 +207,9 @@ const Tabs = () => {
                 }}
                 endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
               >
-                Our More Services
+                {selectedContent
+                  ? selectedContent.buttonText
+                  : "Our More Services"}
               </Button>
             </Grid>
             <Grid

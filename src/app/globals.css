@@ -49,3 +49,25 @@ body {
 .swiper-pagination {
   padding-bottom: 40px;
 }
+
+/* Large screens (keep your original big size and position) */
+.spiral-image {
+  object-fit: contain !important;
+  width: 1000px !important;
+  height: 850px !important;
+  position: absolute !important;
+  top: -75% !important;
+  left: 35% !important;
+  opacity: 0.5;
+  /* transform: scaleX(-1); mirrored */
+}
+
+@media (max-width: 768px) {
+  .spiral-image {
+    top:-170% !important;
+    left: 10% !important; /* move right from center */
+    width: 330px !important;
+    height: 330px !important;
+    opacity: 0.2 !important;
+  }
+}

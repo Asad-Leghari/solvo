@@ -60,7 +60,11 @@ const Clients = () => {
               alt={logo.alt}
               width={logo.width || 100}
               height={logo.height || 40}
-              style={{ objectFit: "contain" }}
+              style={{
+                objectFit: "contain",
+                maxHeight: "60px", // prevents stretching
+                maxWidth: "120px",
+              }}
             />
           ))}
         </Grid>
