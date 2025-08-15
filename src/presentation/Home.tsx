@@ -1,6 +1,5 @@
-import { Divider, Grid } from "@mui/material";
-import React, { useState } from "react";
-import Navbar from "@/components/core/Navbar";
+import { Grid } from "@mui/material";
+import React from "react";
 import Hero from "@/components/home/hero-section/Hero";
 import Clients from "@/components/home/clients/Clients";
 import Services from "@/components/home/services/Services";

@@ -198,3 +198,51 @@ export const contentData = {
     },
   ],
 };
+
+export const slidesData = [
+  {
+    headingButtonTitle: "Case Studies",
+    heading: "Our Customer Simulation Process",
+    highlight: "Simulation Process",
+    leftSection: {
+      title: "Information Gathering & Requirement",
+      buttons: ["Team Assembly", "Responsibility"],
+      image: images.Info1,
+    },
+    rightSection: {
+      title: "Assigning Roles & Responsibilities",
+      buttons: ["Consultation", "Requirement Specifications"],
+      image: images.Info2,
+    },
+  },
+  {
+    headingButtonTitle: "Case Studies",
+    heading: "Optimised Workflow Solutions",
+    highlight: "Workflow Solutions",
+    leftSection: {
+      title: "Process Analysis & Implementation",
+      buttons: ["Process Analysis", "Implementation"],
+      image: images.Info1,
+    },
+    rightSection: {
+      title: "Streamlined Operations",
+      buttons: ["Efficiency Improvement", "Cost Reduction"],
+      image: images.Info2,
+    },
+  },
+  {
+    headingButtonTitle: "Case Studies",
+    heading: "Enhanced Collaboration",
+    highlight: "Collaboration",
+    leftSection: {
+      title: "Team Coordination",
+      buttons: ["Role Assignment", "Communication"],
+      image: images.Info1,
+    },
+    rightSection: {
+      title: "Project Management",
+      buttons: ["Planning", "Execution"],
+      image: images.Info2,
+    },
+  },
+];

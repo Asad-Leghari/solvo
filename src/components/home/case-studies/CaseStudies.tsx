@@ -28,9 +28,7 @@ const slidesData = [
       "CFD Analysis of Supersonic Tandem vs. Single Wing Configurations in Aircraft Design",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's " +
-      "standard dummy text ever since the 1500s, when an unknown printer took a galley of type and Lorem Ipsum is simply " +
-      "dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever " +
-      "since the 1500s, when an unknown printer took a galley of type.",
+      "standard dummy text ever since the 1500s",
     buttonText: "View Case Study",
     image: images.FFPic,
   },
@@ -57,7 +55,6 @@ const CaseStudies = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleNextSlide = () => {
-    console.log("swiper current", swiperRef?.current);
     if (swiperRef.current) {
       swiperRef.current.slideNext();
     }
@@ -75,11 +72,7 @@ const CaseStudies = () => {
       flexDirection={"column"}
       alignItems={"center"}
       width={"100%"}
-      // px={"175px"}
-      // pb={"40px"}
       sx={{
-        // backgroundImage:
-        //   "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
         backgroundImage:
           "linear-gradient(0deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 100%, rgba(136, 216, 232, 0.53) 100%)",
       }}
@@ -122,6 +115,10 @@ const CaseStudies = () => {
                 marginBottom={"80px"}
                 borderRadius={"8px"}
                 gap={{ xs: "40px", md: "0px" }}
+                sx={{
+                  minHeight: "400px", // Ensure consistent minimum height
+                  alignItems: "stretch", // Stretch content to fill height
+                }}
               >
                 <Grid
                   flexDirection={"column"}

@@ -24,6 +24,8 @@ import FFPic from "./images/FFPic.png";
 
 import Info1 from "./images/info-1.png";
 import Info2 from "./images/info-2.png";
+import InfoBg from "./images/info-bg.png";
+import InfoBg2 from "./images/info-bg2.png";
 
 import ContactImg from "./images/contactimg.png";
 import ContactFooterImg from "./images/contactFooterImg.png";
@@ -51,6 +53,8 @@ const images = {
   FFPic,
   Info1,
   Info2,
+  InfoBg,
+  InfoBg2,
   ContactImg,
   ContactFooterImg,
   ContactFooterImg90,

@@ -1,19 +1,28 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Typography,
-} from "@mui/material";
-import React from "react";
+"use client";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import React, { useState } from "react";
 import HeadingButton from "../HeadingButton";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 import images from "@/assets/images";
+import { slidesData } from "@/domain/home";
 
 const Information = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const handleNextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % slidesData.length);
+  };
+
+  const handlePrevSlide = () => {
+    setActiveSlide(
+      (prev) => (prev - 1 + slidesData.length) % slidesData.length
+    );
+  };
+
+  const currentSlide = slidesData[activeSlide];
+
   return (
     <Grid
       container
@@ -22,15 +31,25 @@ const Information = () => {
       gap={"10px"}
       bgcolor={"#ffffff"}
       borderRadius={"0 0 29px 29px"}
-      sx={{ boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)", zIndex: 3 }}
+      sx={{
+        boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)",
+        zIndex: 3,
+        backgroundImage: `url(${images.InfoBg2.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      <Container maxWidth="xl" sx={{ py: "50px" }}>
-        <HeadingButton title="Case Studies" />
+      <Container
+        maxWidth="xl"
+        sx={{
+          py: "50px",
+        }}
+      >
+        <HeadingButton title={currentSlide.headingButtonTitle} />
         <Typography variant="h4" textAlign={"start"} mt={"8px"}>
-          Our Customer{" "}
-          <span style={{ color: "#0273BD" }}>
-            Simulation Process <br />
-          </span>
+          {currentSlide.heading}{" "}
+          <span style={{ color: "#0273BD" }}>{currentSlide.highlight}</span>
         </Typography>
         <Grid
           container
@@ -38,6 +57,11 @@ const Information = () => {
           justifyContent={{ xs: "center", md: "space-between" }}
           size={12}
           mt={"10px"}
+          sx={{
+            backgroundImage: `url(${images.InfoBg.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
           <Grid
             container
@@ -47,7 +71,7 @@ const Information = () => {
             alignItems={{ xs: "center", md: "start" }}
           >
             <Typography variant="h6" width={"100%"}>
-              Information Gathering & Requirement
+              {currentSlide.leftSection.title}
             </Typography>
             <Grid
               container
@@ -55,23 +79,19 @@ const Information = () => {
               gap={{ xs: "8px", md: "16px" }}
               width={"100%"}
             >
-              <Button
-                variant="text"
-                sx={{ color: "black" }}
-                startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
-              >
-                Team Assembly
-              </Button>
-              <Button
-                variant="text"
-                sx={{ color: "black" }}
-                startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
-              >
-                Responsibility
-              </Button>
+              {currentSlide.leftSection.buttons.map((button, idx) => (
+                <Button
+                  key={idx}
+                  variant="text"
+                  sx={{ color: "black" }}
+                  startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
+                >
+                  {button}
+                </Button>
+              ))}
             </Grid>
             <Image
-              src={images.Info1}
+              src={currentSlide.leftSection.image}
               alt=""
               width={250}
               height={350}
@@ -93,23 +113,19 @@ const Information = () => {
               alignItems={"center"}
             >
               <Typography variant="h6" textAlign={"left"} width={"100%"}>
-                Assigning Roles & Responsibilities
+                {currentSlide.rightSection.title}
               </Typography>
               <Grid container flexDirection={"row"} gap={"16px"}>
-                <Button
-                  variant="text"
-                  sx={{ color: "black" }}
-                  startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
-                >
-                  Consultation
-                </Button>
-                <Button
-                  variant="text"
-                  sx={{ color: "black" }}
-                  startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
-                >
-                  Requirement Specifications
-                </Button>
+                {currentSlide.rightSection.buttons.map((button, idx) => (
+                  <Button
+                    key={idx}
+                    variant="text"
+                    sx={{ color: "black" }}
+                    startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
+                  >
+                    {button}
+                  </Button>
+                ))}
               </Grid>
               <Grid
                 container
@@ -118,7 +134,7 @@ const Information = () => {
                 size={12}
               >
                 <Image
-                  src={images.Info2}
+                  src={currentSlide.rightSection.image}
                   alt=""
                   width={350}
                   height={350}
@@ -145,12 +161,14 @@ const Information = () => {
                 bgcolor: "#FFFFFF",
                 color: "primary.main",
               }}
+              onClick={handlePrevSlide}
             >
               <ArrowBackIcon />
             </Button>
             <Button
               variant="contained"
               sx={{ width: "fit-content", height: "42px" }}
+              onClick={handleNextSlide}
             >
               <ArrowForwardIcon />
             </Button>
@@ -162,30 +180,17 @@ const Information = () => {
             gap={"10px"}
             size={12}
           >
-            <Box
-              sx={{
-                flex: 1,
-                height: "8px",
-                borderRadius: "8px",
-                bgcolor: "#0273BD",
-              }}
-            />
-            <Box
-              sx={{
-                flex: 1,
-                height: "8px",
-                borderRadius: "8px",
-                bgcolor: "#DFE8FC",
-              }}
-            />
-            <Box
-              sx={{
-                flex: 1,
-                height: "8px",
-                borderRadius: "8px",
-                bgcolor: "#DFE8FC",
-              }}
-            />
+            {slidesData.map((_, idx) => (
+              <Box
+                key={idx}
+                sx={{
+                  flex: 1,
+                  height: "8px",
+                  borderRadius: "8px",
+                  bgcolor: idx === activeSlide ? "#0273BD" : "#DFE8FC",
+                }}
+              />
+            ))}
           </Grid>
         </Grid>
       </Container>
