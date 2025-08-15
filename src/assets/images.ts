@@ -75,6 +75,20 @@ import NonLinearIcon from "./images/Services/FEA/Nonlinearicon.png";
 import StructuralAnalysisIcon from "./images/Services/FEA/SAicon.png";
 import ThermalIcon from "./images/Services/FEA/ThermaIcon.png";
 
+import CS1 from "./images/case-studies/CS1.jpg";
+import CS2 from "./images/case-studies/CS2.jpg";
+import CS3 from "./images/case-studies/CS3.png";
+import Logo3 from "./images/case-studies/L3.png";
+import BP from "./images/case-studies/bp.png";
+
+const case_studies = {
+  CS1,
+  CS2,
+  CS3,
+  BP,
+  Logo3,
+};
+
 const services = {
   CAD: {
     Modeling3D,
@@ -157,6 +171,7 @@ const images = {
   ContactFooterImg90,
   CSImage,
   services,
+  case_studies,
 };
 
 export default images;

@@ -25,30 +25,42 @@ import { Pagination, FreeMode, Navigation } from "swiper/modules";
 const slidesData = [
   {
     title:
-      "CFD Analysis of Supersonic Tandem vs. Single Wing Configurations in Aircraft",
+      "FEA Analysis to Enhancing Stiffness and Fatigue Life of Rubber-to-Metal Bonded Parts",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's " +
-      "standard dummy text ever since the 1500s",
+      "Our team conducted a detailed Finite Element Analysis (FEA) to optimize the stiffness and extend the fatigue life of rubber-to-metal bonded components. Through fea simulations and material behavior studies, we identified critical stress regions, implemented design improvements, and ensured long term performance under real world loading conditions.",
     buttonText: "View Case Study",
-    image: images.FFPic,
+    image: images.case_studies.CS1,
+    width: "450px",
+    height: "250px",
+    logo: images.case_studies.BP,
+    lwidth: "250px",
+    lheight: "74px",
   },
   {
     title:
-      "Thermal Simulation of Compact Heat Exchanger Designs for Energy Systems",
+      "CFD Analysis and Airflow Optimization for Industrial Dehydrator System",
     description:
-      "Sample filler text serving only as layout content for design purposes. Placeholder text remains consistent with the " +
-      "format and style used across the application sections",
+      "Using Computational Fluid Dynamics (CFD) simulations, we analyzed and optimized airflow patterns within an industrial dehydrator system. The study identified bottlenecks, improved airflow, heat distribution and enhanced overall drying efficiency resulting in better product quality and reduced energy consumption.",
     buttonText: "View Case Study",
-    image: images.FFPic,
+    image: images.case_studies.CS2,
+    width: "450px",
+    height: "250px",
+    logo: images.CSImage,
+    lwidth: "250px",
+    lheight: "74px",
   },
   {
     title:
-      "Structural Stress Testing of Bridge Components Using FEA Techniques",
+      "Design Optimizing and CFD Analysis for Radial Vortex Flow Controls Device (VFC)",
     description:
-      "This example content acts purely as non-functional text to preserve visual alignment. It mirrors the spacing and " +
-      "line usage applied within this interface design template",
+      "We have performed advanced Computational Fluid Dynamics (CFD) analysis to optimize the design of a radial vortex flow control device. By refining flow paths and reducing pressure losses, we enhanced hydraulic efficiency, improved operational stability and ensured reliable performance under varying system conditions.",
     buttonText: "View Case Study",
-    image: images.FFPic,
+    image: images.case_studies.CS3,
+    width: "450px",
+    height: "250px",
+    logo: images.case_studies.Logo3,
+    lwidth: "250px",
+    lheight: "74px",
   },
 ];
 
@@ -109,7 +121,7 @@ const CaseStudies = () => {
           <SwiperSlide key={index}>
             <Box
               // maxWidth="xl"
-              px={"300px"}
+              px={{ xs: 2, lg: "300px" }}
             >
               <Grid
                 size={12}
@@ -117,7 +129,7 @@ const CaseStudies = () => {
                 flexDirection={{ xs: "column", md: "row" }}
                 border={"1px solid #0273BD"}
                 p={{ xs: "8px", md: "50px" }}
-                marginBottom={"80px"}
+                // marginBottom={"80px"}
                 borderRadius={"8px"}
                 gap={{ xs: "40px", md: "0px" }}
                 sx={{
@@ -130,45 +142,29 @@ const CaseStudies = () => {
                   container
                   gap={"24px"}
                   width={"100%"}
-                  flex={1}
+                  size={{ xs: 12, lg: 7 }}
                   justifyContent={"space-between"}
                 >
-                  <div className="cs-image-container">
-                    <Image
-                      src={images.CSImage.src}
-                      alt="cs-image"
-                      width={200}
-                      height={74}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        maxWidth: "200px",
-                        maxHeight: "74px",
-                      }}
-                    />
-                    <style jsx>{`
-                      .cs-image-container {
-                        width: 200px;
-                        height: 74px;
-                      }
-
-                      @media (max-width: 768px) {
-                        .cs-image-container {
-                          width: 175px;
-                          height: 65px;
-                        }
-                      }
-                    `}</style>
-                  </div>
-                  <Typography variant="h4" fontWeight={600} textAlign={"left"}>
-                    {slide.title.split("<br />").map((line, i) => (
-                      <React.Fragment key={i}>
-                        {line}
-                        <br />
-                      </React.Fragment>
-                    ))}
+                  <Image
+                    src={slide.logo}
+                    alt="cs-image"
+                    width={150}
+                    height={74}
+                    style={{
+                      width: slide.lwidth,
+                      height: slide.lheight,
+                      objectFit: "contain",
+                    }}
+                  />
+                  <Typography
+                    variant="h4"
+                    fontWeight={600}
+                    textAlign={"left"}
+                    // border={"1px solid red"}
+                  >
+                    {slide.title}
                   </Typography>
-                  <Typography variant="h6" textAlign={"justify"}>
+                  <Typography variant="h6" textAlign={"left"}>
                     {slide.description}
                   </Typography>
                   <Button
@@ -182,6 +178,7 @@ const CaseStudies = () => {
                       fontWeight: 600,
                       fontSize: "14px",
                       width: "fit-content",
+                      mt: 1,
                     }}
                     endIcon={<ArrowRightIcon sx={{ color: "white" }} />}
                   >
@@ -189,7 +186,7 @@ const CaseStudies = () => {
                   </Button>
                 </Grid>
                 <Grid
-                  flex={1}
+                  size={{ xs: 12, lg: 5 }}
                   container
                   justifyContent={{ xs: "center", md: "end" }}
                   alignItems="center"
@@ -201,8 +198,8 @@ const CaseStudies = () => {
                     height={250}
                     style={{
                       objectFit: "contain",
-                      width: "250px",
-                      height: "250px",
+                      width: slide.width,
+                      height: slide.height,
                     }}
                   />
                 </Grid>
@@ -211,16 +208,18 @@ const CaseStudies = () => {
           </SwiperSlide>
         ))}
         {/* Owl Carousel style dots */}
-        <div
-          style={{
+        <Box
+          sx={{
             width: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            marginTop: -60,
-            paddingBottom: 20,
+            // marginTop: -60,
+            py: "50px",
             position: "relative",
             zIndex: "99999999",
+            // border: "1px solid red",
+            px: { xs: 2, lg: "300px" },
           }}
         >
           <Box
@@ -230,7 +229,6 @@ const CaseStudies = () => {
               justifyContent: "space-between",
               width: "100%",
               maxWidth: "1440px", // limit width on large screens
-              px: { xs: 2, md: 5 },
             }}
           >
             <Grid
@@ -309,7 +307,7 @@ const CaseStudies = () => {
               </Button>
             </Grid>
           </Box>
-        </div>
+        </Box>
       </Swiper>
     </Grid>
   );
