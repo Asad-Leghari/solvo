@@ -120,7 +120,10 @@ const Hero = () => {
               mb={"30px"}
             >
               <Box
-                sx={{ pt: { xs: "63px", md: "63px" }, px: "300px" }}
+                sx={{
+                  pt: { xs: "63px", md: "63px" },
+                  px: { xs: "10px", lg: "300px" },
+                }}
                 width={"100%"}
               >
                 <Grid

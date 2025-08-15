@@ -13,6 +13,10 @@ import CAD from "./images/cad.png";
 import CFD from "./images/cfd.png";
 import FEA from "./images/fea.png";
 
+import CADM from "./images/CADM.png";
+import CFDM from "./images/CFDM.png";
+import FEAM from "./images/FEAM.png";
+
 import SA from "./images/SA.png";
 import CA from "./images/CA.png";
 import DA from "./images/DA.png";
@@ -46,6 +50,9 @@ const images = {
   CAD,
   CFD,
   FEA,
+  CADM,
+  CFDM,
+  FEAM,
   SA,
   CA,
   DA,

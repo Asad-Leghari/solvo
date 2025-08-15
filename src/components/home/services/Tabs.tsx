@@ -171,7 +171,7 @@ const Tabs = () => {
               justifyContent={"space-between"}
             >
               <div>
-                <Typography variant="h5" fontWeight={600} textAlign="start">
+                <Typography variant="h4" fontWeight={600} textAlign="start">
                   {selectedContent
                     ? selectedContent?.title
                     : "Solvo’s Premium Modeling Services"}
@@ -183,7 +183,7 @@ const Tabs = () => {
                 >
                   xyz
                 </div>
-                <Typography variant="h6" textAlign={"justify"}>
+                <Typography variant="body1" textAlign={"left"}>
                   {selectedContent
                     ? selectedContent.description
                     : "Delivering precision and innovation with our premium customer engineering solutions."}

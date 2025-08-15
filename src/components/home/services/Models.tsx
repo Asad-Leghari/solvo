@@ -25,8 +25,8 @@ const Models = () => {
         <Image
           src={models[0].image}
           alt={models[0].title}
-          width={200}
-          height={200}
+          width={250}
+          height={250}
           style={{
             objectFit: "contain",
           }}
@@ -51,8 +51,8 @@ const Models = () => {
         <Image
           src={models[1].image}
           alt={models[1].title}
-          width={200}
-          height={200}
+          width={250}
+          height={250}
           style={{
             objectFit: "contain",
           }}
@@ -77,8 +77,8 @@ const Models = () => {
         <Image
           src={models[2].image}
           alt={models[2].title}
-          width={200}
-          height={200}
+          width={255}
+          height={255}
           style={{
             objectFit: "contain",
           }}

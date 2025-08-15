@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Divider, Grid, Typography } from "@mui/material";
+import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 import HeadingButton from "../HeadingButton";
 import { clientLogos } from "@/domain/home";
@@ -8,13 +8,13 @@ import Image from "next/image";
 
 const Clients = () => {
   return (
-    <Container
-      maxWidth="xl"
+    <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: "20px",
+        gap: "10px",
+        px: { xs: 2, md: "300px" },
       }}
     >
       {/* Heading */}
@@ -38,7 +38,8 @@ const Clients = () => {
         sx={{
           overflow: "hidden",
           position: "relative",
-          width: { xs: "70vw", sm: "72vw" },
+          width: { xs: "70vw", sm: "70vw" },
+          pt: "50px",
         }}
       >
         <Grid
@@ -54,16 +55,18 @@ const Clients = () => {
         >
           {/* Duplicate 3 times for seamless infinite loop */}
           {[...clientLogos, ...clientLogos, ...clientLogos].map(
-            (logo, index) => (
-              <Image
-                key={`${logo.id}-${index}`}
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width || 100}
-                height={logo.height || 40}
-                className="client-logo"
-              />
-            )
+            (logo, index) => {
+              return (
+                <Image
+                  key={`${logo.id}-${index}`}
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className="client-logo"
+                />
+              );
+            }
           )}
         </Grid>
 
@@ -72,7 +75,7 @@ const Clients = () => {
           .client-logo {
             object-fit: contain;
             max-height: 60px;
-            max-width: 120px;
+            // max-width: 120px;
           }
           @media (max-width: 600px) {
             .client-logo {
@@ -94,7 +97,7 @@ const Clients = () => {
 
       {/* Divider */}
       <Divider sx={{ width: "100%", bgcolor: "#E0E0E0", mt: "20px" }} />
-    </Container>
+    </Box>
   );
 };
 
