@@ -36,167 +36,252 @@ export const models = [
   },
 ];
 
-export const CFD = [
-  { id: 1, title: "Structural Analysis", img: images.SA },
-  { id: 2, title: "Composite Analysis", img: images.CA },
-  { id: 3, title: "Dynamic Analysis", img: images.DA },
-  { id: 4, title: "Nonlinear Analysis", img: images.NA },
-  { id: 5, title: "Fatigue & Fracture", img: images.FF },
-  { id: 6, title: "Thermal Analysis", img: images.TA },
-];
-
-export const CAD = [
-  { id: 1, title: "3D Structural Design", img: images.SA },
-  { id: 2, title: "Composite Material Design", img: images.CA },
-  { id: 3, title: "Dynamic Load Simulation", img: images.DA },
-  { id: 4, title: "Nonlinear Material Behavior", img: images.NA },
-  { id: 5, title: "Fatigue Life Prediction", img: images.FF },
-  { id: 6, title: "Thermal Management Solutions", img: images.TA },
-];
-
-export const FEA = [
-  { id: 1, title: "Finite Element Stress Analysis", img: images.SA },
-  { id: 2, title: "Failure Mode Analysis", img: images.CA },
-  { id: 3, title: "Modal Analysis for Vibration", img: images.DA },
-  { id: 4, title: "Nonlinear Structural Analysis", img: images.NA },
-  { id: 5, title: "Fracture Mechanics Study", img: images.FF },
-  { id: 6, title: "Thermal Stress Analysis", img: images.TA },
-];
-
-// Define the data in a structured format
-export const contentData = {
-  CFD: [
-    {
-      id: 1,
-      title: "Structural Analysis",
-      description:
-        "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
-      buttonText: "Our More Services",
-    },
-    {
-      id: 2,
-      title: "Composite Analysis",
-      description:
-        "Delivering precision and innovation in composite material analysis, optimizing designs for complex engineering projects. Providing robust and efficient solutions for composite structures to meet the most demanding requirements in aerospace, automotive, and industrial applications.",
-      buttonText: "Explore Composite Analysis",
-    },
-    {
-      id: 3,
-      title: "Dynamic Analysis",
-      description:
-        "Utilizing advanced dynamic analysis techniques to evaluate structural responses to dynamic loads, vibrations, and other time-dependent forces. Ensuring reliability and safety in systems subjected to unpredictable conditions.",
-      buttonText: "Explore Dynamic Analysis",
-    },
-    {
-      id: 4,
-      title: "Nonlinear Analysis",
-      description:
-        "Conducting comprehensive nonlinear analysis to predict the behavior of materials and structures under complex loading conditions. Offering insights into material failure, plastic deformation, and other advanced phenomena.",
-      buttonText: "Explore Nonlinear Analysis",
-    },
-    {
-      id: 5,
-      title: "Fatigue & Fracture",
-      description:
-        "Providing in-depth analysis of fatigue life and fracture mechanics to ensure the durability and longevity of critical components. Identifying potential failure points and optimizing designs to prevent catastrophic failures.",
-      buttonText: "Explore Fatigue & Fracture",
-    },
-    {
-      id: 6,
-      title: "Thermal Analysis",
-      description:
-        "Optimizing heat transfer and thermal performance in systems using advanced thermal analysis. Ensuring that your designs are efficient and reliable, minimizing the risk of overheating and maximizing system performance.",
-      buttonText: "Explore Thermal Analysis",
-    },
-  ],
-  CAD: [
-    {
-      id: 1,
-      title: "3D Structural Design",
-      description:
-        "Delivering precise and highly detailed 3D structural designs, using state-of-the-art CAD software to ensure structural integrity and optimization for construction and manufacturing applications.",
-      buttonText: "Explore 3D Structural Design",
-    },
-    {
-      id: 2,
-      title: "Composite Material Design",
-      description:
-        "Designing composite materials with advanced CAD tools, ensuring that your designs meet the requirements for strength, weight, and cost-efficiency for complex engineering applications.",
-      buttonText: "Explore Composite Material Design",
-    },
-    {
-      id: 3,
-      title: "Dynamic Load Simulation",
-      description:
-        "Simulating the behavior of structures under dynamic loads to ensure safety and performance. Helping engineers design systems that can withstand real-world dynamic environments.",
-      buttonText: "Explore Dynamic Load Simulation",
-    },
-    {
-      id: 4,
-      title: "Nonlinear Material Behavior",
-      description:
-        "Modeling and simulating the behavior of materials under nonlinear stress conditions to accurately predict performance in high-stress and high-deformation scenarios.",
-      buttonText: "Explore Nonlinear Material Behavior",
-    },
-    {
-      id: 5,
-      title: "Fatigue Life Prediction",
-      description:
-        "Providing detailed analysis of fatigue life in structural components to predict failure and extend the lifespan of critical parts in your designs.",
-      buttonText: "Explore Fatigue Life Prediction",
-    },
-    {
-      id: 6,
-      title: "Thermal Management Solutions",
-      description:
-        "Designing effective thermal management systems to ensure optimal heat dissipation and performance, minimizing the risk of overheating and enhancing system reliability.",
-      buttonText: "Explore Thermal Management Solutions",
-    },
-  ],
-  FEA: [
-    {
-      id: 1,
-      title: "Finite Element Stress Analysis",
-      description:
-        "Performing comprehensive stress analysis using finite element methods to ensure the structural integrity of your designs under various loading conditions.",
-      buttonText: "Explore Stress Analysis",
-    },
-    {
-      id: 2,
-      title: "Failure Mode Analysis",
-      description:
-        "Identifying potential failure modes in structures and components, ensuring reliability and safety by optimizing designs and materials to prevent catastrophic failures.",
-      buttonText: "Explore Failure Mode Analysis",
-    },
-    {
-      id: 3,
-      title: "Modal Analysis for Vibration",
-      description:
-        "Utilizing modal analysis to predict and prevent resonance in structures, ensuring stability and preventing vibrations that could compromise performance and safety.",
-      buttonText: "Explore Vibration Analysis",
-    },
-    {
-      id: 4,
-      title: "Nonlinear Structural Analysis",
-      description:
-        "Performing nonlinear structural analysis to understand and predict complex behaviors under high loads, ensuring safety and durability under extreme conditions.",
-      buttonText: "Explore Nonlinear Structural Analysis",
-    },
-    {
-      id: 5,
-      title: "Fracture Mechanics Study",
-      description:
-        "Conducting fracture mechanics analysis to predict crack propagation and prevent failure in critical structures, ensuring that designs are safe and long-lasting.",
-      buttonText: "Explore Fracture Mechanics",
-    },
-    {
-      id: 6,
-      title: "Thermal Stress Analysis",
-      description:
-        "Analyzing the effects of thermal stress on materials and structures to prevent deformation and failure due to temperature fluctuations.",
-      buttonText: "Explore Thermal Stress Analysis",
-    },
-  ],
+export const home_services = {
+  services: ["CFD", "CAD", "FEA"],
+  CFD: {
+    list: [
+      {
+        id: 1,
+        title: "Airflow Analysis",
+        img: images.services.CFD.icons.AirFlowAnalysisIcon,
+      },
+      {
+        id: 2,
+        title: "Design Optimization",
+        img: images.services.CFD.icons.DesignOptimizationIcon,
+      },
+      {
+        id: 3,
+        title: "Fluid Structure Interaction (FSI)",
+        img: images.DA,
+      },
+      {
+        id: 4,
+        title: "Heat Transfer",
+        img: images.services.CFD.icons.HeatTransferIcon,
+      },
+      {
+        id: 5,
+        title: "Multiphase Flow Analysis",
+        img: images.services.CFD.icons.MultiphaseIcon,
+      },
+      {
+        id: 6,
+        title: "Turbo Machinery",
+        img: images.services.CFD.icons.TurboMachineryIcon,
+      },
+    ],
+    card: [
+      {
+        id: 1,
+        title: "Airflow Analysis",
+        img: images.services.CFD.AirFlowAnalysis,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 2,
+        title: "Design Optimization",
+        img: images.services.CFD.DesignOptimization,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 3,
+        title: "Fluid Structure Interaction (FSI)",
+        img: images.services.CFD.FluidStructureInteraction,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 4,
+        title: "Heat Transfer",
+        img: images.services.CFD.HeatTransfer,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 5,
+        title: "Multiphase Flow Analysis",
+        img: images.services.CFD.Multiphase,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 6,
+        title: "Turbo Machinery",
+        img: images.services.CFD.TurboMachinery,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+    ],
+  },
+  CAD: {
+    list: [
+      {
+        id: 1,
+        title: "3D Modeling",
+        img: images.services.CAD.icons.Modeling3DIcon,
+      },
+      { id: 2, title: "Assembly", img: images.services.CAD.icons.AssemblyIcon },
+      { id: 3, title: "Mold", img: images.services.CAD.icons.Modeling3DIcon },
+      {
+        id: 4,
+        title: "Product Design",
+        img: images.services.CAD.icons.ProductDesignIcon,
+      },
+      {
+        id: 5,
+        title: "Reverse Engineering",
+        img: images.services.CAD.icons.ReverseEngIcon,
+      },
+      {
+        id: 6,
+        title: "Sheet Metal",
+        img: images.services.CAD.icons.SheetMetalIcon,
+      },
+    ],
+    card: [
+      {
+        id: 1,
+        title: "3D Modeling",
+        img: images.services.CAD.Modeling3D,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 2,
+        title: "Assembly",
+        img: images.services.CAD.Assembly,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 3,
+        title: "Mold",
+        img: images.services.CAD.Mold,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 4,
+        title: "Product Design",
+        img: images.services.CAD.ProductDesign,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 5,
+        title: "Reverse Engineering",
+        img: images.services.CAD.ReverseEng,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 6,
+        title: "Sheet Metal",
+        img: images.services.CAD.SheetMetal,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+    ],
+  },
+  FEA: {
+    list: [
+      {
+        id: 1,
+        title: "Composite Analysis",
+        img: images.services.FEA.icons.CompositeIcon,
+      },
+      {
+        id: 2,
+        title: "Dynamic Analysis",
+        img: images.services.FEA.icons.DynamicIcon,
+      },
+      {
+        id: 3,
+        title: "Fatigue & Fracture",
+        img: images.services.FEA.icons.FatigueAndFractureIcon,
+      },
+      {
+        id: 4,
+        title: "Non Linear Analysis",
+        img: images.services.FEA.icons.NonLinearIcon,
+      },
+      {
+        id: 5,
+        title: "Structural Analysis",
+        img: images.services.FEA.icons.StructuralAnalysisIcon,
+      },
+      {
+        id: 6,
+        title: "Thermal Analysis",
+        img: images.services.FEA.icons.ThermalIcon,
+      },
+    ],
+    card: [
+      {
+        id: 1,
+        title: "Composite Analysis",
+        img: images.services.FEA.Composite,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 2,
+        title: "Dynamic Analysis",
+        img: images.services.FEA.Dynamic,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 3,
+        title: "Fatigue & Fracture",
+        img: images.services.FEA.FatigueAndFracture,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 4,
+        title: "Non Linear Analysis",
+        img: images.services.FEA.NonLinear,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 5,
+        title: "Structural Analysis",
+        img: images.services.FEA.StructuralAnalysis,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+      {
+        id: 6,
+        title: "Thermal Analysis",
+        img: images.services.FEA.Thermal,
+        description:
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions.",
+        buttonText: "Our More Services",
+      },
+    ],
+  },
 };
 
 export const slidesData = [
