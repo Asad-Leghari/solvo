@@ -199,6 +199,8 @@ const Tabs = () => {
               description={selectedContent.description}
               btnContent={selectedContent.buttonText}
               img={selectedContent.img}
+              imgWidth={selectedContent.width}
+              imgHeight={selectedContent.height}
             />
           )}
         </Grid>
