@@ -157,14 +157,14 @@ const CaseStudies = () => {
                     }}
                   />
                   <Typography
-                    variant="h4"
+                    variant="h5"
                     fontWeight={600}
                     textAlign={"left"}
                     // border={"1px solid red"}
                   >
                     {slide.title}
                   </Typography>
-                  <Typography variant="h6" textAlign={"left"}>
+                  <Typography variant="body1" textAlign={"left"}>
                     {slide.description}
                   </Typography>
                   <Button
