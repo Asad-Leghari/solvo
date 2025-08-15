@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import HeadingButton from "../HeadingButton";
 import Models from "./Models";
@@ -28,18 +28,19 @@ const Services = () => {
           in your Browser
         </Typography>
       </Grid>
-      <Container
-        maxWidth="xl"
+      <Box
+        // maxWidth="xl"
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           gap: "50px",
+          px: "300px",
         }}
       >
         <Models />
         <Tabs />
-      </Container>
+      </Box>
     </Grid>
   );
 };

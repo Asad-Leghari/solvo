@@ -107,7 +107,10 @@ const CaseStudies = () => {
       >
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Container maxWidth="xl">
+            <Box
+              // maxWidth="xl"
+              px={"300px"}
+            >
               <Grid
                 size={12}
                 container
@@ -204,7 +207,7 @@ const CaseStudies = () => {
                   />
                 </Grid>
               </Grid>
-            </Container>
+            </Box>
           </SwiperSlide>
         ))}
         {/* Owl Carousel style dots */}

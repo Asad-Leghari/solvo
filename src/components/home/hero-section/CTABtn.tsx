@@ -16,11 +16,15 @@ const CTAButton = ({ title }: CTAButtonProps) => {
       startIcon={<EastOutlinedIcon />}
       sx={{
         color: "black",
-        border: "none",
-        width: "fit-content",
+        // border: "none",
+        // width: "fit-content",
+        flex: 1,
         fontWeight: 600,
         // fontSize: "16px",
         textTransform: "capitalize",
+        textAlign: "left",
+        justifyContent: "left",
+        // border: "1px solid red",
       }}
     >
       {title}

@@ -17,6 +17,10 @@ let darkTheme = createTheme({
         root: {
           paddingLeft: "24px", // Your custom left padding
           paddingRight: "24px", // Your custom right padding
+          "@media (min-width:1536px)": {
+            paddingLeft: "12px",
+            paddingRight: "12px",
+          },
         },
       },
     },

@@ -27,7 +27,7 @@ import { Pagination, FreeMode, Navigation } from "swiper/modules";
 export const slidesData = [
   {
     headingButtonTitle: "Our Most In-Demand CFD Services",
-    heading: "Computation Fluid <br /> Dynamics-CFD",
+    heading: "Computation Fluid <br /> Dynamics - CFD",
     heroCTAButtons: [
       { id: 1, title: "Aerodynamic Analysis" },
       { id: 2, title: "Airflow Optimisation" },
@@ -39,40 +39,40 @@ export const slidesData = [
       { title: "Our Services", variant: "white" },
     ],
     spiralImage: images.Spiral,
-    heroImage: images.Hero,
+    heroImage: images.CFD,
   },
   {
     headingButtonTitle: "Our Most In-Demand FEA Services",
-    heading: "Structural Finite <br /> Element Analysis-FEA",
+    heading: "Finite Element<br /> Analysis - FEA",
 
     heroCTAButtons: [
-      { id: 1, title: "Structural Strength Testing" },
-      { id: 2, title: "Dynamic Mode Evaluation" },
-      { id: 3, title: "Thermal Stress Simulation" },
-      { id: 4, title: "Fatigue Life Prediction" },
+      { id: 1, title: "Fatigue and Durability Testing" },
+      { id: 2, title: "Fluid Structure Interaction (FSI)" },
+      { id: 3, title: "Structural Stress Analysis" },
+      { id: 4, title: "VOF - Multiphase Analysis" },
     ],
     mainButtons: [
       { title: "Place Your Order", variant: "blue" },
       { title: "Our Services", variant: "white" },
     ],
     spiralImage: images.Spiral,
-    heroImage: images.Hero,
+    heroImage: images.FEA,
   },
   {
     headingButtonTitle: "Our Most In-Demand PFO Services",
-    heading: "Process Flow <br /> Optimisation-PFO",
+    heading: "2D/3D CAD Modeling & <br /> Rendering",
     heroCTAButtons: [
-      { id: 1, title: "Industrial Piping Layouts" },
-      { id: 2, title: "Multi-Fluid Mixing Design" },
-      { id: 3, title: "Heat Exchanger Simulation" },
-      { id: 4, title: "Pressure Drop Assessment" },
+      { id: 1, title: "3D Product Design and Visualization" },
+      { id: 2, title: "Reverse Engineering" },
+      { id: 3, title: "Mechanical Part Design" },
+      { id: 4, title: "Sheet Metal Design" },
     ],
     mainButtons: [
       { title: "Place Your Order", variant: "blue" },
       { title: "Our Services", variant: "white" },
     ],
     spiralImage: images.Spiral,
-    heroImage: images.Hero,
+    heroImage: images.CAD,
   },
 ];
 
@@ -116,22 +116,31 @@ const Hero = () => {
               //   backgroundImage:
               //     "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
               // }}
+              // border={"1px solid red"}
+              mb={"30px"}
             >
-              <Container maxWidth="xl" sx={{ py: { xs: "63px", md: "63px" } }}>
+              <Box
+                sx={{ pt: { xs: "63px", md: "63px" }, px: "300px" }}
+                width={"100%"}
+              >
                 <Grid
                   container
                   flexDirection={{ xs: "column", lg: "row" }}
                   gap={"12px"}
                   justifyContent={"center"}
                   flexWrap={"nowrap"}
-                  minHeight={"425px"}
                   size={12}
                 >
-                  <Grid container flexDirection={"column"} flexWrap={"nowrap"}>
+                  <Grid
+                    container
+                    flexDirection={"column"}
+                    flexWrap={"nowrap"}
+                    flex={1}
+                  >
                     <Grid container flexDirection={"column"} gap={"8px"}>
                       <HeadingButton title={slide.headingButtonTitle} />
                       <Typography
-                        variant="h2"
+                        variant="h3"
                         fontWeight={600}
                         textAlign={"left"}
                         dangerouslySetInnerHTML={{ __html: slide.heading }}
@@ -145,12 +154,14 @@ const Hero = () => {
                         flexWrap={"nowrap"}
                         mt={"26px"}
                         gap={{ xs: "12px", sm: "0px" }}
+                        // border={"1px solid red"}
+                        size={12}
                       >
                         <Grid
                           container
                           flexDirection={"row"}
                           justifyContent={"start"}
-                          gap={"12px"}
+                          // gap={"12px"}
                         >
                           {slide.heroCTAButtons.slice(0, 2).map((button) => (
                             <CTAButton key={button.id} title={button.title} />
@@ -160,7 +171,7 @@ const Hero = () => {
                           container
                           flexDirection={"row"}
                           justifyContent={"start"}
-                          gap={{ xs: "12px", sm: "22px" }}
+                          // gap={{ xs: "12px", sm: "22px" }}
                         >
                           {slide.heroCTAButtons.slice(2, 4).map((button) => (
                             <CTAButton key={button.id} title={button.title} />
@@ -208,21 +219,6 @@ const Hero = () => {
                     sx={{ position: "relative" }}
                     justifyContent={{ xs: "center", lg: "flex-end" }}
                   >
-                    {/* <Image
-                      src={slide.spiralImage}
-                      alt="Spiral"
-                      width={600}
-                      height={600}
-                      style={{
-                        objectFit: "contain",
-                        width: "1000px",
-                        height: "850px",
-                        position: "absolute",
-                        top: "-75%",
-                        left: "35%",
-                        opacity: 0.5,
-                      }}
-                    /> */}
                     <Image
                       src={slide.spiralImage}
                       alt="Spiral"
@@ -233,37 +229,49 @@ const Hero = () => {
                         objectFit: "contain",
                         position: "absolute",
                         opacity: 0.5,
+                        right: 0,
                       }}
                     />
-
-                    <Image
-                      src={slide.heroImage}
-                      alt="Hero"
-                      width={539}
-                      height={334}
-                      style={{
-                        objectFit: "contain",
-                        width: "600px",
-                        height: "100%",
-                        position: "relative",
-                        zIndex: 1,
+                    <Box
+                      sx={{
+                        padding: "10px",
+                        borderRadius: "12px",
+                        bgcolor: "#ffffff",
+                        zIndex: 9999,
+                        border: "1px solid #0273BD",
+                        height: "334px",
                       }}
-                    />
+                    >
+                      <Image
+                        src={slide.heroImage}
+                        alt="Hero"
+                        width={539}
+                        height={334}
+                        style={{
+                          objectFit: "contain",
+                          width: "539px",
+                          height: "100%",
+                          position: "relative",
+                          zIndex: 1,
+                        }}
+                      />
+                    </Box>
                   </Grid>
                 </Grid>
-              </Container>
+              </Box>
             </Grid>
           </SwiperSlide>
         ))}
         {/* Owl Carousel style dots */}
-        <div
-          style={{
+        <Box
+          sx={{
             width: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             position: "relative",
             zIndex: "99999999",
+            px: { xs: 2, md: "300px" },
           }}
         >
           <Box
@@ -272,11 +280,9 @@ const Hero = () => {
               position: "relative",
               zIndex: 999999999,
               justifyContent: "space-between",
-              mt: { xs: -5, md: -12 },
+              // mt: { xs: -5, md: -12 },
               paddingBottom: { xs: 3, md: 10 },
               width: "100%",
-              maxWidth: "1440px", // limit width on large screens
-              px: { xs: 2, md: 5 },
             }}
           >
             <Grid
@@ -284,7 +290,6 @@ const Hero = () => {
               gap="6px"
               justifyContent="center"
               alignItems="center"
-              sx={{ width: "auto" }}
             >
               {slidesData.map((_, dotIndex) => {
                 const isActive = activeIndex === dotIndex;
@@ -355,7 +360,7 @@ const Hero = () => {
               </Button>
             </Grid>
           </Box>
-        </div>
+        </Box>
       </Swiper>
     </Grid>
   );

@@ -6,6 +6,7 @@ body {
   /* overflow-x: hidden; */
   background-color: #fef7ff;
   /* border: 1px solid red; */
+  /* font-size: 10px; */
 }
 
 body {
@@ -53,11 +54,11 @@ body {
 /* Large screens (keep your original big size and position) */
 .spiral-image {
   object-fit: contain !important;
-  width: 1000px !important;
-  height: 850px !important;
+  width: 800px !important;
+  height: 1040px !important;
   position: absolute !important;
-  top: -75% !important;
-  left: 35% !important;
+  top: -140% !important;
+  left: 200px !important;
   opacity: 0.5;
   /* transform: scaleX(-1); mirrored */
 }
