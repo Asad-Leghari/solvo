@@ -110,7 +110,7 @@ const Information = () => {
               container
               flexDirection={"column"}
               gap={"8px"}
-              alignItems={"center"}
+              alignItems={"start"}
             >
               <Typography variant="h6" textAlign={"left"} width={"100%"}>
                 {currentSlide.rightSection.title}
