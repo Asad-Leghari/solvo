@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import SolvoTheme from "@/application/contexts/SolvoTheme";
 import { Box, Grid } from "@mui/material";
@@ -10,13 +11,18 @@ export const metadata: Metadata = {
   description: "Engineering Agency",
 };
 
+const poppins = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <body>
         <SolvoTheme>
           <Grid

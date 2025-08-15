@@ -14,7 +14,7 @@ const Clients = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: "10px",
+        gap: "20px",
       }}
     >
       {/* Heading */}
@@ -26,7 +26,7 @@ const Clients = () => {
         pt={"60px"}
       >
         <HeadingButton title="Our Best Clients" />
-        <Typography variant="h5">
+        <Typography variant="h4" fontFamily={`Poppins", sans-serif`}>
           Trusted by{" "}
           <span style={{ color: "#0273BD" }}>3,000+ globally companies.</span>
         </Typography>

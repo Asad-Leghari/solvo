@@ -11,6 +11,9 @@ let darkTheme = createTheme({
   palette: {
     mode: "dark",
   },
+  typography: {
+    fontFamily: `"Poppins", sans-serif"`,
+  },
   components: {
     MuiContainer: {
       styleOverrides: {
