@@ -38,7 +38,7 @@ const Clients = () => {
         sx={{
           overflow: "hidden",
           position: "relative",
-          width: { xs: "100vw", sm: "72vw" },
+          width: { xs: "70vw", sm: "72vw" },
         }}
       >
         <Grid

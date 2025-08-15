@@ -5,7 +5,7 @@ body {
   max-width: 100vw;
   /* overflow-x: hidden; */
   background-color: #fef7ff;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -64,7 +64,7 @@ body {
 
 @media (max-width: 768px) {
   .spiral-image {
-    top:-170% !important;
+    top: -170% !important;
     left: 10% !important; /* move right from center */
     width: 330px !important;
     height: 330px !important;
