@@ -25,7 +25,7 @@ import { Pagination, FreeMode, Navigation } from "swiper/modules";
 const slidesData = [
   {
     title:
-      "CFD Analysis of Supersonic Tandem vs. Single Wing Configurations in Aircraft Design",
+      "CFD Analysis of Supersonic Tandem vs. Single Wing Configurations in Aircraft",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's " +
       "standard dummy text ever since the 1500s",
@@ -33,18 +33,20 @@ const slidesData = [
     image: images.FFPic,
   },
   {
-    title: "Aerodynamic Optimization of High-Speed Train Nose Design",
+    title:
+      "Thermal Simulation of Compact Heat Exchanger Designs for Energy Systems",
     description:
-      "Exploring aerodynamic principles to minimize drag and improve stability at high speeds. Using advanced CFD simulations, " +
-      "we analyzed multiple nose configurations to find the most efficient design for noise reduction and fuel efficiency.",
+      "Sample filler text serving only as layout content for design purposes. Placeholder text remains consistent with the " +
+      "format and style used across the application sections",
     buttonText: "View Case Study",
     image: images.FFPic,
   },
   {
-    title: "Wind Tunnel Testing & Simulation of Modern Wind Turbine Blades",
+    title:
+      "Structural Stress Testing of Bridge Components Using FEA Techniques",
     description:
-      "Integrating physical wind tunnel testing with CFD simulations to enhance blade design efficiency. Our study focused " +
-      "on increasing energy capture while reducing load stresses and extending turbine lifespan.",
+      "This example content acts purely as non-functional text to preserve visual alignment. It mirrors the spacing and " +
+      "line usage applied within this interface design template",
     buttonText: "View Case Study",
     image: images.FFPic,
   },
@@ -128,6 +130,33 @@ const CaseStudies = () => {
                   flex={1}
                   justifyContent={"space-between"}
                 >
+                  <div className="cs-image-container">
+                    <Image
+                      src={images.CSImage.src}
+                      alt="cs-image"
+                      width={200}
+                      height={74}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        maxWidth: "200px",
+                        maxHeight: "74px",
+                      }}
+                    />
+                    <style jsx>{`
+                      .cs-image-container {
+                        width: 200px;
+                        height: 74px;
+                      }
+
+                      @media (max-width: 768px) {
+                        .cs-image-container {
+                          width: 175px;
+                          height: 65px;
+                        }
+                      }
+                    `}</style>
+                  </div>
                   <Typography variant="h4" fontWeight={600} textAlign={"left"}>
                     {slide.title.split("<br />").map((line, i) => (
                       <React.Fragment key={i}>
@@ -176,95 +205,108 @@ const CaseStudies = () => {
                 </Grid>
               </Grid>
             </Container>
-            {/* Owl Carousel style dots */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: -60,
-                paddingBottom: 20,
-                position: "relative",
-                zIndex: "99999999",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-                width={"90%"}
-              >
-                <Grid
-                  container
-                  gap="6px"
-                  justifyContent="center"
-                  alignItems="center"
-                  sx={{ width: "auto" }}
-                >
-                  {slidesData.map((_, dotIndex) => {
-                    const isActive = activeIndex === dotIndex;
-                    return (
-                      <Box
-                        key={dotIndex}
-                        onClick={() => {
-                          swiperRef.current?.slideTo(dotIndex);
-                          setActiveIndex(dotIndex);
-                        }}
-                        sx={{
-                          cursor: "pointer",
-                          bgcolor: isActive ? "#0273BD" : "transparent",
-                          border: "1px solid #0273BD",
-                          borderRadius: "999px",
-                          height: "12px",
-                          transition: "all 0.3s ease",
-                          width: isActive ? "100px" : "12px",
-                        }}
-                      />
-                    );
-                  })}
-                </Grid>
-                {/* Navigation Buttons */}
-                <Grid
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  gap="20px"
-                >
-                  <Button
-                    className="custom-swiper-prev-btn"
-                    variant="contained"
-                    sx={{
-                      bgcolor: "white",
-                      color: "#0273BD",
-                      textTransform: "capitalize",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                    }}
-                    onClick={handlePrevSlide}
-                  >
-                    <ArrowBackIcon />
-                  </Button>
-                  <Button
-                    className="custom-swiper-next-btn"
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#0273BD",
-                      color: "white",
-                      textTransform: "capitalize",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                    }}
-                    onClick={handleNextSlide}
-                  >
-                    <ArrowForwardIcon />
-                  </Button>
-                </Grid>
-              </Box>
-            </div>
           </SwiperSlide>
         ))}
+        {/* Owl Carousel style dots */}
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: -60,
+            paddingBottom: 20,
+            position: "relative",
+            zIndex: "99999999",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              maxWidth: "1440px", // limit width on large screens
+              px: { xs: 2, md: 5 },
+            }}
+          >
+            <Grid
+              container
+              gap="6px"
+              justifyContent="center"
+              alignItems="center"
+              sx={{ width: "auto" }}
+            >
+              {slidesData.map((_, dotIndex) => {
+                const isActive = activeIndex === dotIndex;
+                return (
+                  <Box
+                    key={dotIndex}
+                    onClick={() => {
+                      swiperRef.current?.slideTo(dotIndex);
+                      setActiveIndex(dotIndex);
+                    }}
+                    sx={{
+                      cursor: "pointer",
+                      bgcolor: isActive ? "#0273BD" : "transparent",
+                      border: "1px solid #0273BD",
+                      borderRadius: "999px",
+                      height: { xs: "10px", md: "12px" },
+                      transition: "all 0.3s ease",
+                      width: isActive
+                        ? { xs: "55px", md: "100px" } // active: 55px mobile, 100px desktop
+                        : { xs: "10px", md: "12px" }, // inactive: 10px mobile, 12px desktop
+                    }}
+                  />
+                );
+              })}
+            </Grid>
+            {/* Navigation Buttons */}
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+              gap="20px"
+            >
+              <Button
+                className="custom-swiper-prev-btn"
+                variant="contained"
+                sx={{
+                  bgcolor: "white",
+                  color: "#0273BD",
+                  textTransform: "capitalize",
+                  borderRadius: "8px",
+                  fontWeight: 600,
+                  width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
+                  height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
+                  minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                }}
+                onClick={handlePrevSlide}
+              >
+                <ArrowBackIcon sx={{ fontSize: { xs: 18, md: "auto" } }} />
+              </Button>
+              <Button
+                className="custom-swiper-next-btn"
+                variant="contained"
+                sx={{
+                  bgcolor: "#0273BD",
+                  color: "white",
+                  textTransform: "capitalize",
+                  borderRadius: "8px",
+                  fontWeight: 600,
+                  width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
+                  height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
+                  minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                }}
+                onClick={handleNextSlide}
+              >
+                <ArrowForwardIcon
+                  sx={{ fontSize: { xs: 18, md: "inherit" } }}
+                />
+              </Button>
+            </Grid>
+          </Box>
+        </div>
       </Swiper>
     </Grid>
   );

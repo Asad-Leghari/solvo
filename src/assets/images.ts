@@ -31,6 +31,8 @@ import ContactImg from "./images/contactimg.png";
 import ContactFooterImg from "./images/contactFooterImg.png";
 import ContactFooterImg90 from "./images/contactImg90.png";
 
+import CSImage from "./images/cs-img.png";
+
 const images = {
   Logo,
   Hero,
@@ -58,6 +60,7 @@ const images = {
   ContactImg,
   ContactFooterImg,
   ContactFooterImg90,
+  CSImage,
 };
 
 export default images;

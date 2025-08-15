@@ -38,7 +38,7 @@ const Clients = () => {
         sx={{
           overflow: "hidden",
           position: "relative",
-          width: "72vw",
+          width: { xs: "100vw", sm: "72vw" },
         }}
       >
         <Grid
@@ -49,34 +49,44 @@ const Clients = () => {
             display: "flex",
             gap: 6,
             animation: "scrollLeft 30s linear infinite",
-            minWidth: "fit-content", // ⬅️ ensures content doesn't shrink
+            minWidth: "fit-content",
           }}
         >
-          {/* Duplicate twice for loop */}
-          {[...clientLogos, ...clientLogos].map((logo, index) => (
-            <Image
-              key={`${logo.id}-${index}`}
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 40}
-              style={{
-                objectFit: "contain",
-                maxHeight: "60px", // prevents stretching
-                maxWidth: "120px",
-              }}
-            />
-          ))}
+          {/* Duplicate 3 times for seamless infinite loop */}
+          {[...clientLogos, ...clientLogos, ...clientLogos].map(
+            (logo, index) => (
+              <Image
+                key={`${logo.id}-${index}`}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 40}
+                className="client-logo"
+              />
+            )
+          )}
         </Grid>
 
         {/* Global Keyframes */}
         <style jsx global>{`
+          .client-logo {
+            object-fit: contain;
+            max-height: 60px;
+            max-width: 120px;
+          }
+          @media (max-width: 600px) {
+            .client-logo {
+              max-height: 40px; /* smaller height for mobile */
+              max-width: 80px; /* smaller width for mobile */
+            }
+          }
+
           @keyframes scrollLeft {
             0% {
               transform: translateX(0);
             }
             100% {
-              transform: translateX(-50%);
+              transform: translateX(-33.3333%);
             }
           }
         `}</style>

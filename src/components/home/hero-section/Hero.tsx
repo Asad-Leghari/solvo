@@ -42,33 +42,34 @@ export const slidesData = [
     heroImage: images.Hero,
   },
   {
-    headingButtonTitle: "Engineering Simulation Excellence",
-    heading: "Finite Element <br /> Analysis - FEA",
+    headingButtonTitle: "Our Most In-Demand FEA Services",
+    heading: "Structural Finite <br /> Element Analysis-FEA",
+
     heroCTAButtons: [
-      { id: 1, title: "Structural Analysis" },
-      { id: 2, title: "Modal Analysis" },
-      { id: 3, title: "Thermal Simulation" },
+      { id: 1, title: "Structural Strength Testing" },
+      { id: 2, title: "Dynamic Mode Evaluation" },
+      { id: 3, title: "Thermal Stress Simulation" },
       { id: 4, title: "Fatigue Life Prediction" },
     ],
     mainButtons: [
-      { title: "Get a Quote", variant: "blue" },
-      { title: "Learn More", variant: "white" },
+      { title: "Place Your Order", variant: "blue" },
+      { title: "Our Services", variant: "white" },
     ],
     spiralImage: images.Spiral,
     heroImage: images.Hero,
   },
   {
-    headingButtonTitle: "Specialised Industrial Solutions",
-    heading: "Process Flow <br /> Optimisation",
+    headingButtonTitle: "Our Most In-Demand PFO Services",
+    heading: "Process Flow <br /> Optimisation-PFO",
     heroCTAButtons: [
-      { id: 1, title: "Piping Network Design" },
-      { id: 2, title: "Fluid Mixing Simulation" },
-      { id: 3, title: "Heat Exchanger Analysis" },
-      { id: 4, title: "Pressure Drop Evaluation" },
+      { id: 1, title: "Industrial Piping Layouts" },
+      { id: 2, title: "Multi-Fluid Mixing Design" },
+      { id: 3, title: "Heat Exchanger Simulation" },
+      { id: 4, title: "Pressure Drop Assessment" },
     ],
     mainButtons: [
-      { title: "Contact Us", variant: "blue" },
-      { title: "Case Studies", variant: "white" },
+      { title: "Place Your Order", variant: "blue" },
+      { title: "Our Services", variant: "white" },
     ],
     spiralImage: images.Spiral,
     heroImage: images.Hero,
@@ -99,6 +100,10 @@ const Hero = () => {
         modules={[Pagination, FreeMode, Navigation]}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         className="mySwiper"
+        style={{
+          backgroundImage:
+            "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+        }}
       >
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -107,10 +112,10 @@ const Hero = () => {
               flexDirection={{ xs: "column", md: "row" }}
               gap={"12px"}
               width={"100%"}
-              sx={{
-                backgroundImage:
-                  "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
-              }}
+              // sx={{
+              //   backgroundImage:
+              //     "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+              // }}
             >
               <Container maxWidth="xl" sx={{ py: { xs: "63px", md: "63px" } }}>
                 <Grid
@@ -246,85 +251,111 @@ const Hero = () => {
                     />
                   </Grid>
                 </Grid>
-
-                {/* Owl Carousel style dots */}
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Grid
-                    container
-                    gap="6px"
-                    justifyContent="center"
-                    alignItems="center"
-                    sx={{ width: "auto" }}
-                  >
-                    {slidesData.map((_, dotIndex) => {
-                      const isActive = activeIndex === dotIndex;
-                      return (
-                        <Box
-                          key={dotIndex}
-                          onClick={() => {
-                            swiperRef.current?.slideTo(dotIndex);
-                            setActiveIndex(dotIndex);
-                          }}
-                          sx={{
-                            cursor: "pointer",
-                            bgcolor: isActive ? "#0273BD" : "transparent",
-                            border: "1px solid #0273BD",
-                            borderRadius: "999px",
-                            height: "12px",
-                            transition: "all 0.3s ease",
-                            width: isActive ? "100px" : "12px",
-                          }}
-                        />
-                      );
-                    })}
-                  </Grid>
-                  {/* Navigation Buttons */}
-                  <Grid
-                    container
-                    justifyContent="center"
-                    alignItems="center"
-                    gap="20px"
-                    sx={{ mt: -2 }}
-                  >
-                    <Button
-                      className="custom-swiper-prev-btn"
-                      variant="contained"
-                      sx={{
-                        bgcolor: "white",
-                        color: "#0273BD",
-                        textTransform: "capitalize",
-                        borderRadius: "8px",
-                        fontWeight: 600,
-                      }}
-                      onClick={handlePrevSlide}
-                    >
-                      <ArrowBackIcon />
-                    </Button>
-                    <Button
-                      className="custom-swiper-next-btn"
-                      variant="contained"
-                      sx={{
-                        bgcolor: "#0273BD",
-                        color: "white",
-                        textTransform: "capitalize",
-                        borderRadius: "8px",
-                        fontWeight: 600,
-                      }}
-                      onClick={handleNextSlide}
-                    >
-                      <ArrowForwardIcon />
-                    </Button>
-                  </Grid>
-                </Box>
               </Container>
             </Grid>
           </SwiperSlide>
         ))}
+        {/* Owl Carousel style dots */}
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "relative",
+            zIndex: "99999999",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              position: "relative",
+              zIndex: 999999999,
+              justifyContent: "space-between",
+              mt: { xs: -5, md: -12 },
+              paddingBottom: { xs: 3, md: 10 },
+              width: "100%",
+              maxWidth: "1440px", // limit width on large screens
+              px: { xs: 2, md: 5 },
+            }}
+          >
+            <Grid
+              container
+              gap="6px"
+              justifyContent="center"
+              alignItems="center"
+              sx={{ width: "auto" }}
+            >
+              {slidesData.map((_, dotIndex) => {
+                const isActive = activeIndex === dotIndex;
+                return (
+                  <Box
+                    key={dotIndex}
+                    onClick={() => {
+                      swiperRef.current?.slideTo(dotIndex);
+                      setActiveIndex(dotIndex);
+                    }}
+                    sx={{
+                      cursor: "pointer",
+                      bgcolor: isActive ? "#0273BD" : "transparent",
+                      border: "1px solid #0273BD",
+                      borderRadius: "999px",
+                      height: "10px",
+                      transition: "all 0.3s ease",
+                      width: isActive
+                        ? { xs: "55px", md: "100px" } // active: 55px mobile, 100px desktop
+                        : { xs: "10px", md: "10px" }, // inactive: 10px mobile, 12px desktop
+                    }}
+                  />
+                );
+              })}
+            </Grid>
+            {/* Navigation Buttons */}
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+              gap="20px"
+            >
+              <Button
+                className="custom-swiper-prev-btn"
+                variant="contained"
+                sx={{
+                  bgcolor: "white",
+                  color: "#0273BD",
+                  textTransform: "capitalize",
+                  borderRadius: "8px",
+                  fontWeight: 600,
+                  width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
+                  height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
+                  minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                }}
+                onClick={handlePrevSlide}
+              >
+                <ArrowBackIcon sx={{ fontSize: { xs: 18, md: "inherit" } }} />
+              </Button>
+              <Button
+                className="custom-swiper-next-btn"
+                variant="contained"
+                sx={{
+                  bgcolor: "#0273BD",
+                  color: "white",
+                  textTransform: "capitalize",
+                  borderRadius: "8px",
+                  fontWeight: 600,
+                  width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
+                  height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
+                  minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                }}
+                onClick={handleNextSlide}
+              >
+                <ArrowForwardIcon
+                  sx={{ fontSize: { xs: 18, md: "inherit" } }}
+                />
+              </Button>
+            </Grid>
+          </Box>
+        </div>
       </Swiper>
     </Grid>
   );

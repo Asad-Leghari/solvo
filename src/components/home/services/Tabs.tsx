@@ -171,11 +171,7 @@ const Tabs = () => {
               justifyContent={"space-between"}
             >
               <div>
-                <Typography
-                  variant="h5"
-                  fontWeight={600}
-                  textAlign={{ xs: "center", lg: "start" }}
-                >
+                <Typography variant="h5" fontWeight={600} textAlign="start">
                   {selectedContent
                     ? selectedContent?.title
                     : "Solvo’s Premium Modeling Services"}
