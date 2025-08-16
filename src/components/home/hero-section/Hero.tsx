@@ -117,18 +117,19 @@ const Hero = () => {
               //     "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
               // }}
               // border={"1px solid red"}
-              mb={"30px"}
+              sx={{ position: "relative" }}
+              mb={{ xs: 0, md: "30px" }}
             >
               <Box
                 sx={{
-                  pt: { xs: "63px", md: "63px" },
-                  px: { xs: "10px", lg: "300px" },
+                  pt: { xs: "30px", md: "63px" },
+                  px: { xs: 2, lg: "60px", xl: "300px" },
                 }}
                 width={"100%"}
               >
                 <Grid
                   container
-                  flexDirection={{ xs: "column", lg: "row" }}
+                  flexDirection={{ xs: "column", sm: "row" }}
                   gap={"12px"}
                   justifyContent={"center"}
                   flexWrap={"nowrap"}
@@ -139,7 +140,32 @@ const Hero = () => {
                     flexDirection={"column"}
                     flexWrap={"nowrap"}
                     flex={1}
+                    sx={{ position: "relative" }}
                   >
+                    <Box
+                      display={{ xs: "block", lg: "none" }}
+                      width={"300px"}
+                      height={"400px"}
+                      sx={{
+                        position: "absolute",
+                        opacity: 1,
+                        right: 0,
+                        zIndex: 99999999,
+                      }}
+                    >
+                      <Image
+                        src={slide.spiralImage}
+                        alt="Spiral"
+                        width={600}
+                        height={600}
+                        style={{
+                          objectFit: "contain",
+                          width: "100%",
+                          height: "100%",
+                          opacity: 0.5,
+                        }}
+                      />
+                    </Box>
                     <Grid container flexDirection={"column"} gap={"8px"}>
                       <HeadingButton title={slide.headingButtonTitle} />
                       <Typography
@@ -162,7 +188,7 @@ const Hero = () => {
                       >
                         <Grid
                           container
-                          flexDirection={"row"}
+                          flexDirection={{ xs: "column", md: "row" }}
                           justifyContent={"start"}
                           // gap={"12px"}
                         >
@@ -172,7 +198,7 @@ const Hero = () => {
                         </Grid>
                         <Grid
                           container
-                          flexDirection={"row"}
+                          flexDirection={{ xs: "column", md: "row" }}
                           justifyContent={"start"}
                           // gap={{ xs: "12px", sm: "22px" }}
                         >
@@ -219,22 +245,39 @@ const Hero = () => {
                     container
                     alignItems={"center"}
                     flex={1}
-                    sx={{ position: "relative" }}
-                    justifyContent={{ xs: "center", lg: "flex-end" }}
+                    // sx={{ position: "relative" }}
+                    justifyContent={{
+                      xs: "center",
+                      md: "start",
+                      xl: "flex-end",
+                    }}
+                    // border={"2px solid green"}
                   >
-                    <Image
-                      src={slide.spiralImage}
-                      alt="Spiral"
-                      width={600}
-                      height={600}
-                      className="spiral-image"
-                      style={{
-                        objectFit: "contain",
+                    <Box
+                      display={{ xs: "none", lg: "block" }}
+                      sx={{
                         position: "absolute",
-                        opacity: 0.5,
-                        right: 0,
+                        top: { lg: "-70%", xl: "-78%" },
+                        right: { lg: "-5%", xl: "2%" },
+                        width: { sm: "500px", xl: "700px" },
+                        height: { sm: "900px", xl: "900px" },
+                        // border: "2px solid yellow",
                       }}
-                    />
+                    >
+                      <Image
+                        src={slide.spiralImage}
+                        alt="Spiral"
+                        width={250}
+                        height={250}
+                        // className="spiral-image"
+                        style={{
+                          objectFit: "contain",
+                          opacity: 0.5,
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    </Box>
                     <Box
                       sx={{
                         padding: "10px",
@@ -242,6 +285,7 @@ const Hero = () => {
                         bgcolor: "#ffffff",
                         zIndex: 9999,
                         border: "1px solid #0273BD",
+                        width: { xs: "300px", md: "539px" },
                         height: "334px",
                       }}
                     >
@@ -252,7 +296,7 @@ const Hero = () => {
                         height={334}
                         style={{
                           objectFit: "contain",
-                          width: "539px",
+                          width: "100%",
                           height: "100%",
                           position: "relative",
                           zIndex: 1,
@@ -274,7 +318,7 @@ const Hero = () => {
             justifyContent: "center",
             position: "relative",
             zIndex: "99999999",
-            px: { xs: 2, md: "300px" },
+            px: { xs: 2, lg: "60px", xl: "300px" },
           }}
         >
           <Box

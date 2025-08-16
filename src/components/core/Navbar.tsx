@@ -26,7 +26,7 @@ const Navbar = () => {
         flex={1}
         justifyContent={"end"}
         gap={"27px"}
-        display={{ xs: "none", lg: "flex" }}
+        display={{ xs: "none", md: "flex" }}
       >
         {navbarItems.map((item) => (
           <RouterButton key={item.label} href={item.href}>
@@ -42,7 +42,7 @@ const Navbar = () => {
         flex={1}
         justifyContent={"end"}
         gap={"27px"}
-        display={{ xs: "flex", lg: "none" }}
+        display={{ xs: "flex", md: "none" }}
       >
         <IconButton>
           <MenuIcon />

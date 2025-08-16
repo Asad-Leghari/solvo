@@ -19,12 +19,12 @@ const Home = () => {
       size={12}
     >
       <Hero />
-      <Clients />
-      <Services />
-      <CaseStudies />
-      <Reviews />
-      <Information />
-      <Contact />
+      {/* <Clients /> */}
+      {/* <Services /> */}
+      {/* <CaseStudies /> */}
+      {/* <Reviews /> */}
+      {/* <Information /> */}
+      {/* <Contact /> */}
     </Grid>
   );
 };
