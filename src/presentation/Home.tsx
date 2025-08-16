@@ -17,9 +17,10 @@ const Home = () => {
       flexWrap={"nowrap"}
       bgcolor={"#FEF7FF"}
       size={12}
+      // border={"1px solid red"}
     >
       <Hero />
-      {/* <Clients /> */}
+      <Clients />
       {/* <Services /> */}
       {/* <CaseStudies /> */}
       {/* <Reviews /> */}

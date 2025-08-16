@@ -14,7 +14,9 @@ const Clients = () => {
         flexDirection: "column",
         alignItems: "center",
         gap: "10px",
-        px: { xs: 2, md: "300px" },
+
+        // border: "1px solid red",
+        width: "100%",
       }}
     >
       {/* Heading */}
@@ -24,9 +26,13 @@ const Clients = () => {
         alignItems="center"
         gap="10px"
         pt={"60px"}
+        sx={{
+          px: { xs: 2, xl: "0px" },
+        }}
+        width={"100%"}
       >
         <HeadingButton title="Our Best Clients" />
-        <Typography variant="h4" fontFamily={`Poppins", sans-serif`}>
+        <Typography variant="h4" textAlign={"center"} width={"100%"}>
           Trusted by{" "}
           <span style={{ color: "#0273BD" }}>3,000+ globally companies.</span>
         </Typography>
@@ -38,7 +44,8 @@ const Clients = () => {
         sx={{
           overflow: "hidden",
           position: "relative",
-          width: { xs: "70vw", sm: "70vw" },
+          width: { xs: "90vw", sm: "70vw" },
+          // border: "1px solid red",
           pt: "50px",
         }}
       >
@@ -53,7 +60,6 @@ const Clients = () => {
             minWidth: "fit-content",
           }}
         >
-          {/* Duplicate 3 times for seamless infinite loop */}
           {[...clientLogos, ...clientLogos, ...clientLogos].map(
             (logo, index) => {
               return (
@@ -70,7 +76,6 @@ const Clients = () => {
           )}
         </Grid>
 
-        {/* Global Keyframes */}
         <style jsx global>{`
           .client-logo {
             object-fit: contain;
