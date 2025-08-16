@@ -198,7 +198,7 @@ const CaseStudies = () => {
                     height={250}
                     style={{
                       objectFit: "contain",
-                      width: slide.width,
+                      width: "100%",
                       height: slide.height,
                     }}
                   />

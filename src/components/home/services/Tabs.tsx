@@ -38,7 +38,7 @@ const Tabs = () => {
         flexDirection={"row"}
         gap={"10px"}
         size={12}
-        justifyContent={{ xs: "center !important", sm: "start !important" }}
+        justifyContent={{ xs: "center !important", lg: "start !important" }}
       >
         {home_services.services.map((tab) => (
           <Button
