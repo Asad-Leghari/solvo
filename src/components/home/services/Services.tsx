@@ -35,7 +35,7 @@ const Services = () => {
           flexDirection: "column",
           alignItems: "center",
           gap: "50px",
-          px: "300px",
+          px: { xs: 2, lg: "300px" },
         }}
       >
         <Models />
