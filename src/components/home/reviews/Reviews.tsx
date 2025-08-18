@@ -3,8 +3,9 @@ import React from "react";
 import HeadingButton from "../HeadingButton";
 import Image from "next/image";
 import images from "@/assets/images";
+import SlidesComponent from "./SlidesComponent";
 
-const reviewsData = [
+export const reviewsData = [
   {
     title: "Solvo's Premium",
     heading: (
@@ -16,46 +17,41 @@ const reviewsData = [
       </>
     ),
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, " +
-      "when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "It was a great experience working with Muhammad on my business project related to classic acoustics. He carefully reviewed the work we shared, improved it by fixing errors, and clearly explained each step of his process. His clarity and reliability made collaboration smooth, even with our time difference. It was my first time on this platform and he was very patient throughout. I would definitely recommend him!",
     clientName: "John Doe",
     designation: "Founder & CEO",
-    image: images.FFPic,
+    image: images.reviews.R1,
   },
   {
     title: "Solvo's Premium",
     heading: (
       <>
-        Hear from our{" "}
+        What our{" "}
         <span style={{ color: "#0273BD" }}>
-          Happy Clients <br />
+          Clients Say <br />
         </span>
       </>
     ),
     description:
-      "Our collaboration with Solvo was exceptional. The team understood our vision and " +
-      "delivered beyond expectations. Their professionalism and quality of work are unmatched.",
+      "It was an absolute pleasure to work with Muhammad! He had excellent communication throughout the process, ensuring everything was clear and addressing any questions quickly. His understanding and flexibility made working together very easy. The work was delivered earlier than expected and of high quality. Would definitely recommend",
     clientName: "Jane Smith",
     designation: "Co-Founder",
-    image: images.FFPic,
+    image: images.reviews.R2,
   },
   {
-    title: "Solvo's Premium",
+    title: "Solvo's Premium 3",
     heading: (
       <>
-        Why clients{" "}
+        What our{" "}
         <span style={{ color: "#0273BD" }}>
-          Trust Us <br />
+          Clients Say <br />
         </span>
       </>
     ),
-    description:
-      "Working with Solvo has been a seamless experience. From planning to execution, " +
-      "they've been transparent, innovative, and reliable every step of the way.",
-    clientName: "Michael Johnson",
-    designation: "Managing Director",
-    image: images.FFPic,
+    description: `Solvo Engineers did an excellent job on our CFD project for airflow optimization in a dust catcher device. They carefully analyzed the design, improved efficiency by addressing critical flow issues, and clearly explained every step of their process. Their expertise and responsiveness made collaboration very smooth and effective. The work was delivered with precision and high quality. I would definitely recommend them!"`,
+    clientName: "33 Jane Smith",
+    designation: "Co-Founder",
+    image: images.reviews.R3,
   },
 ];
 
@@ -70,120 +66,28 @@ const Reviews = () => {
         bgcolor: "#E6FBFF",
         position: "relative",
         overflow: "hidden",
+        px: { xs: 2, xl: "300px" },
+        py: 1,
       }}
     >
       {/* Background Spiral */}
       <Box
         sx={{
           position: "absolute",
-          top: "50%",
-          left: "0",
+          top: "40%",
+          left: "0px",
           transform: "translateY(-50%) scaleX(-1)", // flip horizontally
-          width: "400px", // smaller size
-          height: "400px",
+          width: "800px", // smaller size
+          height: "800px",
           backgroundImage: `url(${images.Spiral.src})`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          opacity: 0.3, // make it faint
+          opacity: 0.15, // make it faint
           pointerEvents: "none", // so it doesn't block clicks
         }}
       />
-      {/* Scroll container */}
-      <Box
-        sx={{
-          overflowY: "auto",
-          maxHeight: "500px",
-          width: "100%",
-          "&::-webkit-scrollbar": {
-            width: "8px",
-          },
-          "&::-webkit-scrollbar-track": {
-            backgroundColor: "#E6FBFF",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "#0273BD",
-            borderRadius: "4px",
-          },
-          "&::-webkit-scrollbar-thumb:hover": {
-            backgroundColor: "#015a94",
-          },
-          "&::-webkit-scrollbar-button:single-button": {
-            display: "none",
-            width: 0,
-            height: 0,
-          },
-          /* Firefox */
-          // scrollbarWidth: "thin",
-          scrollbarColor: "#0273BD #E6FBFF",
-        }}
-      >
-        {reviewsData.map((review, index) => (
-          <Container
-            key={index}
-            maxWidth="xl"
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              gap: { xs: "40px", md: "0px" },
-              justifyContent: "center",
-              py: "93.5px",
-              borderBottom:
-                index !== reviewsData.length - 1 ? "1px solid #ccc" : "none",
-            }}
-          >
-            <Grid
-              container
-              flexDirection={"column"}
-              gap={"16px"}
-              flex={1}
-              justifyContent={"space-between"}
-            >
-              <HeadingButton title={review.title} />
-              <Typography variant="h4" textAlign={"start"}>
-                {review.heading}
-              </Typography>
-              <Typography
-                variant="h6"
-                textAlign={"justify"}
-                pb={"20px"}
-                width={"100%"}
-              >
-                {review.description}
-              </Typography>
-              <Box>
-                <Typography variant="h4" textAlign={"start"}>
-                  {review.clientName}
-                </Typography>
-                <Typography variant="h5" textAlign={"start"} color="#0273BD">
-                  {review.designation}
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid
-              container
-              flexDirection={"row"}
-              flex={1}
-              gap={"10px"}
-              justifyContent={{ xs: "center", md: "end" }}
-              alignItems={"center"}
-              pr={{ xs: "0px", md: "50px" }}
-            >
-              <Image
-                src={review.image}
-                alt="Client"
-                width={250}
-                height={250}
-                style={{
-                  objectFit: "contain",
-                  width: "250px",
-                  height: "250px",
-                }}
-              />
-            </Grid>
-          </Container>
-        ))}
-      </Box>
+      <SlidesComponent />
     </Grid>
   );
 };

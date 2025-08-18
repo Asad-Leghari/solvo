@@ -81,6 +81,16 @@ import CS3 from "./images/case-studies/CS3.png";
 import Logo3 from "./images/case-studies/L3.png";
 import BP from "./images/case-studies/bp.png";
 
+import R1 from "./images/reviews/R1.jpeg";
+import R2 from "./images/reviews/R2.jpeg";
+import R3 from "./images/reviews/R3.jpeg";
+
+const reviews = {
+  R1,
+  R2,
+  R3,
+};
+
 const case_studies = {
   CS1,
   CS2,
@@ -172,6 +182,7 @@ const images = {
   CSImage,
   services,
   case_studies,
+  reviews,
 };
 
 export default images;

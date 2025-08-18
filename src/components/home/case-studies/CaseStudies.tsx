@@ -106,7 +106,7 @@ const CaseStudies = () => {
             Our Products <br />
           </span>
         </Typography>
-        <Typography variant="h6" textAlign={"center"}>
+        <Typography variant="body1" textAlign={"center"}>
           See how Solvo Products has helped its clients achieve their vision{" "}
           <br /> of digital innovation.
         </Typography>
