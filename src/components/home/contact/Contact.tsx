@@ -17,7 +17,11 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import images from "@/assets/images";
 import Image from "next/image";
 
-const Contact = () => {
+interface ContactProps {
+  displayBottomImage?: boolean;
+}
+
+const Contact = ({ displayBottomImage = true }: ContactProps) => {
   return (
     <Box
       py={"100px"}
@@ -216,95 +220,97 @@ const Contact = () => {
               </Grid>
             </Paper>
           </Grid>
-          <Grid
-            container
-            flexDirection={{ xs: "column", md: "row" }}
-            justifyContent={"space-between"}
-            bgcolor={"#0273BD"}
-            p={{ xs: "8px", sm: "45px 100px" }}
-            gap={{ xs: "20px", md: "0px" }}
-            borderRadius={"24px"}
-          >
-            <Box sx={{ display: { xs: "none", md: "block" } }}>
-              <Image
-                src={images.ContactFooterImg}
-                alt="contact-footer-img"
-                width={200}
-                height={330}
-                objectFit="contain"
-              />
-            </Box>
-            <Box sx={{ display: { xs: "block", md: "none" } }}>
-              <Image
-                src={images.ContactFooterImg90}
-                alt="contact-footer-img"
-                width={200}
-                height={200}
-                objectFit="contain"
-                style={{ width: "100%" }}
-              />
-            </Box>
+          {displayBottomImage && (
             <Grid
-              flex={1}
               container
-              flexDirection={"column"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              gap={"20px"}
+              flexDirection={{ xs: "column", md: "row" }}
+              justifyContent={"space-between"}
+              bgcolor={"#0273BD"}
+              p={{ xs: "8px", sm: "45px 100px" }}
+              gap={{ xs: "20px", md: "0px" }}
+              borderRadius={"24px"}
             >
-              <Typography
-                variant="h4"
-                color="white"
-                textAlign={"center"}
-                display={{ xs: "none", md: "block" }}
+              <Box sx={{ display: { xs: "none", md: "block" } }}>
+                <Image
+                  src={images.ContactFooterImg}
+                  alt="contact-footer-img"
+                  width={200}
+                  height={330}
+                  objectFit="contain"
+                />
+              </Box>
+              <Box sx={{ display: { xs: "block", md: "none" } }}>
+                <Image
+                  src={images.ContactFooterImg90}
+                  alt="contact-footer-img"
+                  width={200}
+                  height={200}
+                  objectFit="contain"
+                  style={{ width: "100%" }}
+                />
+              </Box>
+              <Grid
+                flex={1}
+                container
+                flexDirection={"column"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                gap={"20px"}
               >
-                Discover your potential in a <br /> supportive, growth-focused{" "}
-                <br />
-                environment.
-              </Typography>
-              <Typography
-                variant="h4"
-                color="white"
-                textAlign={"center"}
-                display={{ xs: "block", md: "none" }}
-              >
-                Discover your potential in a supportive, growth-focused
-                environment.
-              </Typography>
-              <Button
-                variant="contained"
-                sx={{
-                  bgcolor: "#ffffff",
-                  color: "black",
-                  textTransform: "capitalize",
-                  height: "52px",
-                  borderRadius: "12px",
-                  width: "154px",
-                }}
-              >
-                Apply For Job
-              </Button>
+                <Typography
+                  variant="h4"
+                  color="white"
+                  textAlign={"center"}
+                  display={{ xs: "none", md: "block" }}
+                >
+                  Discover your potential in a <br /> supportive, growth-focused{" "}
+                  <br />
+                  environment.
+                </Typography>
+                <Typography
+                  variant="h4"
+                  color="white"
+                  textAlign={"center"}
+                  display={{ xs: "block", md: "none" }}
+                >
+                  Discover your potential in a supportive, growth-focused
+                  environment.
+                </Typography>
+                <Button
+                  variant="contained"
+                  sx={{
+                    bgcolor: "#ffffff",
+                    color: "black",
+                    textTransform: "capitalize",
+                    height: "52px",
+                    borderRadius: "12px",
+                    width: "154px",
+                  }}
+                >
+                  Apply For Job
+                </Button>
+              </Grid>
+              <Box sx={{ display: { xs: "none", md: "block" } }}>
+                <Image
+                  src={images.ContactFooterImg}
+                  alt="contact-footer-img"
+                  width={200}
+                  height={330}
+                  objectFit="contain"
+                />
+              </Box>
+              <Box sx={{ display: { xs: "block", md: "none" } }}>
+                <Image
+                  src={images.ContactFooterImg90}
+                  alt="contact-footer-img"
+                  width={200}
+                  height={200}
+                  objectFit="contain"
+                  style={{ width: "100%" }}
+                />
+              </Box>
             </Grid>
-            <Box sx={{ display: { xs: "none", md: "block" } }}>
-              <Image
-                src={images.ContactFooterImg}
-                alt="contact-footer-img"
-                width={200}
-                height={330}
-                objectFit="contain"
-              />
-            </Box>
-            <Box sx={{ display: { xs: "block", md: "none" } }}>
-              <Image
-                src={images.ContactFooterImg90}
-                alt="contact-footer-img"
-                width={200}
-                height={200}
-                objectFit="contain"
-                style={{ width: "100%" }}
-              />
-            </Box>
-          </Grid>
+          )}
         </Grid>
       </Container>
     </Box>

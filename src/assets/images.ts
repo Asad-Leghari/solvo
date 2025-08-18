@@ -90,6 +90,17 @@ const reviews = {
   R2,
   R3,
 };
+import bgsectionleft from "./images/bg-section-left.png";
+import bgsectionright from "./images/bg-section-right.png";
+
+import whoweare from "./images/who-we-are.png";
+
+// icons
+import audience from "./images/icons/audience.png";
+import handshake from "./images/icons/handshake.png";
+import idea from "./images/icons/idea.png";
+import quality_assurance from "./images/icons/quality-assurance.png";
+import verified from "./images/icons/verified.png";
 
 const case_studies = {
   CS1,
@@ -176,6 +187,8 @@ const images = {
   Info2,
   InfoBg,
   InfoBg2,
+  bgsectionleft,
+  bgsectionright,
   ContactImg,
   ContactFooterImg,
   ContactFooterImg90,
@@ -183,6 +196,14 @@ const images = {
   services,
   case_studies,
   reviews,
+  whoweare,
+
+  // Icons
+  audience,
+  handshake,
+  idea,
+  quality_assurance,
+  verified,
 };
 
 export default images;
