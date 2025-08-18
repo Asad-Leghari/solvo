@@ -327,7 +327,7 @@ const Hero = () => {
               position: "relative",
               zIndex: 999999999,
               justifyContent: "space-between",
-              mt: { xs: 2, md: -10 },
+              mt: { xs: 2, md: -2 },
               paddingBottom: { xs: 3, md: 10 },
               width: "100%",
             }}
