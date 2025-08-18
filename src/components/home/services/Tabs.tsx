@@ -64,7 +64,7 @@ const Tabs = () => {
         flexDirection={{ xs: "column", lg: "row" }}
         gap={"40px"}
         size={12}
-        alignItems={"center"}
+        alignItems={"start"}
       >
         {/* Left Tab Content */}
         <Grid
@@ -134,7 +134,7 @@ const Tabs = () => {
                     color: selectedItem === item.id ? "white" : "black",
                     bgcolor: selectedItem === item.id ? "#007BFF" : "white",
                     textTransform: "capitalize",
-                    height: "60px",
+                    height: "58px",
                     borderRadius: "8px",
                     justifyContent: "flex-start",
                     width: "100%",

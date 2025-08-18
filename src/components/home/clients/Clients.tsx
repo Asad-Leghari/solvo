@@ -32,7 +32,7 @@ const Clients = () => {
         width={"100%"}
       >
         <HeadingButton title="Our Best Clients" />
-        <Typography variant="h4" textAlign={"center"} width={"100%"}>
+        <Typography variant="h5" textAlign={"center"} width={"100%"}>
           Trusted by{" "}
           <span style={{ color: "#0273BD" }}>3,000+ globally companies.</span>
         </Typography>

@@ -79,7 +79,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -89,7 +89,7 @@ export const home_services = {
         width: "300px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -99,7 +99,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -109,7 +109,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -119,7 +119,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -129,7 +129,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
     ],
@@ -167,7 +167,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -177,7 +177,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -187,7 +187,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -197,7 +197,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -207,7 +207,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -217,7 +217,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
     ],
@@ -263,7 +263,7 @@ export const home_services = {
         width: "300px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -273,7 +273,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -283,7 +283,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -293,7 +293,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -303,7 +303,7 @@ export const home_services = {
         width: "250px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
       {
@@ -313,7 +313,7 @@ export const home_services = {
         width: "300px",
         height: "250px",
         description:
-          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation precision and innovation precision and innovation    Delivering precision and innovation  precision and innovation precision and innovation  ",
+          "Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering solutions, Delivering precision and innovation with our premium customer engineering.  Delivering precision and innovation  precision and innovation",
         buttonText: "Our More Services",
       },
     ],

@@ -17,9 +17,9 @@ export const reviewsData = [
       </>
     ),
     description:
-      "It was a great experience working with Muhammad on my business project related to classic acoustics. He carefully reviewed the work we shared, improved it by fixing errors, and clearly explained each step of his process. His clarity and reliability made collaboration smooth, even with our time difference. It was my first time on this platform and he was very patient throughout. I would definitely recommend him!",
-    clientName: "John Doe",
-    designation: "Founder & CEO",
+      "It was a great experience working with Muhammad on my business project related to classic acoustics. He carefully reviewed the work we shared, improved it by fixing errors, and clearly explained each step of his process. His clarity and reliability made collaboration smooth, even with our time difference. It was my first time on this platform and he was very patient throughout. I would definitely recommend him!. . It was my first time on this platform and he was very patient throughout. I would definitely recommend him! . It was my first time on this platform and he was very patient throughout. I would definitely recommend him!",
+    clientName: "Serrena Alen",
+    designation: "Founder & CEO at Airvitalize",
     image: images.reviews.R1,
   },
   {
@@ -33,7 +33,7 @@ export const reviewsData = [
       </>
     ),
     description:
-      "It was an absolute pleasure to work with Muhammad! He had excellent communication throughout the process, ensuring everything was clear and addressing any questions quickly. His understanding and flexibility made working together very easy. The work was delivered earlier than expected and of high quality. Would definitely recommend",
+      "It was an absolute pleasure to work with Muhammad! He had excellent communication throughout the process, ensuring everything was clear and addressing any questions quickly. His understanding and flexibility made working together very easy. The work was delivered earlier than expected and of high quality. Would definitely recommend . It was my first time on this platform and he was very patient throughout. I would definitely recommend him! . It was my first time on this platform and he was very patient throughout. I would definitely recommend him! . It was my first time on this platform and he was very patient throughout. I would definitely recommend him!",
     clientName: "Jane Smith",
     designation: "Co-Founder",
     image: images.reviews.R2,

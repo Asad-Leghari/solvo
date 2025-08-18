@@ -6,17 +6,29 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { slidesData } from "@/domain/home";
 import { reviewsData } from "./Reviews";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const SlidesComponent = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % slidesData.length);
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveSlide((prev) => (prev + 1) % slidesData.length);
+  //   }, 7000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  const handleNextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % slidesData.length);
+  };
+
+  const handlePrevSlide = () => {
+    setActiveSlide(
+      (prev) => (prev - 1 + slidesData.length) % slidesData.length
+    );
+  };
 
   const currentSlide = reviewsData[activeSlide];
 
@@ -34,8 +46,8 @@ const SlidesComponent = () => {
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: "40px", md: "0px" },
-          py: "93.5px",
           width: "100%",
+          // border: "1px solid red",
         }}
       >
         {/* Animate Slide Content */}
@@ -53,18 +65,18 @@ const SlidesComponent = () => {
               container
               flexDirection={"column"}
               gap={"40px"}
-              flex={1}
+              flex={1.5}
               justifyContent={"start"}
               height={"450px"}
             >
               <HeadingButton title={currentSlide.title} />
-              <Typography variant="h4">{currentSlide.heading}</Typography>
-              <Typography variant="body1" pb={"20px"}>
+              <Typography variant="h5">{currentSlide.heading}</Typography>
+              <Typography variant="body1">
                 {currentSlide.description}
               </Typography>
               <Box>
-                <Typography variant="h4">{currentSlide.clientName}</Typography>
-                <Typography variant="h5" color="#0273BD">
+                <Typography variant="h5">{currentSlide.clientName}</Typography>
+                <Typography variant="h6" color="#0273BD">
                   {currentSlide.designation}
                 </Typography>
               </Box>
@@ -82,8 +94,8 @@ const SlidesComponent = () => {
               <Image
                 src={currentSlide.image}
                 alt="Client"
-                width={350}
-                height={350}
+                width={300}
+                height={300}
                 style={{
                   objectFit: "contain",
                   borderRadius: "8px",
@@ -99,15 +111,20 @@ const SlidesComponent = () => {
         container
         flexDirection={"column"}
         justifyContent={"center"}
+        alignItems={"center"}
         gap={"16px"}
       >
+        <ArrowDropUpIcon
+          sx={{ fontSize: "28px", color: "#0273BD", cursor: "pointer" }}
+          onClick={() => handlePrevSlide}
+        />
         {slidesData.map((_, idx) => (
           <Box
             key={idx}
             onClick={() => setActiveSlide(idx)}
             sx={{
               width: "8px",
-              height: "110px",
+              height: "70px",
               borderRadius: "8px",
               bgcolor: idx === activeSlide ? "#0273BD" : "#DFE8FC",
               cursor: "pointer",
@@ -115,6 +132,10 @@ const SlidesComponent = () => {
             }}
           />
         ))}
+        <ArrowDropDownIcon
+          sx={{ fontSize: "28px", color: "#0273BD", cursor: "pointer" }}
+          onClick={handleNextSlide}
+        />
       </Grid>
     </Grid>
   );

@@ -47,7 +47,7 @@ const TabContent = (props: Props) => {
           >
             xyz
           </div>
-          <Typography variant="body1" textAlign={"justify"}>
+          <Typography variant="body1" textAlign={"left"}>
             {description}
           </Typography>
         </div>
