@@ -75,8 +75,8 @@ const SlidesComponent = () => {
                 {currentSlide.description}
               </Typography>
               <Box>
-                <Typography variant="h5">{currentSlide.clientName}</Typography>
-                <Typography variant="h6" color="#0273BD">
+                <Typography variant="h6">{currentSlide.clientName}</Typography>
+                <Typography variant="body1" fontWeight={500} color="#0273BD">
                   {currentSlide.designation}
                 </Typography>
               </Box>
@@ -112,26 +112,34 @@ const SlidesComponent = () => {
         flexDirection={"column"}
         justifyContent={"center"}
         alignItems={"center"}
-        gap={"16px"}
+        gap={"0px"}
       >
         <ArrowDropUpIcon
           sx={{ fontSize: "28px", color: "#0273BD", cursor: "pointer" }}
-          onClick={() => handlePrevSlide}
+          onClick={handlePrevSlide}
         />
-        {slidesData.map((_, idx) => (
-          <Box
-            key={idx}
-            onClick={() => setActiveSlide(idx)}
-            sx={{
-              width: "8px",
-              height: "70px",
-              borderRadius: "8px",
-              bgcolor: idx === activeSlide ? "#0273BD" : "#DFE8FC",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-            }}
-          />
-        ))}
+        <Grid
+          container
+          flexDirection={"column"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          gap={"8px"}
+        >
+          {slidesData.map((_, idx) => (
+            <Box
+              key={idx}
+              onClick={() => setActiveSlide(idx)}
+              sx={{
+                width: "8px",
+                height: "85px",
+                borderRadius: "8px",
+                bgcolor: idx === activeSlide ? "#0273BD" : "#DFE8FC",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+              }}
+            />
+          ))}
+        </Grid>
         <ArrowDropDownIcon
           sx={{ fontSize: "28px", color: "#0273BD", cursor: "pointer" }}
           onClick={handleNextSlide}
