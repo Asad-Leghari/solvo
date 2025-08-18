@@ -43,10 +43,10 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
               container
               flexDirection={"column"}
               flex={1}
-              gap={"10px"}
+              gap={"30px"}
               width={"100%"}
               border={"1px solid #608EF1"}
-              p={"22px 20px"}
+              p={"30px 20px"}
               borderRadius={"20px"}
             >
               <HeadingButton title="Solvo's Premium" />
@@ -56,70 +56,105 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
               <Grid
                 container
                 flexDirection={"column"}
-                gap={"10px"}
+                gap={"20px"}
                 // width={"100%"}
               >
                 <Grid
-                  flexDirection={{ xs: "column", lg: "row" }}
                   container
-                  gap={"10px"}
+                  flexDirection={"column"}
+                  gap={"40px"}
+                  justifyContent={"space-around"}
+                  // width={"100%"}
+                  py={"20px"}
                 >
-                  <Grid flexDirection={"column"} container flex={1}>
-                    <Typography variant="body1" fontWeight={600}>
-                      I am Looking For
-                    </Typography>
-                    <TextField variant="outlined" placeholder="CFD" />
+                  <Grid
+                    flexDirection={{ xs: "column", lg: "row" }}
+                    container
+                    gap={"10px"}
+                  >
+                    <Grid
+                      flexDirection={"column"}
+                      container
+                      flex={1}
+                      gap={"16px"}
+                    >
+                      <Typography variant="body1">I am Looking For</Typography>
+                      <TextField variant="standard" placeholder="CFD" />
+                    </Grid>
+                    <Grid
+                      flexDirection={"column"}
+                      container
+                      flex={1}
+                      gap={"16px"}
+                    >
+                      <Typography variant="body1">Services I Need</Typography>
+                      <TextField
+                        variant="standard"
+                        placeholder="CFD Analysis"
+                      />
+                    </Grid>
+                    <Grid
+                      flexDirection={"column"}
+                      container
+                      flex={1}
+                      gap={"16px"}
+                    >
+                      <Typography variant="body1">
+                        Preferable Software
+                      </Typography>
+                      <TextField variant="standard" placeholder="Ansys" />
+                    </Grid>
                   </Grid>
-                  <Grid flexDirection={"column"} container flex={1}>
-                    <Typography variant="body1" fontWeight={600}>
-                      Services I Need
-                    </Typography>
-                    <TextField variant="outlined" placeholder="CFD Analysis" />
+                  <Grid
+                    flexDirection={{ xs: "column", lg: "row" }}
+                    container
+                    gap={"10px"}
+                  >
+                    <Grid
+                      flexDirection={"column"}
+                      container
+                      flex={1}
+                      gap={"16px"}
+                    >
+                      <Typography variant="body1">Full Name</Typography>
+                      <TextField variant="standard" placeholder="John Doe" />
+                    </Grid>
+                    <Grid
+                      flexDirection={"column"}
+                      container
+                      flex={1}
+                      gap={"16px"}
+                    >
+                      <Typography variant="body1">Email</Typography>
+                      <TextField
+                        variant="standard"
+                        placeholder="John@gmail.com"
+                      />
+                    </Grid>
+                    <Grid
+                      flexDirection={"column"}
+                      container
+                      flex={1}
+                      gap={"16px"}
+                    >
+                      <Typography variant="body1">Estimated Budget</Typography>
+                      <TextField variant="standard" placeholder="$500" />
+                    </Grid>
                   </Grid>
-                  <Grid flexDirection={"column"} container flex={1}>
-                    <Typography variant="body1" fontWeight={600}>
-                      Preferable Software
-                    </Typography>
-                    <TextField variant="outlined" placeholder="Ansys" />
-                  </Grid>
-                </Grid>
-                <Grid
-                  flexDirection={{ xs: "column", lg: "row" }}
-                  container
-                  gap={"10px"}
-                >
-                  <Grid flexDirection={"column"} container flex={1}>
-                    <Typography variant="body1" fontWeight={600}>
-                      Full Name
-                    </Typography>
-                    <TextField variant="outlined" placeholder="John Doe" />
-                  </Grid>
-                  <Grid flexDirection={"column"} container flex={1}>
-                    <Typography variant="body1" fontWeight={600}>
-                      Email
-                    </Typography>
+                  <Grid
+                    flexDirection={"column"}
+                    container
+                    size={12}
+                    gap={"16px"}
+                  >
+                    <Typography variant="body1">Your Message</Typography>
                     <TextField
-                      variant="outlined"
-                      placeholder="John@gmail.com"
+                      variant="standard"
+                      multiline
+                      maxRows={3}
+                      placeholder="This is a message"
                     />
                   </Grid>
-                  <Grid flexDirection={"column"} container flex={1}>
-                    <Typography variant="body1" fontWeight={600}>
-                      Estimated Budget
-                    </Typography>
-                    <TextField variant="outlined" placeholder="$500" />
-                  </Grid>
-                </Grid>
-                <Grid flexDirection={"column"} container size={12}>
-                  <Typography variant="body1" fontWeight={600}>
-                    Your Message
-                  </Typography>
-                  <TextField
-                    multiline
-                    maxRows={11}
-                    minRows={11}
-                    placeholder="This is a message"
-                  />
                 </Grid>
                 <FormControlLabel
                   control={<Checkbox defaultChecked />}
@@ -173,7 +208,6 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "start",
-                height: "100%",
               }}
             >
               <Grid
@@ -214,7 +248,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                   style={{
                     objectFit: "cover",
                     width: "100%",
-                    height: "100%",
+                    height: "485px",
                     borderRadius: "0 0 29px 29px",
                   }}
                 />
