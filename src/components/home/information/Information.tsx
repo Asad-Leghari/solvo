@@ -7,6 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 import images from "@/assets/images";
 import { slidesData } from "@/domain/home";
+import HelpIcon from "@mui/icons-material/Help";
 
 const Information = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -112,9 +113,24 @@ const Information = () => {
               gap={"8px"}
               alignItems={"start"}
             >
-              <Typography variant="h6" textAlign={"left"} width={"100%"}>
-                {currentSlide.rightSection.title}
-              </Typography>
+              <Grid
+                container
+                flexDirection={"row"}
+                justifyContent={"space-between"}
+              >
+                <Typography
+                  variant="h6"
+                  textAlign={"left"}
+                  width={"100%"}
+                  flex={1}
+                >
+                  {currentSlide.rightSection.title}
+                </Typography>
+                <Grid container flex={1}>
+                  <Typography>Vereify our reviews</Typography>
+                  <HelpIcon />
+                </Grid>
+              </Grid>
               <Grid container flexDirection={"row"} gap={"16px"}>
                 {currentSlide.rightSection.buttons.map((button, idx) => (
                   <Button

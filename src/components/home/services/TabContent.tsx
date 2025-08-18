@@ -37,7 +37,7 @@ const TabContent = (props: Props) => {
         justifyContent={"space-between"}
       >
         <div>
-          <Typography variant="h4" fontWeight={600} textAlign="start">
+          <Typography variant="h5" fontWeight={600} textAlign="start">
             {title}
           </Typography>
           <div
