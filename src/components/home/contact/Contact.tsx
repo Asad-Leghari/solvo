@@ -78,7 +78,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       flex={1}
                       gap={"16px"}
                     >
-                      <Typography variant="body1">I am Looking For</Typography>
+                      <Typography variant="body1" fontWeight={600}>
+                        I am Looking For
+                      </Typography>
                       <TextField variant="standard" placeholder="CFD" />
                     </Grid>
                     <Grid
@@ -87,7 +89,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       flex={1}
                       gap={"16px"}
                     >
-                      <Typography variant="body1">Services I Need</Typography>
+                      <Typography variant="body1" fontWeight={600}>
+                        Services I Need
+                      </Typography>
                       <TextField
                         variant="standard"
                         placeholder="CFD Analysis"
@@ -99,7 +103,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       flex={1}
                       gap={"16px"}
                     >
-                      <Typography variant="body1">
+                      <Typography variant="body1" fontWeight={600}>
                         Preferable Software
                       </Typography>
                       <TextField variant="standard" placeholder="Ansys" />
@@ -116,7 +120,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       flex={1}
                       gap={"16px"}
                     >
-                      <Typography variant="body1">Full Name</Typography>
+                      <Typography variant="body1" fontWeight={600}>
+                        Full Name
+                      </Typography>
                       <TextField variant="standard" placeholder="John Doe" />
                     </Grid>
                     <Grid
@@ -125,7 +131,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       flex={1}
                       gap={"16px"}
                     >
-                      <Typography variant="body1">Email</Typography>
+                      <Typography variant="body1" fontWeight={600}>
+                        Email
+                      </Typography>
                       <TextField
                         variant="standard"
                         placeholder="John@gmail.com"
@@ -137,7 +145,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       flex={1}
                       gap={"16px"}
                     >
-                      <Typography variant="body1">Estimated Budget</Typography>
+                      <Typography variant="body1" fontWeight={600}>
+                        Estimated Budget
+                      </Typography>
                       <TextField variant="standard" placeholder="$500" />
                     </Grid>
                   </Grid>
@@ -147,7 +157,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                     size={12}
                     gap={"16px"}
                   >
-                    <Typography variant="body1">Your Message</Typography>
+                    <Typography variant="body1" fontWeight={600}>
+                      Your Message
+                    </Typography>
                     <TextField
                       variant="standard"
                       multiline
@@ -162,7 +174,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                   sx={{ color: "#0273BD" }}
                 />
                 <Grid container flexDirection={"column"} gap={"0px"}>
-                  <Typography variant="body1">Upload Documents</Typography>
+                  <Typography variant="body1" fontWeight={600}>
+                    Upload Documents (Optional)
+                  </Typography>
                   <Grid
                     container
                     flexDirection={"row"}
