@@ -9,6 +9,7 @@ import images from "@/assets/images";
 import { slidesData } from "@/domain/home";
 import HelpIcon from "@mui/icons-material/Help";
 import { motion, AnimatePresence } from "framer-motion";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 const Information = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -94,7 +95,7 @@ const Information = () => {
                 flex={1.5}
                 alignItems={{ xs: "center", md: "start" }}
               >
-                <Typography variant="h6" width={"100%"}>
+                <Typography variant="h6" width={"100%"} fontWeight={600}>
                   {currentSlide.leftSection.title}
                 </Typography>
                 <Grid
@@ -108,7 +109,9 @@ const Information = () => {
                       key={idx}
                       variant="text"
                       sx={{ color: "black" }}
-                      startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
+                      startIcon={
+                        <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
+                      }
                     >
                       {button}
                     </Button>
@@ -121,8 +124,8 @@ const Information = () => {
                     style={{
                       objectFit: "contain",
                       zIndex: 222,
-                      width: "300px",
-                      height: "300px",
+                      width: "260px",
+                      height: "260px",
                     }}
                   />
                 </Box>
@@ -153,6 +156,7 @@ const Information = () => {
                       textAlign={"left"}
                       width={"100%"}
                       flex={1}
+                      fontWeight={600}
                     >
                       {currentSlide.rightSection.title}
                     </Typography>
@@ -163,7 +167,9 @@ const Information = () => {
                         key={idx}
                         variant="text"
                         sx={{ color: "black" }}
-                        startIcon={<ArrowForwardIcon sx={{ color: "black" }} />}
+                        startIcon={
+                          <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
+                        }
                       >
                         {button}
                       </Button>
@@ -185,8 +191,8 @@ const Information = () => {
                         width:
                           currentSlide.rightSection.image === images.home.CH2
                             ? "400px"
-                            : "300px",
-                        height: "300px",
+                            : "260px",
+                        height: "260px",
                       }}
                     />
                   </Grid>
