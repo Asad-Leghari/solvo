@@ -1,15 +1,13 @@
 "use client";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
-import HeadingButton from "../HeadingButton";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 import images from "@/assets/images";
 import { slidesData } from "@/domain/home";
-import HelpIcon from "@mui/icons-material/Help";
 import { motion, AnimatePresence } from "framer-motion";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import NewSlideCard from "./NewSlideCard";
 
 const Information = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -75,150 +73,7 @@ const Information = () => {
             exit="exit"
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <HeadingButton title={currentSlide.headingButtonTitle} />
-            <Typography variant="h5" textAlign={"start"} mt={"8px"}>
-              {currentSlide.heading}{" "}
-              <span style={{ color: "#0273BD" }}>{currentSlide.highlight}</span>
-            </Typography>
-            <Grid
-              container
-              flexDirection={"row"}
-              justifyContent={{ xs: "center", md: "space-between" }}
-              size={12}
-              mt={"10px"}
-              sx={{ position: "relative" }}
-            >
-              <Grid
-                container
-                flexDirection={"column"}
-                gap={"8px"}
-                flex={1.5}
-                alignItems={{ xs: "center", md: "start" }}
-              >
-                <Typography variant="h6" width={"100%"} fontWeight={600}>
-                  {currentSlide.leftSection.title}
-                </Typography>
-                <Grid
-                  container
-                  flexDirection={"row"}
-                  gap={{ xs: "8px", md: "16px" }}
-                  width={"100%"}
-                >
-                  {currentSlide.leftSection.buttons.map((button, idx) => (
-                    <Button
-                      key={idx}
-                      variant="text"
-                      sx={{ color: "black" }}
-                      startIcon={
-                        <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
-                      }
-                    >
-                      {button}
-                    </Button>
-                  ))}
-                </Grid>
-                <Box py={2}>
-                  <img
-                    src={currentSlide.leftSection.image.src}
-                    alt=""
-                    style={{
-                      objectFit: "contain",
-                      zIndex: 222,
-                      width: "260px",
-                      height: "260px",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid
-                container
-                flexDirection={"column"}
-                gap={"8px"}
-                flex={1}
-                alignItems={"end"}
-                display={{ xs: "none", md: "flex" }}
-              >
-                <Grid
-                  container
-                  flexDirection={"column"}
-                  gap={"8px"}
-                  alignItems={"start"}
-                  width={"100%"}
-                  height={"100%"}
-                >
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"space-between"}
-                  >
-                    <Typography
-                      variant="h6"
-                      textAlign={"left"}
-                      width={"100%"}
-                      flex={1}
-                      fontWeight={600}
-                    >
-                      {currentSlide.rightSection.title}
-                    </Typography>
-                  </Grid>
-                  <Grid container flexDirection={"row"} gap={"16px"}>
-                    {currentSlide.rightSection.buttons.map((button, idx) => (
-                      <Button
-                        key={idx}
-                        variant="text"
-                        sx={{ color: "black" }}
-                        startIcon={
-                          <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
-                        }
-                      >
-                        {button}
-                      </Button>
-                    ))}
-                  </Grid>
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"start"}
-                    size={12}
-                    py={2}
-                  >
-                    <img
-                      src={currentSlide.rightSection.image.src}
-                      alt=""
-                      style={{
-                        objectFit: "contain",
-                        zIndex: 222,
-                        width:
-                          currentSlide.rightSection.image === images.home.CH2
-                            ? "400px"
-                            : "260px",
-                        height: "260px",
-                      }}
-                    />
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "30%",
-                  width: "100%",
-                  zIndex: -1,
-                }}
-              >
-                <img
-                  src={images.home.DL.src}
-                  alt="mid line"
-                  // width={300}
-                  // height={300}
-                  style={{
-                    objectFit: "contain",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
-              </Box>
-            </Grid>
+            <NewSlideCard currentSlide={currentSlide} />
           </motion.div>
         </AnimatePresence>
         <Grid container flexDirection={"column"} width={"100%"} gap={"36px"}>
@@ -254,7 +109,7 @@ const Information = () => {
             container
             flexDirection={"row"}
             justifyContent={"space-between"}
-            gap={"10px"}
+            gap={"50px"}
             size={12}
           >
             {slidesData.map((_, idx) => (
@@ -271,7 +126,7 @@ const Information = () => {
           </Grid>
         </Grid>
       </Box>
-      {/* top right */}
+      {/* toleft top */}
       <Box>
         <Image
           src={images.home.LTI}
@@ -281,7 +136,7 @@ const Information = () => {
           style={{
             position: "absolute",
             top: 0,
-            left: "200px",
+            left: "300px",
             width: "300px",
             height: "300px",
             opacity: 0.5,
@@ -289,7 +144,7 @@ const Information = () => {
         />
       </Box>
 
-      {/* top left */}
+      {/* right top  */}
       <Box>
         <Image
           src={images.home.RTI}
@@ -299,13 +154,13 @@ const Information = () => {
           style={{
             position: "absolute",
             top: 0,
-            right: "200px",
+            right: "300px",
             opacity: 0.5,
           }}
         />
       </Box>
 
-      {/* bot right */}
+      {/* left bot */}
       <Box>
         <Image
           src={images.home.LBI}
@@ -314,8 +169,8 @@ const Information = () => {
           height={300}
           style={{
             position: "absolute",
-            bottom: 0,
-            left: "200px",
+            bottom: "100px",
+            left: "300px",
             width: "250px",
             height: "250px",
           }}
