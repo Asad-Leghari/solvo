@@ -24,14 +24,21 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 const Footer = () => {
   return (
     <Box
-      p={{ xs: "50px 8px", md: "100px 50px 50px 50px" }}
+      p={{ xs: "50px 0px", md: "100px 0px 50px 0px" }}
       sx={{
-        backgroundImage:
-          "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+        // backgroundImage:
+        //   "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+        bgcolor: "#333",
+        color: "white",
         width: "100%",
       }}
     >
-      <Container maxWidth="xl">
+      <Box
+        sx={{
+          width: "100%",
+          px: { xs: 2, lg: "300px" },
+        }}
+      >
         <Grid container flexDirection={"column"} gap={"24px"}>
           <Grid
             container
@@ -43,7 +50,7 @@ const Footer = () => {
             <Grid
               container
               flexDirection={"column"}
-              gap={"20px"}
+              gap={"10px"}
               flex={1}
               justifyContent={"space-between"}
             >
@@ -54,20 +61,16 @@ const Footer = () => {
                 height={60}
                 objectFit="contain"
               />
-              <Typography variant="body1" textAlign={"justify"}>
+              <Typography variant="body1" textAlign={"justify"} flex={1}>
                 Solvo Engineers is an expert engineering consultation firm
                 specializing in Finite Element Analysis (FEA), Computational
                 Fluid Dynamics (CFD) and Computer-Aided Design (CAD) modelling
                 services. With a focus on delivering precise and efficient
                 solutions, our team of professional licensed engineers providing
-                accurate and effective solutions. We are dedicated to offering
-                advanced simulation driven insights that enable clients to
-                promote innovation, reducing prototyping cost, design
-                optimization, and simplify the process of developing new
-                products.
+                accurate
               </Typography>
             </Grid>
-            <Grid container flexDirection={"column"} gap={"24px"} flex={1}>
+            <Grid container flexDirection={"column"} gap={"24px"} flex={1.5}>
               <Grid
                 container
                 flexDirection={{ xs: "column", md: "row" }}
@@ -80,10 +83,10 @@ const Footer = () => {
                   </Typography>
                   {footer_company.map((item) => {
                     return (
-                      <Typography variant="body1" key={item.id} color="black">
+                      <Typography variant="body1" key={item.id}>
                         <Link
                           href={item.href}
-                          style={{ textDecoration: "none", color: "black" }}
+                          style={{ textDecoration: "none" }}
                         >
                           {item.label}
                         </Link>
@@ -97,10 +100,10 @@ const Footer = () => {
                   </Typography>
                   {footer_solutions.map((item) => {
                     return (
-                      <Typography variant="body1" key={item.id} color="black">
+                      <Typography variant="body1" key={item.id}>
                         <Link
                           href={item.href}
-                          style={{ textDecoration: "none", color: "black" }}
+                          style={{ textDecoration: "none" }}
                         >
                           {item.label}
                         </Link>
@@ -114,10 +117,10 @@ const Footer = () => {
                   </Typography>
                   {footer_resources.map((item) => {
                     return (
-                      <Typography variant="body1" key={item.id} color="black">
+                      <Typography variant="body1" key={item.id}>
                         <Link
                           href={item.href}
-                          style={{ textDecoration: "none", color: "black" }}
+                          style={{ textDecoration: "none" }}
                         >
                           {item.label}
                         </Link>
@@ -125,77 +128,6 @@ const Footer = () => {
                     );
                   })}
                 </Grid>
-              </Grid>
-              <Grid
-                container
-                flexDirection={"row"}
-                gap={"10px"}
-                justifyContent={{ xs: "start", md: "end" }}
-              >
-                <IconButton
-                  sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: "8px",
-
-                    bgcolor: "#0273BD",
-                    color: "white",
-                    "&:hover": {
-                      bgcolor: "#0273BD",
-                      opacity: 0.8,
-                    },
-                  }}
-                >
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton
-                  sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: "8px",
-
-                    bgcolor: "#0273BD",
-                    color: "white",
-                    "&:hover": {
-                      bgcolor: "#0273BD",
-                      opacity: 0.8,
-                    },
-                  }}
-                >
-                  <InstagramIcon />
-                </IconButton>
-                <IconButton
-                  sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: "8px",
-
-                    bgcolor: "#0273BD",
-                    color: "white",
-                    "&:hover": {
-                      bgcolor: "#0273BD",
-                      opacity: 0.8,
-                    },
-                  }}
-                >
-                  <XIcon />
-                </IconButton>
-                <IconButton
-                  sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: "8px",
-
-                    bgcolor: "#0273BD",
-                    color: "white",
-                    "&:hover": {
-                      bgcolor: "#0273BD",
-                      opacity: 0.8,
-                    },
-                  }}
-                >
-                  <LinkedInIcon />
-                </IconButton>
               </Grid>
             </Grid>
           </Grid>
@@ -218,7 +150,101 @@ const Footer = () => {
               <CopyrightIcon />
               <Typography variant="h6">Solvo Engineering 2025</Typography>
             </Grid>
-            <Typography variant="h6">Term of service</Typography>
+            <Grid
+              container
+              flexDirection={"row"}
+              gap={"10px"}
+              justifyContent={{ xs: "start", md: "end" }}
+            >
+              <IconButton
+                sx={{
+                  width: "fit-content",
+                  height: "fit-content",
+                  borderRadius: "8px",
+
+                  bgcolor: "white",
+                  color: "#0273BD",
+                  "&:hover": {
+                    bgcolor: "#0273BD",
+                    opacity: 0.8,
+                  },
+                }}
+              >
+                <FacebookIcon />
+              </IconButton>
+              <IconButton
+                sx={{
+                  width: "fit-content",
+                  height: "fit-content",
+                  borderRadius: "8px",
+                  bgcolor: "white",
+                  color: "#0273BD",
+                  "&:hover": {
+                    bgcolor: "#0273BD",
+                    opacity: 0.8,
+                  },
+                }}
+              >
+                <InstagramIcon />
+              </IconButton>
+              <IconButton
+                sx={{
+                  width: "fit-content",
+                  height: "fit-content",
+                  borderRadius: "8px",
+
+                  bgcolor: "white",
+                  color: "#0273BD",
+                  "&:hover": {
+                    bgcolor: "#0273BD",
+                    opacity: 0.8,
+                  },
+                }}
+              >
+                <XIcon />
+              </IconButton>
+              <IconButton
+                sx={{
+                  width: "fit-content",
+                  height: "fit-content",
+                  borderRadius: "8px",
+                  bgcolor: "white",
+                  color: "#0273BD",
+                  position: "relative",
+                  overflow: "hidden",
+
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    bgcolor: "#0273BD",
+                    borderRadius: "inherit",
+                    transform: "scale(0)",
+                    transformOrigin: "center",
+                    transition: "transform 0.4s ease-in-out",
+                    zIndex: 0,
+                  },
+                  "&:hover::before": {
+                    transform: "scale(1)",
+                  },
+
+                  // icon styles
+                  "& .MuiSvgIcon-root": {
+                    position: "relative",
+                    zIndex: 1,
+                    transition: "color 0.4s ease-in-out",
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "white",
+                  },
+                }}
+              >
+                <LinkedInIcon />
+              </IconButton>
+            </Grid>
           </Grid>
           <Grid
             container
@@ -243,7 +269,7 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };
