@@ -28,27 +28,25 @@ const Information = () => {
     <Grid
       container
       flexDirection={"column"}
-      alignItems={"start"}
+      alignItems={"center"}
       gap={"10px"}
       bgcolor={"#ffffff"}
       borderRadius={"0 0 29px 29px"}
       sx={{
         boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)",
         zIndex: 3,
-        backgroundImage: `url(${images.InfoBg2.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        px: { xs: 2, lg: "300px" },
+        position: "relative",
       }}
     >
-      <Container
-        maxWidth="xl"
+      <Box
         sx={{
           py: "50px",
+          width: "100%",
         }}
       >
         <HeadingButton title={currentSlide.headingButtonTitle} />
-        <Typography variant="h4" textAlign={"start"} mt={"8px"}>
+        <Typography variant="h5" textAlign={"start"} mt={"8px"}>
           {currentSlide.heading}{" "}
           <span style={{ color: "#0273BD" }}>{currentSlide.highlight}</span>
         </Typography>
@@ -58,17 +56,13 @@ const Information = () => {
           justifyContent={{ xs: "center", md: "space-between" }}
           size={12}
           mt={"10px"}
-          sx={{
-            backgroundImage: `url(${images.InfoBg.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          sx={{}}
         >
           <Grid
             container
             flexDirection={"column"}
             gap={"8px"}
-            flex={1}
+            flex={1.5}
             alignItems={{ xs: "center", md: "start" }}
           >
             <Typography variant="h6" width={"100%"}>
@@ -112,6 +106,8 @@ const Information = () => {
               flexDirection={"column"}
               gap={"8px"}
               alignItems={"start"}
+              width={"100%"}
+              height={"100%"}
             >
               <Grid
                 container
@@ -126,10 +122,6 @@ const Information = () => {
                 >
                   {currentSlide.rightSection.title}
                 </Typography>
-                <Grid container flex={1}>
-                  <Typography>Vereify our reviews</Typography>
-                  <HelpIcon />
-                </Grid>
               </Grid>
               <Grid container flexDirection={"row"} gap={"16px"}>
                 {currentSlide.rightSection.buttons.map((button, idx) => (
@@ -154,7 +146,9 @@ const Information = () => {
                   alt=""
                   width={350}
                   height={350}
-                  style={{ objectFit: "contain" }}
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
               </Grid>
             </Grid>
@@ -209,7 +203,57 @@ const Information = () => {
             ))}
           </Grid>
         </Grid>
-      </Container>
+      </Box>
+      {/* top right */}
+      <Box>
+        <Image
+          src={images.home.LTI}
+          alt="img"
+          width={300}
+          height={300}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: "200px",
+            width: "300px",
+            height: "300px",
+            opacity: 0.5,
+          }}
+        />
+      </Box>
+      {/* top left */}
+
+      <Box>
+        <Image
+          src={images.home.RTI}
+          alt="img"
+          width={300}
+          height={300}
+          style={{
+            position: "absolute",
+            top: 0,
+            right: "200px",
+            opacity: 0.5,
+          }}
+        />
+      </Box>
+
+      {/* bot right */}
+      <Box>
+        <Image
+          src={images.home.LBI}
+          alt="img"
+          width={300}
+          height={300}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: "200px",
+            width: "250px",
+            height: "250px",
+          }}
+        />
+      </Box>
     </Grid>
   );
 };

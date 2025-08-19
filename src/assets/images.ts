@@ -3,6 +3,10 @@ import Hero from "./images/Hero.png";
 import Zap from "./images/zap.png";
 import Spiral from "./images/spiral.png";
 
+import LBI from "./images/home/leftBotImg.png";
+import LTI from "./images/home/leftTopImg.png";
+import RTI from "./images/home/rightbgimg.png";
+
 import L1 from "./images/l1.png";
 import L2 from "./images/l2.png";
 import L3 from "./images/l3.png";
@@ -85,6 +89,12 @@ import R1 from "./images/reviews/R1.jpeg";
 import R2 from "./images/reviews/R2.jpeg";
 import R3 from "./images/reviews/R3.jpeg";
 
+const home = {
+  LBI,
+  LTI,
+  RTI,
+};
+
 const reviews = {
   R1,
   R2,
@@ -161,6 +171,7 @@ const services = {
 };
 
 const images = {
+  home,
   Logo,
   Hero,
   Zap,
