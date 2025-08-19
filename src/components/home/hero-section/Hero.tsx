@@ -94,7 +94,7 @@ const Hero = () => {
   };
 
   return (
-    <Grid container size={12}>
+    <Grid container size={12} width={"99vw"}>
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         modules={[Pagination, FreeMode, Navigation]}

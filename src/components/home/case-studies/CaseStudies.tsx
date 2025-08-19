@@ -85,7 +85,7 @@ const CaseStudies = () => {
       container
       flexDirection={"column"}
       alignItems={"center"}
-      width={"100%"}
+      width={"99vw"}
       sx={{
         backgroundImage:
           "linear-gradient(0deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 100%, rgba(136, 216, 232, 0.53) 100%)",

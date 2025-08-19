@@ -1,46 +1,42 @@
 "use client";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 import images from "@/assets/images";
 import { slidesData } from "@/domain/home";
-import { motion, AnimatePresence } from "framer-motion";
 import NewSlideCard from "./NewSlideCard";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination, FreeMode, Navigation } from "swiper/modules";
+import HeadingButton from "../HeadingButton";
+
 const Information = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const swiperRef = useRef<SwiperCore>(null); // Reference to Swiper instance
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleNextSlide = () => {
-    setDirection(1);
-    setActiveSlide((prev) => (prev + 1) % slidesData.length);
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
   };
 
   const handlePrevSlide = () => {
-    setDirection(-1);
-    setActiveSlide(
-      (prev) => (prev - 1 + slidesData.length) % slidesData.length
-    );
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
   };
-
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      x: direction > 0 ? -300 : 300,
-      opacity: 0,
-    }),
-  };
-
-  const currentSlide = slidesData[activeSlide];
 
   return (
     <Grid
@@ -54,128 +50,146 @@ const Information = () => {
         boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)",
         zIndex: 3,
         px: { xs: 2, lg: "300px" },
-        position: "relative",
       }}
+      width={"99vw"}
     >
+      <Grid
+        container
+        flexDirection={"column"}
+        alignItems={"center"}
+        gap={"10px"}
+        mt={"40px"}
+      >
+        <HeadingButton title="Case Studies" />
+      </Grid>
       <Box
         sx={{
-          py: "50px",
           width: "100%",
+          // overflow: "hidden",
+          borderRadius: "12px",
+          // border: "1px solid red",
+          position: "relative",
         }}
       >
-        <AnimatePresence mode="wait" custom={direction}>
-          <motion.div
-            key={activeSlide} // Important: re-mounts on slide change
-            custom={direction} // Pass direction to variants
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+        <Swiper
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          modules={[Pagination, FreeMode, Navigation]}
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          className="mySwiper"
+        >
+          {slidesData.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <NewSlideCard currentSlide={slide} />;
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* toleft top */}
+        <Box>
+          <Image
+            src={images.home.LTI}
+            alt="img"
+            width={300}
+            height={300}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "0px",
+              width: "150px",
+              height: "150px",
+              opacity: 1,
+            }}
+          />
+        </Box>
+
+        {/* right top  */}
+        <Box>
+          <Image
+            src={images.home.RTI}
+            alt="img"
+            width={300}
+            height={300}
+            style={{
+              position: "absolute",
+              top: "-50px",
+              right: "0",
+              opacity: 1,
+            }}
+          />
+        </Box>
+
+        {/* left bot */}
+        <Box>
+          <Image
+            src={images.home.LBI}
+            alt="img"
+            width={300}
+            height={300}
+            style={{
+              position: "absolute",
+              bottom: "0",
+              left: "0",
+              width: "250px",
+              height: "250px",
+            }}
+          />
+        </Box>
+      </Box>
+      <Grid
+        container
+        flexDirection={"column"}
+        width={"100%"}
+        gap={"36px"}
+        mb={"60px"}
+        // border={"1px solid red"}
+      >
+        <Grid
+          container
+          flexDirection={"row"}
+          justifyContent={"flex-end"}
+          alignItems={"center"}
+          gap={"8px"}
+          width={"100%"}
+        >
+          <Button
+            variant="contained"
+            sx={{
+              width: "fit-content",
+              height: "42px",
+              bgcolor: "#FFFFFF",
+              color: "primary.main",
+            }}
+            onClick={handlePrevSlide}
           >
-            <NewSlideCard currentSlide={currentSlide} />
-          </motion.div>
-        </AnimatePresence>
-        <Grid container flexDirection={"column"} width={"100%"} gap={"36px"}>
-          <Grid
-            container
-            flexDirection={"row"}
-            justifyContent={"flex-end"}
-            alignItems={"center"}
-            gap={"8px"}
-            width={"100%"}
+            <ArrowBackIcon />
+          </Button>
+          <Button
+            variant="contained"
+            sx={{ width: "fit-content", height: "42px" }}
+            onClick={handleNextSlide}
           >
-            <Button
-              variant="contained"
-              sx={{
-                width: "fit-content",
-                height: "42px",
-                bgcolor: "#FFFFFF",
-                color: "primary.main",
-              }}
-              onClick={handlePrevSlide}
-            >
-              <ArrowBackIcon />
-            </Button>
-            <Button
-              variant="contained"
-              sx={{ width: "fit-content", height: "42px" }}
-              onClick={handleNextSlide}
-            >
-              <ArrowForwardIcon />
-            </Button>
-          </Grid>
-          <Grid
-            container
-            flexDirection={"row"}
-            justifyContent={"space-between"}
-            gap={"50px"}
-            size={12}
-          >
-            {slidesData.map((_, idx) => (
-              <Box
-                key={idx}
-                sx={{
-                  flex: 1,
-                  height: "8px",
-                  borderRadius: "8px",
-                  bgcolor: idx === activeSlide ? "#0273BD" : "#DFE8FC",
-                }}
-              />
-            ))}
-          </Grid>
+            <ArrowForwardIcon />
+          </Button>
         </Grid>
-      </Box>
-      {/* toleft top */}
-      <Box>
-        <Image
-          src={images.home.LTI}
-          alt="img"
-          width={300}
-          height={300}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: "300px",
-            width: "300px",
-            height: "300px",
-            opacity: 0.5,
-          }}
-        />
-      </Box>
-
-      {/* right top  */}
-      <Box>
-        <Image
-          src={images.home.RTI}
-          alt="img"
-          width={300}
-          height={300}
-          style={{
-            position: "absolute",
-            top: 0,
-            right: "300px",
-            opacity: 0.5,
-          }}
-        />
-      </Box>
-
-      {/* left bot */}
-      <Box>
-        <Image
-          src={images.home.LBI}
-          alt="img"
-          width={300}
-          height={300}
-          style={{
-            position: "absolute",
-            bottom: "100px",
-            left: "300px",
-            width: "250px",
-            height: "250px",
-          }}
-        />
-      </Box>
+        <Grid
+          container
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          gap={"50px"}
+          size={12}
+        >
+          {slidesData.map((_, idx) => (
+            <Box
+              key={idx}
+              sx={{
+                flex: 1,
+                height: "8px",
+                borderRadius: "8px",
+                bgcolor: idx === activeIndex ? "#0273BD" : "#DFE8FC",
+              }}
+            />
+          ))}
+        </Grid>
+      </Grid>
     </Grid>
   );
 };

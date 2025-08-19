@@ -11,8 +11,10 @@ const NewSlideCard = ({ currentSlide }: any) => {
       flexDirection={"row"}
       justifyContent={{ xs: "center", md: "space-between" }}
       size={12}
-      mt={"10px"}
+      // mt={"10px"}
       sx={{ position: "relative" }}
+      // border={"1px solid red"}
+      width={"100%"}
     >
       <Grid
         container
@@ -26,10 +28,16 @@ const NewSlideCard = ({ currentSlide }: any) => {
           width={"100%"}
           fontWeight={600}
           color="#0273BD"
+          textAlign={"left"}
         >
           {currentSlide.leftSection.id}
         </Typography>
-        <Typography variant="h6" width={"100%"} fontWeight={600}>
+        <Typography
+          variant="h6"
+          width={"100%"}
+          fontWeight={600}
+          textAlign={"left"}
+        >
           {currentSlide.leftSection.title}
         </Typography>
         <Grid
