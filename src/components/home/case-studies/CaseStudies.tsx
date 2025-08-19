@@ -215,7 +215,7 @@ const CaseStudies = () => {
             alignItems: "center",
             justifyContent: "center",
             // marginTop: -60,
-            py: "50px",
+            py: "20px",
             position: "relative",
             zIndex: "99999999",
             // border: "1px solid red",

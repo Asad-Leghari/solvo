@@ -47,7 +47,7 @@ const Information = () => {
       bgcolor={"#ffffff"}
       borderRadius={"0 0 29px 29px"}
       sx={{
-        boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)",
+        // boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)",
         zIndex: 3,
         px: { xs: 2, lg: "300px" },
       }}
@@ -139,7 +139,6 @@ const Information = () => {
         flexDirection={"column"}
         width={"100%"}
         gap={"36px"}
-        mb={"60px"}
         // border={"1px solid red"}
       >
         <Grid

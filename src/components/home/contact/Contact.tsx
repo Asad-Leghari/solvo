@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeadingButton from "../HeadingButton";
 import {
@@ -8,7 +9,10 @@ import {
   Divider,
   FormControlLabel,
   Grid,
+  MenuItem,
   Paper,
+  Select,
+  SelectChangeEvent,
   TextField,
   Typography,
 } from "@mui/material";
@@ -16,22 +20,77 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import images from "@/assets/images";
 import Image from "next/image";
+import SelectInput from "./SelectInput";
 
 interface ContactProps {
   displayBottomImage?: boolean;
 }
 
 const Contact = ({ displayBottomImage = true }: ContactProps) => {
+  const [FormInfo, setFormInfo] = React.useState({
+    lookingFor: [],
+    services: [],
+    software: [],
+    budgets: [],
+  });
+
+  const LookingFor = [
+    "Start a new project",
+    "Revamp existing job",
+    "Consulation",
+    "Dedicated Team",
+  ];
+
+  const Services = [
+    "FEA Analysis",
+    "CFD Analysis",
+    "CAD Design",
+    "Design Optimization",
+  ];
+
+  const budgets = [
+    "> 5000 USD",
+    "5000 USD - 25000 USD",
+    "25000 USD - 75000 USD",
+    "< 100000 USD",
+  ];
+
+  const Software = ["Ansys", "Solidworks", "Comsol", "Abaqus", "Inventor"];
+
+  const handleChange = (event: SelectChangeEvent<string[]>) => {
+    const { name, value } = event.target;
+
+    setFormInfo((prev) => ({
+      ...prev, // ✅ keep the rest of formInfo
+      [name]: typeof value === "string" ? value.split(",") : value,
+    }));
+  };
   return (
     <Box
-      py={"100px"}
+      py={"50px"}
       bgcolor={"#ffffff"}
       boxShadow={"0px 24px 34px rgba(0, 0, 0, 0.11)"}
       borderRadius={"0 0 29px 29px"}
       zIndex={2}
-      pt={"100px"}
     >
-      <Container maxWidth="xl">
+      <Box
+        sx={{
+          px: { xs: 2, lg: "300px" },
+          width: "100%",
+        }}
+      >
+        <Grid
+          container
+          flexDirection={"column"}
+          alignItems={"start"}
+          gap={"10px"}
+          pb={"10px"}
+        >
+          <HeadingButton title="Solvo's Premium" />
+          <Typography variant="h5" textAlign={"start"} fontWeight={600}>
+            How Can We <span style={{ color: "#0273BD" }}>Help You?</span>
+          </Typography>
+        </Grid>
         <Grid container flexDirection={"column"} gap={"40px"}>
           <Grid
             container
@@ -46,13 +105,9 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
               gap={"30px"}
               width={"100%"}
               border={"1px solid #608EF1"}
-              p={"30px 20px"}
+              p={"40px 20px"}
               borderRadius={"20px"}
             >
-              <HeadingButton title="Solvo's Premium" />
-              <Typography variant="h5" textAlign={"start"} fontWeight={600}>
-                How Can We <span style={{ color: "#0273BD" }}>Help You?</span>
-              </Typography>
               <Grid
                 container
                 flexDirection={"column"}
@@ -62,10 +117,10 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                 <Grid
                   container
                   flexDirection={"column"}
-                  gap={"40px"}
+                  gap={"20px"}
                   justifyContent={"space-around"}
                   // width={"100%"}
-                  py={"20px"}
+                  // py={"20px"}
                 >
                   <Grid
                     flexDirection={{ xs: "column", lg: "row" }}
@@ -79,22 +134,14 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       gap={"16px"}
                     >
                       <Typography variant="body1" fontWeight={600}>
-                        I am Looking For
+                        I am Looking For <span style={{ color: "red" }}>*</span>
                       </Typography>
-                      <TextField variant="standard" placeholder="CFD" />
-                    </Grid>
-                    <Grid
-                      flexDirection={"column"}
-                      container
-                      flex={1}
-                      gap={"16px"}
-                    >
-                      <Typography variant="body1" fontWeight={600}>
-                        Services I Need
-                      </Typography>
-                      <TextField
-                        variant="standard"
-                        placeholder="CFD Analysis"
+                      <SelectInput
+                        value={FormInfo.lookingFor}
+                        name={"lookingFor"}
+                        onChange={handleChange}
+                        options={LookingFor}
+                        placeholder="start a new project"
                       />
                     </Grid>
                     <Grid
@@ -104,9 +151,33 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       gap={"16px"}
                     >
                       <Typography variant="body1" fontWeight={600}>
-                        Preferable Software
+                        Services I Need <span style={{ color: "red" }}>*</span>
                       </Typography>
-                      <TextField variant="standard" placeholder="Ansys" />
+                      <SelectInput
+                        value={FormInfo.services}
+                        onChange={handleChange}
+                        options={Services}
+                        placeholder="CFD Analysis"
+                        name={"services"}
+                      />
+                    </Grid>
+                    <Grid
+                      flexDirection={"column"}
+                      container
+                      flex={1}
+                      gap={"16px"}
+                    >
+                      <Typography variant="body1" fontWeight={600}>
+                        Preferable Software{" "}
+                        <span style={{ color: "red" }}>*</span>
+                      </Typography>
+                      <SelectInput
+                        value={FormInfo.software}
+                        onChange={handleChange}
+                        options={Software}
+                        placeholder="Ansys"
+                        name={"software"}
+                      />
                     </Grid>
                   </Grid>
                   <Grid
@@ -121,7 +192,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       gap={"16px"}
                     >
                       <Typography variant="body1" fontWeight={600}>
-                        Full Name
+                        Full Name <span style={{ color: "red" }}>*</span>
                       </Typography>
                       <TextField variant="standard" placeholder="John Doe" />
                     </Grid>
@@ -132,7 +203,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       gap={"16px"}
                     >
                       <Typography variant="body1" fontWeight={600}>
-                        Email
+                        Email <span style={{ color: "red" }}>*</span>
                       </Typography>
                       <TextField
                         variant="standard"
@@ -146,9 +217,16 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                       gap={"16px"}
                     >
                       <Typography variant="body1" fontWeight={600}>
-                        Estimated Budget
+                        Estimated Budget <span style={{ color: "red" }}>*</span>
                       </Typography>
-                      <TextField variant="standard" placeholder="$500" />
+                      <SelectInput
+                        value={FormInfo.budgets}
+                        onChange={handleChange}
+                        options={budgets}
+                        placeholder="> $5000"
+                        name={"budgets"}
+                        multiple
+                      />
                     </Grid>
                   </Grid>
                   <Grid
@@ -158,13 +236,28 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                     gap={"16px"}
                   >
                     <Typography variant="body1" fontWeight={600}>
-                      Your Message
+                      Your Message <span style={{ color: "red" }}>*</span>
                     </Typography>
                     <TextField
-                      variant="standard"
+                      variant="outlined"
                       multiline
-                      maxRows={3}
+                      minRows={5}
+                      maxRows={5}
                       placeholder="This is a message"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "12px", // affects the input wrapper
+                          "& fieldset": {
+                            borderRadius: "12px", // affects the outline itself
+                          },
+                          "&:hover fieldset": {
+                            borderColor: "#005BA6", // optional: custom hover color
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "#005BA6", // optional: focus color
+                          },
+                        },
+                      }}
                     />
                   </Grid>
                 </Grid>
@@ -206,19 +299,19 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                     width: "fit-content",
                     height: "40px",
                     borderRadius: "12px",
-                    textTransform: "capitalize",
+                    textTransform: "none",
                     mt: "10px",
                   }}
                 >
-                  Send Us a Message
+                  Send us a message
                 </Button>
               </Grid>
             </Grid>
             <Paper
               elevation={4}
               sx={{
-                borderRadius: "29px",
-                maxWidth: "400px",
+                borderRadius: "20px",
+                maxWidth: "360px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "start",
@@ -228,15 +321,21 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                 container
                 flexDirection={"column"}
                 gap={"10px"}
-                p={"30px 20px 40px 20px"}
+                p={"30px 20px 20px 20px"}
                 // height={"fit-content"}
               >
-                <Typography variant="h4" textAlign={"start"}>
+                <Typography variant="h5" textAlign={"start"}>
                   We’re just a{" "}
                   <span style={{ color: "#0273BD" }}>message away!</span>
                 </Typography>
-                <Grid container flexDirection={"row"} gap={"10px"} mt={2}>
-                  <CheckCircleOutlineIcon />
+                <Grid
+                  container
+                  flexDirection={"row"}
+                  gap={"10px"}
+                  mt={2}
+                  flexWrap={"nowrap"}
+                >
+                  <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
                   <Typography variant="body1">
                     We will respond to you within 24 hours
                   </Typography>
@@ -247,7 +346,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                   gap={"10px"}
                   flexWrap={"nowrap"}
                 >
-                  <CheckCircleOutlineIcon />
+                  <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
                   <Typography variant="body1">
                     You’ll be talking to CAE Engineers (no account managers).
                   </Typography>
@@ -262,8 +361,8 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                   style={{
                     objectFit: "cover",
                     width: "100%",
-                    height: "485px",
-                    borderRadius: "0 0 29px 29px",
+                    height: "510px",
+                    borderRadius: "0 0 20px 20px",
                   }}
                 />
               </Grid>
@@ -277,7 +376,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
               bgcolor={"#0273BD"}
               p={{ xs: "8px", sm: "45px 100px" }}
               gap={{ xs: "20px", md: "0px" }}
-              borderRadius={"24px"}
+              borderRadius={"20px"}
             >
               <Box sx={{ display: { xs: "none", md: "block" } }}>
                 <Image
@@ -361,7 +460,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
             </Grid>
           )}
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };
