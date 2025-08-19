@@ -6,6 +6,14 @@ import Spiral from "./images/spiral.png";
 import LBI from "./images/home/leftBotImg.png";
 import LTI from "./images/home/leftTopImg.png";
 import RTI from "./images/home/rightbgimg.png";
+import DL from "./images/home/dotLine.png";
+
+import CH1 from "./images/home/case/1.png";
+import CH2 from "./images/home/case/2.png";
+import CH3 from "./images/home/case/3.png";
+import CH4 from "./images/home/case/4.png";
+import CH5 from "./images/home/case/5.png";
+import CH6 from "./images/home/case/6.png";
 
 import L1 from "./images/l1.png";
 import L2 from "./images/l2.png";
@@ -93,6 +101,13 @@ const home = {
   LBI,
   LTI,
   RTI,
+  DL,
+  CH1,
+  CH2,
+  CH3,
+  CH4,
+  CH5,
+  CH6,
 };
 
 const reviews = {

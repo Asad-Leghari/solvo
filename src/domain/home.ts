@@ -328,12 +328,12 @@ export const slidesData = [
     leftSection: {
       title: "Information Gathering & Requirement",
       buttons: ["Team Assembly", "Responsibility"],
-      image: images.Info1,
+      image: images.home.CH1,
     },
     rightSection: {
       title: "Assigning Roles & Responsibilities",
       buttons: ["Consultation", "Requirement Specifications"],
-      image: images.Info2,
+      image: images.home.CH2,
     },
   },
   {
@@ -343,12 +343,12 @@ export const slidesData = [
     leftSection: {
       title: "Process Analysis & Implementation",
       buttons: ["Process Analysis", "Implementation"],
-      image: images.Info1,
+      image: images.home.CH3,
     },
     rightSection: {
       title: "Streamlined Operations",
       buttons: ["Efficiency Improvement", "Cost Reduction"],
-      image: images.Info2,
+      image: images.home.CH4,
     },
   },
   {
@@ -358,12 +358,12 @@ export const slidesData = [
     leftSection: {
       title: "Team Coordination",
       buttons: ["Role Assignment", "Communication"],
-      image: images.Info1,
+      image: images.home.CH5,
     },
     rightSection: {
       title: "Project Management",
       buttons: ["Planning", "Execution"],
-      image: images.Info2,
+      image: images.home.CH6,
     },
   },
 ];
