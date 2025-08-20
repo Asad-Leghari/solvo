@@ -7,7 +7,8 @@ import OurTechnology from "@/components/Services/OurTechnology";
 import Contact from "@/components/home/contact/Contact";
 import { Grid } from "@mui/material";
 import React from "react";
-import CaseStudies from "@/components/Services/CaseStudies";
+import CaseStudies from "@/components/home/case-studies/CaseStudies";
+// import CaseStudies from "@/components/Services/CaseStudies";
 
 const Services = () => {
   return (

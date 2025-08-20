@@ -8,7 +8,7 @@ const DetailsSection: React.FC = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, xl: "300px", lg: "100px" },
+        px: { xs: 2, md: "60px", xl: "300px" },
         py: 10,
         backgroundColor: "#f9f9f9",
         borderTopRightRadius: "10px",
@@ -32,8 +32,9 @@ const DetailsSection: React.FC = () => {
           justifyContent={"space-between"}
           flexWrap={"nowrap"}
           gap={{ xs: "20px", md: "120px" }}
+          width={"100%"}
         >
-          <Grid container flex={1} justifyContent="center">
+          <Grid container flex={1} justifyContent="start">
             <Image
               src={images.services.EFA1}
               alt="Finite Element Analysis"
@@ -55,7 +56,9 @@ const DetailsSection: React.FC = () => {
             justifyContent={"center"}
             gap={"20px"}
             height={"100%"}
-            width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            // width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            flex={1}
+            // border={"1px solid red"}
           >
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
               Finite Element Analysis <br />
@@ -89,6 +92,7 @@ const DetailsSection: React.FC = () => {
           justifyContent={"space-between"}
           flexWrap={"nowrap"}
           gap={{ xs: "20px", md: "120px" }}
+          width={"100%"}
         >
           <Grid
             container
@@ -96,7 +100,8 @@ const DetailsSection: React.FC = () => {
             justifyContent={"center"}
             gap={"20px"}
             height={"100%"}
-            width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            // width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            flex={1}
           >
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
               Finite Element Analysis <br />
@@ -120,7 +125,7 @@ const DetailsSection: React.FC = () => {
               Read More
             </Button>
           </Grid>
-          <Grid container justifyContent="center">
+          <Grid container flex={1} justifyContent="end">
             <Image
               src={images.services.EFA1}
               alt="Finite Element Analysis"
@@ -146,8 +151,9 @@ const DetailsSection: React.FC = () => {
           justifyContent={"space-between"}
           flexWrap={"nowrap"}
           gap={{ xs: "20px", md: "120px" }}
+          width={"100%"}
         >
-          <Grid container flex={1} justifyContent="center">
+          <Grid container flex={1} justifyContent="start">
             <Image
               src={images.services.EFA1}
               alt="Finite Element Analysis"
@@ -170,6 +176,7 @@ const DetailsSection: React.FC = () => {
             gap={"20px"}
             height={"100%"}
             width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            flex={1}
           >
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
               Finite Element Analysis <br />

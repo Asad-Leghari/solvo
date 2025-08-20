@@ -8,7 +8,7 @@ const ClientFocusedSection = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, xl: "300px", lg: "100px" },
+        px: { xs: 2, md: "60px", xl: "300px" },
         py: 8,
         backgroundColor: "#88D8E833",
         display: "flex",
@@ -16,10 +16,10 @@ const ClientFocusedSection = () => {
         justifyContent: "center",
       }}
     >
-      <Grid container spacing={10} alignItems="center" justifyContent="center">
+      <Grid container alignItems="center" justifyContent="center">
         <Grid
+          flex={1.5}
           sx={{
-            width: { xs: "100%", lg: "671px" },
             height: { xs: "auto", lg: "444px" },
             display: "flex",
             alignItems: "center",
@@ -102,12 +102,12 @@ const ClientFocusedSection = () => {
         </Grid>
 
         <Grid
+          flex={1}
           sx={{
-            width: { xs: "100%", lg: "368px" },
             height: { xs: "auto", lg: "356px" },
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "end",
           }}
         >
           <Image

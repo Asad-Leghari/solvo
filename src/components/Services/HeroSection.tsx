@@ -11,7 +11,7 @@ const HeroSection = () => {
           "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
         flexDirection: "column",
         pt: "100px",
-        px: { xs: 2, lg: "300px" },
+        px: { xs: 2, md: "60px", xl: "300px" },
         // border: "2px solid black",
         pb: "150px",
         alignItems: "center",
