@@ -24,10 +24,12 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 const Footer = () => {
   return (
     <Box
-      p={{ xs: "50px 0px", md: "100px 0px 50px 0px" }}
+      p={{ xs: "50px 0px", md: "125px 0px 50px 0px" }}
       sx={{
-        backgroundImage:
-          "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+        // backgroundImage:
+        //   "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+        background:
+          "linear-gradient(360deg, rgba(255, 255, 255, 0) 2.89%, rgba(136, 216, 232, 0.15) 31.57%, #88D8E8 110.14%)",
         // bgcolor: "#333",
         // color: "white",
         width: "100%",
@@ -67,7 +69,11 @@ const Footer = () => {
                 Fluid Dynamics (CFD) and Computer-Aided Design (CAD) modelling
                 services. With a focus on delivering precise and efficient
                 solutions, our team of professional licensed engineers providing
-                accurate
+                accurate and effective solutions. We are dedicated to offering
+                advanced simulation driven insights that enable clients to
+                promote innovation, reducing prototyping cost, design
+                optimization, and simplify the process of developing new
+                products.
               </Typography>
             </Grid>
             <Grid container flexDirection={"column"} gap={"24px"} flex={1.5}>
@@ -129,6 +135,180 @@ const Footer = () => {
                   })}
                 </Grid>
               </Grid>
+              <Grid
+                container
+                flexDirection={"row"}
+                gap={"10px"}
+                justifyContent={{ xs: "start", md: "end" }}
+                // border={"1px solid red"}
+                flex={1}
+                alignItems={"end"}
+              >
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+                    bgcolor: "white",
+                    color: "#0273BD",
+                    position: "relative",
+                    overflow: "hidden",
+
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      bgcolor: "#0273BD",
+                      borderRadius: "inherit",
+                      transform: "scale(0)",
+                      transformOrigin: "center",
+                      transition: "transform 0.4s ease-in-out",
+                      zIndex: 0,
+                    },
+                    "&:hover::before": {
+                      transform: "scale(1)",
+                    },
+
+                    // icon styles
+                    "& .MuiSvgIcon-root": {
+                      position: "relative",
+                      zIndex: 1,
+                      transition: "color 0.4s ease-in-out",
+                    },
+                    "&:hover .MuiSvgIcon-root": {
+                      color: "white",
+                    },
+                  }}
+                >
+                  <FacebookIcon />
+                </IconButton>
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+                    bgcolor: "white",
+                    color: "#0273BD",
+                    position: "relative",
+                    overflow: "hidden",
+
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      bgcolor: "#0273BD",
+                      borderRadius: "inherit",
+                      transform: "scale(0)",
+                      transformOrigin: "center",
+                      transition: "transform 0.4s ease-in-out",
+                      zIndex: 0,
+                    },
+                    "&:hover::before": {
+                      transform: "scale(1)",
+                    },
+
+                    // icon styles
+                    "& .MuiSvgIcon-root": {
+                      position: "relative",
+                      zIndex: 1,
+                      transition: "color 0.4s ease-in-out",
+                    },
+                    "&:hover .MuiSvgIcon-root": {
+                      color: "white",
+                    },
+                  }}
+                >
+                  <InstagramIcon />
+                </IconButton>
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+                    bgcolor: "white",
+                    color: "#0273BD",
+                    position: "relative",
+                    overflow: "hidden",
+
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      bgcolor: "#0273BD",
+                      borderRadius: "inherit",
+                      transform: "scale(0)",
+                      transformOrigin: "center",
+                      transition: "transform 0.4s ease-in-out",
+                      zIndex: 0,
+                    },
+                    "&:hover::before": {
+                      transform: "scale(1)",
+                    },
+
+                    // icon styles
+                    "& .MuiSvgIcon-root": {
+                      position: "relative",
+                      zIndex: 1,
+                      transition: "color 0.4s ease-in-out",
+                    },
+                    "&:hover .MuiSvgIcon-root": {
+                      color: "white",
+                    },
+                  }}
+                >
+                  <XIcon />
+                </IconButton>
+                <IconButton
+                  sx={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    borderRadius: "8px",
+                    bgcolor: "white",
+                    color: "#0273BD",
+                    position: "relative",
+                    overflow: "hidden",
+
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      bgcolor: "#0273BD",
+                      borderRadius: "inherit",
+                      transform: "scale(0)",
+                      transformOrigin: "center",
+                      transition: "transform 0.4s ease-in-out",
+                      zIndex: 0,
+                    },
+                    "&:hover::before": {
+                      transform: "scale(1)",
+                    },
+
+                    // icon styles
+                    "& .MuiSvgIcon-root": {
+                      position: "relative",
+                      zIndex: 1,
+                      transition: "color 0.4s ease-in-out",
+                    },
+                    "&:hover .MuiSvgIcon-root": {
+                      color: "white",
+                    },
+                  }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Grid>
             </Grid>
           </Grid>
           <Divider sx={{ bgcolor: "#CAC4D0" }} />
@@ -150,177 +330,7 @@ const Footer = () => {
               <CopyrightIcon />
               <Typography variant="h6">Solvo Engineering 2025</Typography>
             </Grid>
-            <Grid
-              container
-              flexDirection={"row"}
-              gap={"10px"}
-              justifyContent={{ xs: "start", md: "end" }}
-            >
-              <IconButton
-                sx={{
-                  width: "fit-content",
-                  height: "fit-content",
-                  borderRadius: "8px",
-                  bgcolor: "white",
-                  color: "#0273BD",
-                  position: "relative",
-                  overflow: "hidden",
-
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    bgcolor: "#0273BD",
-                    borderRadius: "inherit",
-                    transform: "scale(0)",
-                    transformOrigin: "center",
-                    transition: "transform 0.4s ease-in-out",
-                    zIndex: 0,
-                  },
-                  "&:hover::before": {
-                    transform: "scale(1)",
-                  },
-
-                  // icon styles
-                  "& .MuiSvgIcon-root": {
-                    position: "relative",
-                    zIndex: 1,
-                    transition: "color 0.4s ease-in-out",
-                  },
-                  "&:hover .MuiSvgIcon-root": {
-                    color: "white",
-                  },
-                }}
-              >
-                <FacebookIcon />
-              </IconButton>
-              <IconButton
-                sx={{
-                  width: "fit-content",
-                  height: "fit-content",
-                  borderRadius: "8px",
-                  bgcolor: "white",
-                  color: "#0273BD",
-                  position: "relative",
-                  overflow: "hidden",
-
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    bgcolor: "#0273BD",
-                    borderRadius: "inherit",
-                    transform: "scale(0)",
-                    transformOrigin: "center",
-                    transition: "transform 0.4s ease-in-out",
-                    zIndex: 0,
-                  },
-                  "&:hover::before": {
-                    transform: "scale(1)",
-                  },
-
-                  // icon styles
-                  "& .MuiSvgIcon-root": {
-                    position: "relative",
-                    zIndex: 1,
-                    transition: "color 0.4s ease-in-out",
-                  },
-                  "&:hover .MuiSvgIcon-root": {
-                    color: "white",
-                  },
-                }}
-              >
-                <InstagramIcon />
-              </IconButton>
-              <IconButton
-                sx={{
-                  width: "fit-content",
-                  height: "fit-content",
-                  borderRadius: "8px",
-                  bgcolor: "white",
-                  color: "#0273BD",
-                  position: "relative",
-                  overflow: "hidden",
-
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    bgcolor: "#0273BD",
-                    borderRadius: "inherit",
-                    transform: "scale(0)",
-                    transformOrigin: "center",
-                    transition: "transform 0.4s ease-in-out",
-                    zIndex: 0,
-                  },
-                  "&:hover::before": {
-                    transform: "scale(1)",
-                  },
-
-                  // icon styles
-                  "& .MuiSvgIcon-root": {
-                    position: "relative",
-                    zIndex: 1,
-                    transition: "color 0.4s ease-in-out",
-                  },
-                  "&:hover .MuiSvgIcon-root": {
-                    color: "white",
-                  },
-                }}
-              >
-                <XIcon />
-              </IconButton>
-              <IconButton
-                sx={{
-                  width: "fit-content",
-                  height: "fit-content",
-                  borderRadius: "8px",
-                  bgcolor: "white",
-                  color: "#0273BD",
-                  position: "relative",
-                  overflow: "hidden",
-
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    bgcolor: "#0273BD",
-                    borderRadius: "inherit",
-                    transform: "scale(0)",
-                    transformOrigin: "center",
-                    transition: "transform 0.4s ease-in-out",
-                    zIndex: 0,
-                  },
-                  "&:hover::before": {
-                    transform: "scale(1)",
-                  },
-
-                  // icon styles
-                  "& .MuiSvgIcon-root": {
-                    position: "relative",
-                    zIndex: 1,
-                    transition: "color 0.4s ease-in-out",
-                  },
-                  "&:hover .MuiSvgIcon-root": {
-                    color: "white",
-                  },
-                }}
-              >
-                <LinkedInIcon />
-              </IconButton>
-            </Grid>
+            <Typography variant="h6">Term of service</Typography>
           </Grid>
           <Grid
             container

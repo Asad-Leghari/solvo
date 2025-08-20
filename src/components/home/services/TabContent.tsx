@@ -22,7 +22,7 @@ const TabContent = (props: Props) => {
       container
       flexDirection={{ xs: "column", md: "row" }}
       gap={{ xs: "40px", md: "0px" }}
-      border={"1px solid #BDBCC7"}
+      border={"1px solid #0273BD"}
       p={"16px"}
       borderRadius={"8px"}
       sx={{

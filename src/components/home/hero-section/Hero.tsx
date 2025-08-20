@@ -101,8 +101,8 @@ const Hero = () => {
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         className="mySwiper"
         style={{
-          backgroundImage:
-            "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+          background:
+            "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(136, 216, 232, 0.2) 47.74%, rgba(136, 216, 232, 0.533333) 88.56%)",
         }}
       >
         {slidesData.map((slide, index) => (
@@ -118,6 +118,7 @@ const Hero = () => {
               // }}
               // border={"1px solid red"}
               sx={{ position: "relative" }}
+              pt={"22px"}
               mb={{ xs: 0, md: "30px" }}
             >
               <Box
@@ -257,7 +258,7 @@ const Hero = () => {
                       display={{ xs: "none", lg: "block" }}
                       sx={{
                         position: "absolute",
-                        top: { lg: "-70%", xl: "-78%" },
+                        top: { lg: "-70%", xl: "-68%" },
                         right: { lg: "-5%", xl: "2%" },
                         width: { sm: "500px", xl: "700px" },
                         height: { sm: "900px", xl: "900px" },
@@ -319,6 +320,8 @@ const Hero = () => {
             position: "relative",
             zIndex: "99999999",
             px: { xs: 2, lg: "60px", xl: "300px" },
+            pt: "25px",
+            mb: "100px",
           }}
         >
           <Box
@@ -381,6 +384,9 @@ const Hero = () => {
                   width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
                   height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
                   minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                  "&:hover": {
+                    boxShadow: "none", // remove shadow on hover
+                  },
                 }}
                 onClick={handlePrevSlide}
               >
@@ -398,6 +404,9 @@ const Hero = () => {
                   width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
                   height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
                   minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                  "&:hover": {
+                    boxShadow: "none", // remove shadow on hover
+                  },
                 }}
                 onClick={handleNextSlide}
               >

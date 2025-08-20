@@ -70,8 +70,10 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
       p={"50px 0 20px 0"}
       bgcolor={"#ffffff"}
       // boxShadow={"0px 24px 34px rgba(0, 0, 0, 0.11)"}
-      borderRadius={"0 0 29px 29px"}
-      zIndex={2}
+      borderRadius={"0 0 60px 60px"}
+      zIndex={9999}
+      // border={"1px solid red"}
+      mb={"-50px"}
     >
       <Box
         sx={{
@@ -91,7 +93,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
             How Can We <span style={{ color: "#0273BD" }}>Help You?</span>
           </Typography>
         </Grid>
-        <Grid container flexDirection={"column"} gap={"40px"}>
+        <Grid container flexDirection={"column"} gap={"40px"} mt={"10px"}>
           <Grid
             container
             flexDirection={{ xs: "column", lg: "row" }}

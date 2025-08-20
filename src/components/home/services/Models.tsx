@@ -22,12 +22,12 @@ const Models = () => {
         p={1}
         gap={"10px"}
       >
-        <Image
-          src={models[0].image}
+        <img
+          src={models[0].image.src}
           alt={models[0].title}
-          width={250}
-          height={250}
           style={{
+            width: "220px",
+            height: "250px",
             objectFit: "contain",
           }}
         />
@@ -48,12 +48,12 @@ const Models = () => {
         p={1}
         gap={"10px"}
       >
-        <Image
-          src={models[1].image}
+        <img
+          src={models[1].image.src}
           alt={models[1].title}
-          width={250}
-          height={250}
           style={{
+            width: "250px",
+            height: "250px",
             objectFit: "contain",
           }}
         />
@@ -74,12 +74,12 @@ const Models = () => {
         p={1}
         gap={"10px"}
       >
-        <Image
-          src={models[2].image}
+        <img
+          src={models[2].image.src}
           alt={models[2].title}
-          width={255}
-          height={255}
           style={{
+            width: "250px",
+            height: "250px",
             objectFit: "contain",
           }}
         />

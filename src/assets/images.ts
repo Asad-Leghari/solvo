@@ -15,11 +15,17 @@ import CH4 from "./images/home/case/4.png";
 import CH5 from "./images/home/case/5.png";
 import CH6 from "./images/home/case/6.png";
 
-import L1 from "./images/l1.png";
-import L2 from "./images/l2.png";
-import L3 from "./images/l3.png";
-import L4 from "./images/l4.png";
-import L5 from "./images/l5.png";
+import L1 from "./images/home/logos/1.png";
+import L2 from "./images/home/logos/2.png";
+import L3 from "./images/home/logos/3.png";
+import L4 from "./images/home/logos/4.png";
+import L5 from "./images/home/logos/5.png";
+import L6 from "./images/home/logos/6.png";
+import L7 from "./images/home/logos/7.png";
+import L8 from "./images/home/logos/8.png";
+import L9 from "./images/home/logos/9.png";
+import L10 from "./images/home/logos/11.png";
+import L11 from "./images/home/logos/22.png";
 
 import CAD from "./images/cad.png";
 import CFD from "./images/cfd.png";
@@ -103,6 +109,20 @@ import R1 from "./images/reviews/R1.jpeg";
 import R2 from "./images/reviews/R2.jpeg";
 import R3 from "./images/reviews/R3.jpeg";
 
+const our_best_clients_logos = {
+  L1,
+  L2,
+  L3,
+  L4,
+  L5,
+  L6,
+  L7,
+  L8,
+  L9,
+  L10,
+  L11,
+};
+
 const home = {
   LBI,
   LTI,
@@ -114,6 +134,7 @@ const home = {
   CH4,
   CH5,
   CH6,
+  our_best_clients_logos,
 };
 
 const reviews = {

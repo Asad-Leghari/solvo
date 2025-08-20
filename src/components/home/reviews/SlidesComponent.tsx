@@ -20,7 +20,7 @@ import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 
 const SlidesComponent = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [direction, setDirection] = useState("left");
+  const [direction, setDirection] = useState<any>("left");
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -45,7 +45,7 @@ const SlidesComponent = () => {
       gap={"10px"}
       width={"100%"}
       flexWrap={"nowrap"}
-      py={2}
+      // border={"1px solid red"}
     >
       <Slide
         key={activeSlide}
@@ -65,16 +65,20 @@ const SlidesComponent = () => {
         >
           {/* Text Section */}
           <Stack
-            gap={"40px"}
+            gap={"10px"}
             flex={1.5}
             justifyContent={"start"}
-            height={"450px"}
+            // height={"450px"}
           >
             <HeadingButton title={currentSlide.title} />
             <Typography variant="h5">{currentSlide.heading}</Typography>
-            <Typography variant="body1">{currentSlide.description}</Typography>
+            <Typography variant="body1" py={"10px"}>
+              {currentSlide.description}
+            </Typography>
             <Box>
-              <Typography variant="h6">{currentSlide.clientName}</Typography>
+              <Typography variant="h6" fontWeight={600} mt={"10px"}>
+                {currentSlide.clientName}
+              </Typography>
               <Typography variant="body1" fontWeight={500} color="#0273BD">
                 {currentSlide.designation}
               </Typography>

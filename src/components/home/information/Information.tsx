@@ -61,6 +61,12 @@ const Information = () => {
         mt={"40px"}
       >
         <HeadingButton title="Case Studies" />
+        <Typography variant="h5" textAlign={"center"} mb={"20px"}>
+          Our Custom{" "}
+          <span style={{ color: "#0273BD" }}>
+            Simulation Process <br />
+          </span>
+        </Typography>
       </Grid>
       <Box
         sx={{
@@ -79,7 +85,7 @@ const Information = () => {
         >
           {slidesData.map((slide, index) => (
             <SwiperSlide key={index}>
-              <NewSlideCard currentSlide={slide} />;
+              <NewSlideCard currentSlide={slide} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -134,13 +140,7 @@ const Information = () => {
           />
         </Box>
       </Box>
-      <Grid
-        container
-        flexDirection={"column"}
-        width={"100%"}
-        gap={"36px"}
-        // border={"1px solid red"}
-      >
+      <Grid container flexDirection={"column"} width={"100%"} gap={"36px"}>
         <Grid container justifyContent="end" alignItems="center" gap="20px">
           <Button
             className="custom-swiper-prev-btn"
@@ -181,7 +181,7 @@ const Information = () => {
           container
           flexDirection={"row"}
           justifyContent={"space-between"}
-          gap={"50px"}
+          gap={"16px"}
           size={12}
         >
           {slidesData.map((_, idx) => (
@@ -192,6 +192,7 @@ const Information = () => {
                 height: "8px",
                 borderRadius: "8px",
                 bgcolor: idx === activeIndex ? "#0273BD" : "#DFE8FC",
+                cursor: "pointer",
               }}
             />
           ))}

@@ -8,11 +8,83 @@ export const heroCTAButtons = [
 ];
 
 export const clientLogos = [
-  { id: 1, src: images.L1, alt: "Client Logo 1", width: 150, height: 60 },
-  { id: 2, src: images.L2, alt: "Client Logo 2", width: 150, height: 60 },
-  { id: 3, src: images.L3, alt: "Client Logo 3", width: 150, height: 60 },
-  { id: 4, src: images.L4, alt: "Client Logo 4", width: 150, height: 60 },
-  { id: 5, src: images.L5, alt: "Client Logo 5", width: 250, height: 60 },
+  {
+    id: 1,
+    src: images.home.our_best_clients_logos.L1,
+    alt: "Client Logo 1",
+    width: 150,
+    height: 60,
+  },
+  {
+    id: 2,
+    src: images.home.our_best_clients_logos.L2,
+    alt: "Client Logo 2",
+    width: 170,
+    height: 60,
+  },
+  {
+    id: 3,
+    src: images.home.our_best_clients_logos.L3,
+    alt: "Client Logo 3",
+    width: 150,
+    height: 60,
+  },
+  {
+    id: 4,
+    src: images.home.our_best_clients_logos.L4,
+    alt: "Client Logo 4",
+    width: 150,
+    height: 60,
+  },
+  {
+    id: 5,
+    src: images.home.our_best_clients_logos.L5,
+    alt: "Client Logo 5",
+    width: 250,
+    height: 60,
+  },
+  {
+    id: 6,
+    src: images.home.our_best_clients_logos.L6,
+    alt: "Client Logo 1",
+    width: 150,
+    height: 60,
+  },
+  {
+    id: 7,
+    src: images.home.our_best_clients_logos.L7,
+    alt: "Client Logo 2",
+    width: 150,
+    height: 60,
+  },
+  {
+    id: 8,
+    src: images.home.our_best_clients_logos.L8,
+    alt: "Client Logo 3",
+    width: 150,
+    height: 60,
+  },
+  {
+    id: 9,
+    src: images.home.our_best_clients_logos.L9,
+    alt: "Client Logo 4",
+    width: 150,
+    height: 60,
+  },
+  {
+    id: 10,
+    src: images.home.our_best_clients_logos.L10,
+    alt: "Client Logo 5",
+    width: 250,
+    height: 60,
+  },
+  {
+    id: 11,
+    src: images.home.our_best_clients_logos.L11,
+    alt: "Client Logo 5",
+    width: 250,
+    height: 60,
+  },
 ];
 
 export const models = [

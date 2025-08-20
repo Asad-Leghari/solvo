@@ -47,7 +47,7 @@ const Tabs = () => {
             onClick={() => setSelectedTab(tab as "CFD" | "CAD" | "FEA")}
             sx={{
               border: "1px solid #E0E0E0",
-              bgcolor: selectedTab === tab ? "#007BFF" : "#F2F3F5",
+              bgcolor: selectedTab === tab ? "#0273BD" : "#F2F3F5",
               color: selectedTab === tab ? "white" : "black",
               fontWeight: selectedTab === tab ? 600 : 400,
               textTransform: "capitalize",
@@ -92,18 +92,25 @@ const Tabs = () => {
                     />
                   }
                   sx={{
-                    border: "1px solid #BDBCC7",
+                    // border: "1px solid #BDBCC7",
                     fontSize: "16px",
                     fontWeight: 500,
-                    color: selectedItem === item.id ? "white" : "black",
-                    bgcolor: selectedItem === item.id ? "#007BFF" : "white",
+                    // color: selectedItem === item.id ? "white" : "black",
+                    color: "black",
+                    border:
+                      selectedItem === item.id
+                        ? "2px solid #0273BD"
+                        : "1px solid #BDBCC7",
                     textTransform: "capitalize",
                     height: "60px",
                     borderRadius: "8px",
                     justifyContent: "flex-start",
                     width: "100%",
                     "&:hover": {
-                      bgcolor: selectedItem === item.id ? "#007BFF" : "#f5f5f5",
+                      border:
+                        selectedItem === item.id
+                          ? "2px solid #007BFF"
+                          : "1px solid #BDBCC7",
                     },
                   }}
                 >
@@ -128,18 +135,25 @@ const Tabs = () => {
                     />
                   }
                   sx={{
-                    border: "1px solid #BDBCC7",
+                    // border: "1px solid #BDBCC7",
                     fontSize: "16px",
                     fontWeight: 500,
-                    color: selectedItem === item.id ? "white" : "black",
-                    bgcolor: selectedItem === item.id ? "#007BFF" : "white",
+                    // color: selectedItem === item.id ? "white" : "black",
+                    color: "black",
+                    border:
+                      selectedItem === item.id
+                        ? "2px solid #0273BD"
+                        : "1px solid #BDBCC7",
                     textTransform: "capitalize",
                     height: "58px",
                     borderRadius: "8px",
                     justifyContent: "flex-start",
                     width: "100%",
                     "&:hover": {
-                      bgcolor: selectedItem === item.id ? "#007BFF" : "#f5f5f5",
+                      border:
+                        selectedItem === item.id
+                          ? "2px solid #0273BD"
+                          : "1px solid #BDBCC7",
                     },
                   }}
                 >
@@ -164,18 +178,25 @@ const Tabs = () => {
                     />
                   }
                   sx={{
-                    border: "1px solid #BDBCC7",
+                    // border: "1px solid #BDBCC7",
                     fontSize: "16px",
                     fontWeight: 500,
-                    color: selectedItem === item.id ? "white" : "black",
-                    bgcolor: selectedItem === item.id ? "#007BFF" : "white",
+                    // color: selectedItem === item.id ? "white" : "black",
+                    color: "black",
+                    border:
+                      selectedItem === item.id
+                        ? "2px solid #0273BD"
+                        : "1px solid #BDBCC7",
                     textTransform: "capitalize",
                     height: "60px",
                     borderRadius: "8px",
                     justifyContent: "flex-start",
                     width: "100%",
                     "&:hover": {
-                      bgcolor: selectedItem === item.id ? "#007BFF" : "#f5f5f5",
+                      border:
+                        selectedItem === item.id
+                          ? "2px solid #0273BD"
+                          : "1px solid #BDBCC7",
                     },
                   }}
                 >

@@ -15,7 +15,7 @@ const Home = () => {
       flexDirection={"column"}
       width={"100%"}
       flexWrap={"nowrap"}
-      bgcolor={"#FEF7FF"}
+      bgcolor={"##FFFFFF"}
       size={12}
     >
       <Hero />

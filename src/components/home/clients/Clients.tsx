@@ -14,9 +14,12 @@ const Clients = () => {
         flexDirection: "column",
         alignItems: "center",
         gap: "10px",
-
+        bgcolor: "#ffffff",
         // border: "1px solid red",
+        borderRadius: "60px",
         width: "100%",
+        mt: "-110px",
+        zIndex: 99,
       }}
     >
       {/* Heading */}
@@ -55,25 +58,23 @@ const Clients = () => {
           wrap="nowrap"
           sx={{
             display: "flex",
-            gap: 6,
-            animation: "scrollLeft 30s linear infinite",
+            gap: "60px",
+            animation: "scrollLeft 200s linear infinite",
             minWidth: "fit-content",
           }}
         >
-          {[...clientLogos, ...clientLogos, ...clientLogos].map(
-            (logo, index) => {
-              return (
-                <Image
-                  key={`${logo.id}-${index}`}
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={logo.width}
-                  height={logo.height}
-                  className="client-logo"
-                />
-              );
-            }
-          )}
+          {Array.from({ length: 50 })
+            .flatMap(() => clientLogos)
+            .map((logo, index) => (
+              <Image
+                key={`${logo.id}-${index}`}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
+                className="client-logo"
+              />
+            ))}
         </Grid>
 
         <style jsx global>{`
