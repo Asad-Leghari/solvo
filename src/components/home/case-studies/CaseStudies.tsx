@@ -121,7 +121,7 @@ const CaseStudies = () => {
           <SwiperSlide key={index}>
             <Box
               // maxWidth="xl"
-              px={{ xs: 2, lg: "300px" }}
+              px={{ xs: 2, md: "60px", xl: "300px" }}
             >
               <Grid
                 size={12}
@@ -219,7 +219,7 @@ const CaseStudies = () => {
             position: "relative",
             zIndex: "99999999",
             // border: "1px solid red",
-            px: { xs: 2, lg: "300px" },
+            px: { xs: 2, md: "60px", xl: "300px" },
           }}
         >
           <Box

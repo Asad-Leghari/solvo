@@ -1,5 +1,13 @@
 "use client";
-import { Box, Grid, Slide, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Slide,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import React, { useState } from "react";
 import HeadingButton from "../HeadingButton";
 import Image from "next/image";
@@ -7,8 +15,8 @@ import { slidesData } from "@/domain/home";
 import { reviewsData } from "./Reviews";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 
 const SlidesComponent = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -23,7 +31,9 @@ const SlidesComponent = () => {
 
   const handlePrevSlide = () => {
     setDirection("right");
-    setActiveSlide((prev) => (prev - 1 + slidesData.length) % slidesData.length);
+    setActiveSlide(
+      (prev) => (prev - 1 + slidesData.length) % slidesData.length
+    );
   };
 
   const currentSlide = reviewsData[activeSlide];
@@ -33,7 +43,7 @@ const SlidesComponent = () => {
       container
       flexDirection={isSmall ? "column" : "row"}
       gap={"10px"}
-      width={"91%"}
+      width={"100%"}
       flexWrap={"nowrap"}
       py={2}
     >
@@ -54,7 +64,12 @@ const SlidesComponent = () => {
           }}
         >
           {/* Text Section */}
-          <Stack gap={"40px"} flex={1.5} justifyContent={"start"} height={"450px"}>
+          <Stack
+            gap={"40px"}
+            flex={1.5}
+            justifyContent={"start"}
+            height={"450px"}
+          >
             <HeadingButton title={currentSlide.title} />
             <Typography variant="h5">{currentSlide.heading}</Typography>
             <Typography variant="body1">{currentSlide.description}</Typography>

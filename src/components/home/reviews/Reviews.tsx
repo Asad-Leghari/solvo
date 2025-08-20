@@ -66,7 +66,7 @@ const Reviews = () => {
         bgcolor: "#E6FBFF",
         position: "relative",
         overflow: "hidden",
-        px: { xs: 2, xl: "300px" },
+        px: { xs: 2, md: "60px", xl: "300px" },
         py: 1,
       }}
     >
@@ -77,7 +77,7 @@ const Reviews = () => {
           top: "40%",
           left: "0px",
           transform: "translateY(-50%) scaleX(-1)", // flip horizontally
-          width: "800px", // smaller size
+          // width: "800px", // smaller size
           height: "800px",
           backgroundImage: `url(${images.Spiral.src})`,
           backgroundSize: "contain",

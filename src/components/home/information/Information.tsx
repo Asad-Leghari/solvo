@@ -49,7 +49,7 @@ const Information = () => {
       sx={{
         // boxShadow: "0px 24px 34px rgba(0, 0, 0, 0.11)",
         zIndex: 3,
-        px: { xs: 2, lg: "300px" },
+        px: { xs: 2, md: "60px", xl: "300px" },
       }}
       width={"99vw"}
     >

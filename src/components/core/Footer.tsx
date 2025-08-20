@@ -36,7 +36,7 @@ const Footer = () => {
       <Box
         sx={{
           width: "100%",
-          px: { xs: 2, lg: "300px" },
+          px: { xs: 2, md: "60px", xl: "300px" },
         }}
       >
         <Grid container flexDirection={"column"} gap={"24px"}>
