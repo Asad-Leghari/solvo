@@ -21,7 +21,7 @@ passport.use(
           return done(null, false, { message: "Invalid credentials" });
         }
 
-        return done(null, user); // 👈 full mongoose user doc here
+        return done(null, user);
       } catch (err) {
         return done(err as Error);
       }
