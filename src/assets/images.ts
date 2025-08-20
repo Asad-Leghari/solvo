@@ -38,11 +38,11 @@ import TA from "./images/TA.png";
 
 import FFPic from "./images/FFPic.png";
 
-import EFA1 from "./images/services/all/EFA1.png";
-import CFD1 from "./images/services/all/CFD1.png";
-import CAD1 from "./images/services/all/CAD1.png";
-import clientimage from "./images/services/all/client.png";
-import servicecase from "./images/Services/all/servicecase.png";
+import EFA1 from "./images/Services/CAD/3D Modeling.png";
+import CFD1 from "./images/Services/CAD/Assembly.png";
+import CAD1 from "./images/Services/CAD/Mold.png";
+import clientimage from "./images/Services/CAD/Product Design.png";
+import servicecase from "./images/Services/CAD/Reverse Eng..png";
 
 import Info1 from "./images/info-1.png";
 import Info2 from "./images/info-2.png";
