@@ -28,6 +28,8 @@ const DetailsSection: React.FC = () => {
           direction={{ xs: "column-reverse", md: "row" }}
           alignItems="center"
           justifyContent={"space-between"}
+          flexWrap={"nowrap"}
+          gap={{ xs: "20px", md: "0px" }}
         >
           <Grid container flex={1}>
             <Image
@@ -76,9 +78,10 @@ const DetailsSection: React.FC = () => {
         </Grid>
         <Grid
           container
-          direction={{ xs: "column-reverse", md: "row" }}
+          direction={{ xs: "column", md: "row" }}
           alignItems="center"
           justifyContent={"space-between"}
+          flexWrap={"nowrap"}
         >
           <Grid
             container
@@ -130,6 +133,7 @@ const DetailsSection: React.FC = () => {
           direction={{ xs: "column-reverse", md: "row" }}
           alignItems="center"
           justifyContent={"space-between"}
+          flexWrap={"nowrap"}
         >
           <Grid container flex={1}>
             <Image
