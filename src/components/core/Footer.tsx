@@ -26,10 +26,10 @@ const Footer = () => {
     <Box
       p={{ xs: "50px 0px", md: "100px 0px 50px 0px" }}
       sx={{
-        // backgroundImage:
-        //   "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
-        bgcolor: "#333",
-        color: "white",
+        backgroundImage:
+          "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
+        // bgcolor: "#333",
+        // color: "white",
         width: "100%",
       }}
     >
@@ -161,12 +161,37 @@ const Footer = () => {
                   width: "fit-content",
                   height: "fit-content",
                   borderRadius: "8px",
-
                   bgcolor: "white",
                   color: "#0273BD",
-                  "&:hover": {
+                  position: "relative",
+                  overflow: "hidden",
+
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
                     bgcolor: "#0273BD",
-                    opacity: 0.8,
+                    borderRadius: "inherit",
+                    transform: "scale(0)",
+                    transformOrigin: "center",
+                    transition: "transform 0.4s ease-in-out",
+                    zIndex: 0,
+                  },
+                  "&:hover::before": {
+                    transform: "scale(1)",
+                  },
+
+                  // icon styles
+                  "& .MuiSvgIcon-root": {
+                    position: "relative",
+                    zIndex: 1,
+                    transition: "color 0.4s ease-in-out",
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "white",
                   },
                 }}
               >
@@ -179,9 +204,35 @@ const Footer = () => {
                   borderRadius: "8px",
                   bgcolor: "white",
                   color: "#0273BD",
-                  "&:hover": {
+                  position: "relative",
+                  overflow: "hidden",
+
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
                     bgcolor: "#0273BD",
-                    opacity: 0.8,
+                    borderRadius: "inherit",
+                    transform: "scale(0)",
+                    transformOrigin: "center",
+                    transition: "transform 0.4s ease-in-out",
+                    zIndex: 0,
+                  },
+                  "&:hover::before": {
+                    transform: "scale(1)",
+                  },
+
+                  // icon styles
+                  "& .MuiSvgIcon-root": {
+                    position: "relative",
+                    zIndex: 1,
+                    transition: "color 0.4s ease-in-out",
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "white",
                   },
                 }}
               >
@@ -192,12 +243,37 @@ const Footer = () => {
                   width: "fit-content",
                   height: "fit-content",
                   borderRadius: "8px",
-
                   bgcolor: "white",
                   color: "#0273BD",
-                  "&:hover": {
+                  position: "relative",
+                  overflow: "hidden",
+
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
                     bgcolor: "#0273BD",
-                    opacity: 0.8,
+                    borderRadius: "inherit",
+                    transform: "scale(0)",
+                    transformOrigin: "center",
+                    transition: "transform 0.4s ease-in-out",
+                    zIndex: 0,
+                  },
+                  "&:hover::before": {
+                    transform: "scale(1)",
+                  },
+
+                  // icon styles
+                  "& .MuiSvgIcon-root": {
+                    position: "relative",
+                    zIndex: 1,
+                    transition: "color 0.4s ease-in-out",
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "white",
                   },
                 }}
               >
