@@ -4,10 +4,10 @@ import HeroSection from "@/components/Services/HeroSection";
 import ProjectsSection from "@/components/Services/ProjectsSection";
 import WelcomeSection from "@/components/Services/WelcomeSection";
 import OurTechnology from "@/components/Services/OurTechnology";
-import CaseStudies from "@/components/Services/CaseStudies";
 import Contact from "@/components/home/contact/Contact";
 import { Grid } from "@mui/material";
 import React from "react";
+import CaseStudies from "@/components/home/case-studies/CaseStudies";
 
 const Services = () => {
   return (

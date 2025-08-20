@@ -86,7 +86,7 @@ const CaseStudies = () => {
       container
       flexDirection={"column"}
       alignItems={"center"}
-      //   width={"100%"}
+      width={"99vw"}
       sx={{
         backgroundImage:
           "linear-gradient(0deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 100%, rgba(136, 216, 232, 0.53) 100%)",
@@ -123,9 +123,7 @@ const CaseStudies = () => {
             <Box
               sx={{
                 width: "100%",
-                maxWidth: { lg: "1150px", xs: "380px" }, // keeps it centered & prevents too wide
-                mx: "auto", // centers the box
-                px: { xs: 2, sm: 4, md: 6, lg: 10 }, // responsive padding
+                px: { xs: 2, lg: "300px" }, // responsive padding
                 borderRadius: "14px",
               }}
             >

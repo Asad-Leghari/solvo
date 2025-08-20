@@ -8,7 +8,7 @@ const DetailsSection: React.FC = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 10 },
+        px: { xs: 2, xl: "300px" },
         py: 10,
         backgroundColor: "#f9f9f9",
         borderTopRightRadius: "10px",
@@ -16,188 +16,164 @@ const DetailsSection: React.FC = () => {
         display: "flex",
       }}
     >
-      <Grid container spacing={6} justifyContent="center">
-        {/* 1️⃣ Image Left - Text Right */}
-        <Grid item xs={12} md={6}>
+      <Grid
+        container
+        justifyContent="start"
+        flexDirection={"column"}
+        gap={"100px"}
+        size={12}
+      >
+        <Grid
+          container
+          direction={{ xs: "column-reverse", md: "row" }}
+          alignItems="center"
+          justifyContent={"space-between"}
+        >
+          <Grid container flex={1}>
+            <Image
+              src={images.services.EFA1}
+              alt="Finite Element Analysis"
+              style={{
+                objectFit: "contain",
+                width: "480px",
+                height: "265px",
+                borderRadius: "29px",
+              }}
+              width={300}
+              height={300}
+            />
+          </Grid>
           <Grid
             container
-            spacing={6}
-            direction={{ xs: "column-reverse", md: "row" }}
-            alignItems="center"
+            flexDirection={"column"}
+            justifyContent={"center"}
+            gap={"20px"}
+            height={"100%"}
+            width={"480px"}
           >
-            {/* Image */}
-            <Grid item xs={12} md={6}>
-              <Paper
-                sx={{
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  width: "100%",
-                  transition: "transform 0.3s ease-in-out",
-                  "&:hover": { transform: "scale(1.02)" },
-                }}
-              >
-                <Box sx={{ position: "relative", width: "100%", height: 220 }}>
-                  <Image
-                    src={images.services.EFA1}
-                    alt="Finite Element Analysis"
-                    style={{ objectFit: "cover" }}
-                  />
-                </Box>
-              </Paper>
-            </Grid>
-            {/* Text */}
-            <Grid
-              item
-              xs={12}
-              md={6}
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <Box sx={{ wordBreak: "break-word", overflowWrap: "anywhere" }}>
-                <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                  Finite Element Analysis{" "}
-                  <Box component="span" color="primary.main" fontWeight="bold">
-                    (EFA)
-                  </Box>
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ mb: 2, color: "text.secondary", lineHeight: 1.6 }}
-                >
-                  Optimize designs and ensure structural integrity with precise
-                  and efficient simulation techniques.
-                </Typography>
-                <Button
-                  variant="contained"
-                  size="small"
-                  endIcon={<ArrowRightIcon />}
-                  sx={{ borderRadius: "12px", textTransform: "capitalize" }}
-                >
-                  Read More
-                </Button>
+            <Typography variant="h5" sx={{ fontWeight: 600 }}>
+              Finite Element Analysis <br />
+              <Box component="span" color="primary.main" fontWeight="bold">
+                (EFA)
               </Box>
-            </Grid>
+            </Typography>
+            <Typography variant="body1">
+              Optimize designs and ensure structural integrity with precise and
+              efficient simulation techniques.
+            </Typography>
+            <Button
+              variant="contained"
+              endIcon={<ArrowRightIcon />}
+              sx={{
+                borderRadius: "12px",
+                textTransform: "capitalize",
+                width: "fit-content",
+              }}
+            >
+              Read More
+            </Button>
           </Grid>
         </Grid>
-
-        {/* 2️⃣ Text Left - Image Right */}
-        <Grid item xs={12} md={6}>
+        <Grid
+          container
+          direction={{ xs: "column-reverse", md: "row" }}
+          alignItems="center"
+          justifyContent={"space-between"}
+        >
           <Grid
             container
-            spacing={6}
-            direction={{ xs: "column-reverse", md: "row-reverse" }} // 🔥 Text first on mobile
-            alignItems="center"
+            flexDirection={"column"}
+            justifyContent={"center"}
+            gap={"20px"}
+            height={"100%"}
+            width={"480px"}
           >
-            {/* Image */}
-            <Grid item xs={12} md={6}>
-              <Paper
-                sx={{
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  width: "100%",
-                  transition: "transform 0.3s ease-in-out",
-                  "&:hover": { transform: "scale(1.02)" },
-                }}
-              >
-                <Box sx={{ position: "relative", width: "100%", height: 220 }}>
-                  <Image
-                    src={images.services.CFD1}
-                    alt="Computational Fluid Dynamics"
-                    style={{ objectFit: "cover" }}
-                  />
-                </Box>
-              </Paper>
-            </Grid>
-            {/* Text */}
-            <Grid
-              item
-              xs={12}
-              md={6}
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <Box sx={{ wordBreak: "break-word", overflowWrap: "anywhere" }}>
-                <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                  Computational Fluid Dynamics{" "}
-                  <Box component="span" color="primary.main" fontWeight="bold">
-                    (CFD)
-                  </Box>
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ mb: 2, color: "text.secondary", lineHeight: 1.6 }}
-                >
-                  Analyze fluid dynamics and thermal processes to enhance
-                  performance and energy efficiency.
-                </Typography>
-                <Button
-                  variant="contained"
-                  size="small"
-                  endIcon={<ArrowRightIcon />}
-                  sx={{ borderRadius: "12px", textTransform: "capitalize" }}
-                >
-                  Read More
-                </Button>
+            <Typography variant="h5" sx={{ fontWeight: 600 }}>
+              Finite Element Analysis <br />
+              <Box component="span" color="primary.main" fontWeight="bold">
+                (EFA)
               </Box>
-            </Grid>
+            </Typography>
+            <Typography variant="body1">
+              Optimize designs and ensure structural integrity with precise and
+              efficient simulation techniques.
+            </Typography>
+            <Button
+              variant="contained"
+              endIcon={<ArrowRightIcon />}
+              sx={{
+                borderRadius: "12px",
+                textTransform: "capitalize",
+                width: "fit-content",
+              }}
+            >
+              Read More
+            </Button>
+          </Grid>
+          <Grid container height={"100%"} width={"480px"}>
+            <Image
+              src={images.services.EFA1}
+              alt="Finite Element Analysis"
+              style={{
+                objectFit: "contain",
+                width: "480px",
+                height: "265px",
+                borderRadius: "29px",
+              }}
+              width={300}
+              height={300}
+            />
           </Grid>
         </Grid>
-
-        {/* 3️⃣ Image Left - Text Right */}
-        <Grid item xs={12} md={6}>
+        <Grid
+          container
+          direction={{ xs: "column-reverse", md: "row" }}
+          alignItems="center"
+          justifyContent={"space-between"}
+        >
+          <Grid container flex={1}>
+            <Image
+              src={images.services.EFA1}
+              alt="Finite Element Analysis"
+              style={{
+                objectFit: "contain",
+                width: "480px",
+                height: "265px",
+                borderRadius: "29px",
+              }}
+              width={300}
+              height={300}
+            />
+          </Grid>
           <Grid
             container
-            spacing={6}
-            direction={{ xs: "column-reverse", md: "row" }} // 🔥 Text first on mobile
-            alignItems="center"
+            flexDirection={"column"}
+            justifyContent={"center"}
+            gap={"20px"}
+            height={"100%"}
+            width={"480px"}
           >
-            <Grid item xs={12} md={6}>
-              <Paper
-                sx={{
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  width: "100%",
-                  transition: "transform 0.3s ease-in-out",
-                  "&:hover": { transform: "scale(1.02)" },
-                }}
-              >
-                <Box sx={{ position: "relative", width: "100%", height: 220 }}>
-                  <Image
-                    src={images.services.CAD1}
-                    alt="2D/3D Computer Aided Design"
-                    style={{ objectFit: "cover" }}
-                  />
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <Box sx={{ wordBreak: "break-word", overflowWrap: "anywhere" }}>
-                <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                  2D/3D Computer Aided Design{" "}
-                  <Box component="span" color="primary.main" fontWeight="bold">
-                    (CAD)
-                  </Box>
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ mb: 2, color: "text.secondary", lineHeight: 1.6 }}
-                >
-                  Transform concepts into accurate CAD model with seamless
-                  integration and practical solutions.
-                </Typography>
-                <Button
-                  variant="contained"
-                  size="small"
-                  endIcon={<ArrowRightIcon />}
-                  sx={{ borderRadius: "12px", textTransform: "capitalize" }}
-                >
-                  Read More
-                </Button>
+            <Typography variant="h5" sx={{ fontWeight: 600 }}>
+              Finite Element Analysis <br />
+              <Box component="span" color="primary.main" fontWeight="bold">
+                (EFA)
               </Box>
-            </Grid>
+            </Typography>
+            <Typography variant="body1">
+              Optimize designs and ensure structural integrity with precise and
+              efficient simulation techniques.
+            </Typography>
+            <Button
+              variant="contained"
+              endIcon={<ArrowRightIcon />}
+              sx={{
+                borderRadius: "12px",
+                textTransform: "capitalize",
+                width: "fit-content",
+              }}
+            >
+              Read More
+            </Button>
           </Grid>
         </Grid>
       </Grid>

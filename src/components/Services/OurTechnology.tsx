@@ -12,9 +12,10 @@ const OurTechnology = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: { xs: "24px", md: "40px" }, // responsive gap
+        gap: "10px",
+        px: { xs: 2, xl: "300px" },
+        // border: "1px solid red",
         width: "100%",
-        px: { xs: 2, sm: 4, md: 6, lg: 10 }, // responsive page padding
       }}
     >
       {/* Heading */}
@@ -22,13 +23,16 @@ const OurTechnology = () => {
         container
         flexDirection="column"
         alignItems="center"
-        gap={{ xs: "8px", md: "16px" }}
-        pt={{ xs: "40px", md: "60px" }}
-        width="100%"
+        gap="10px"
+        pt={"60px"}
+        sx={{
+          px: { xs: 2, xl: "0px" },
+        }}
+        width={"100%"}
       >
-        <h1 className="text-[20px] sm:text-[32px] md:text-[48px] leading-tight text-center">
-          Our <span style={{ color: "#0273bd" }}>Technology</span>
-        </h1>
+        <Typography variant="h5" textAlign={"center"} width={"100%"}>
+          Our <span style={{ color: "#0273BD" }}>Technology</span>
+        </Typography>
       </Grid>
 
       {/* Scrolling Logos */}
@@ -37,8 +41,9 @@ const OurTechnology = () => {
         sx={{
           overflow: "hidden",
           position: "relative",
-          width: { xs: "95vw", sm: "85vw", md: "75vw", lg: "70vw" },
-          pt: { xs: "30px", md: "50px" },
+          width: { xs: "90vw", sm: "65vw" },
+          // border: "1px solid red",
+          py: "50px",
         }}
       >
         <Grid
@@ -47,7 +52,7 @@ const OurTechnology = () => {
           wrap="nowrap"
           sx={{
             display: "flex",
-            gap: { xs: 3, sm: 4, md: 6 },
+            gap: 6,
             animation: "scrollLeft 30s linear infinite",
             minWidth: "fit-content",
           }}
@@ -72,17 +77,12 @@ const OurTechnology = () => {
           .client-logo {
             object-fit: contain;
             max-height: 60px;
-          }
-          @media (max-width: 900px) {
-            .client-logo {
-              max-height: 50px;
-              max-width: 100px;
-            }
+            // max-width: 120px;
           }
           @media (max-width: 600px) {
             .client-logo {
-              max-height: 40px;
-              max-width: 80px;
+              max-height: 40px; /* smaller height for mobile */
+              max-width: 80px; /* smaller width for mobile */
             }
           }
 
@@ -96,15 +96,6 @@ const OurTechnology = () => {
           }
         `}</style>
       </Grid>
-
-      {/* Divider */}
-      <Divider
-        sx={{
-          width: { xs: "80%", md: "60%" },
-          bgcolor: "#E0E0E0",
-          mt: { xs: "16px", md: "20px" },
-        }}
-      />
     </Box>
   );
 };
