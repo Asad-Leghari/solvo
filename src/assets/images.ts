@@ -38,6 +38,12 @@ import TA from "./images/TA.png";
 
 import FFPic from "./images/FFPic.png";
 
+import EFA1 from "./images/services/EFA1.png";
+import CFD1 from "./images/services/CFD1.png";
+import CAD1 from "./images/services/CAD1.png";
+import clientimage from "./images/services/client.png";
+import servicecase from "./images/Services/servicecase.png";
+
 import Info1 from "./images/info-1.png";
 import Info2 from "./images/info-2.png";
 import InfoBg from "./images/info-bg.png";
@@ -136,6 +142,11 @@ const case_studies = {
 };
 
 const services = {
+  EFA1,
+  CAD1,
+  CFD1,
+  clientimage,
+  servicecase,
   CAD: {
     Modeling3D,
     Assembly,
