@@ -141,32 +141,40 @@ const Information = () => {
         gap={"36px"}
         // border={"1px solid red"}
       >
-        <Grid
-          container
-          flexDirection={"row"}
-          justifyContent={"flex-end"}
-          alignItems={"center"}
-          gap={"8px"}
-          width={"100%"}
-        >
+        <Grid container justifyContent="end" alignItems="center" gap="20px">
           <Button
+            className="custom-swiper-prev-btn"
             variant="contained"
             sx={{
-              width: "fit-content",
-              height: "42px",
-              bgcolor: "#FFFFFF",
-              color: "primary.main",
+              bgcolor: "white",
+              color: "#0273BD",
+              textTransform: "capitalize",
+              borderRadius: "8px",
+              fontWeight: 600,
+              width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
+              height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
+              minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
             }}
             onClick={handlePrevSlide}
           >
-            <ArrowBackIcon />
+            <ArrowBackIcon sx={{ fontSize: { xs: 18, md: "inherit" } }} />
           </Button>
           <Button
+            className="custom-swiper-next-btn"
             variant="contained"
-            sx={{ width: "fit-content", height: "42px" }}
+            sx={{
+              bgcolor: "#0273BD",
+              color: "white",
+              textTransform: "capitalize",
+              borderRadius: "8px",
+              fontWeight: 600,
+              width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
+              height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
+              minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+            }}
             onClick={handleNextSlide}
           >
-            <ArrowForwardIcon />
+            <ArrowForwardIcon sx={{ fontSize: { xs: 18, md: "inherit" } }} />
           </Button>
         </Grid>
         <Grid
