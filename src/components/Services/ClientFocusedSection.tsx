@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import Head from "next/head";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import Image from "next/image";
 import images from "@/assets/images";
@@ -9,28 +8,24 @@ const ClientFocusedSection = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 6 },
-        // maxWidth: "1000px",
+        px: { xs: 2, md: "60px", xl: "300px" },
         py: 8,
-        // bgColor: "#88D8E8",
         backgroundColor: "#88D8E833",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      <Grid
-        container
-        spacing={15}
-        alignItems="center"
-        justifyContent={"center"}
-        // sx={{ backgroundColor: "88D8E8" }}
-      >
-        {/* LEFT SIDE - TEXT */}
-        <Grid item xs={12} md={6}>
-          <Box sx={{ maxWidth: 650 }}>
-            {" "}
-            {/* 👈 keeps text wrapped */}
+      <Grid container alignItems="center" justifyContent="center">
+        <Grid
+          flex={1.5}
+          sx={{
+            height: { xs: "auto", lg: "444px" },
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Box>
             <Typography
               variant="h5"
               sx={{
@@ -53,7 +48,7 @@ const ClientFocusedSection = () => {
               variant="body1"
               sx={{
                 lineHeight: 1.8,
-                color: "text.secondary",
+                color: "black",
                 mb: 3,
               }}
             >
@@ -72,7 +67,7 @@ const ClientFocusedSection = () => {
                 Ready to Take your projects to next level?
               </span>
             </Typography>
-            {/* Buttons like in your screenshot */}
+
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               <Button
                 variant="contained"
@@ -83,7 +78,6 @@ const ClientFocusedSection = () => {
                   height: "40px",
                   borderRadius: "12px",
                   textTransform: "capitalize",
-                  //   mt: "10px",
                   mb: "20px",
                 }}
               >
@@ -98,7 +92,6 @@ const ClientFocusedSection = () => {
                   color: "#0273BD",
                   borderRadius: "12px",
                   textTransform: "capitalize",
-                  //   mt: "10px",
                   mb: "20px",
                 }}
               >
@@ -108,25 +101,25 @@ const ClientFocusedSection = () => {
           </Box>
         </Grid>
 
-        {/* RIGHT SIDE - GREY PLACEHOLDER */}
         <Grid
-          item
-          xs={12}
-          md={6}
+          flex={1}
           sx={{
+            height: { xs: "auto", lg: "356px" },
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            alignSelf: "center",
+            justifyContent: "end",
           }}
         >
           <Image
             src={images.services.clientimage}
-            alt={"title"}
-            width={250}
-            height={250}
+            alt="Client Solutions"
+            width={368}
+            height={356}
             style={{
               objectFit: "cover",
+              borderRadius: "12px",
+              maxWidth: "100%",
+              height: "auto",
             }}
           />
         </Grid>

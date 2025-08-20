@@ -1,7 +1,7 @@
 "use client";
 
 import images from "@/assets/images";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import HeadingButton from "@/components/home/HeadingButton";

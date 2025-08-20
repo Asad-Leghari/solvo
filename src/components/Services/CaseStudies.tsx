@@ -5,10 +5,9 @@ import React, { useRef, useState } from "react";
 import HeadingButton from "../home/HeadingButton";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import Image from "next/image";
-// import images from "@/assets/images";
+import images from "@/assets/images";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import images from "@/assets/images";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,7 +29,7 @@ const slidesData = [
     description:
       "Our team conducted a detailed Finite Element Analysis (FEA) to optimize the stiffness and extend the fatigue life of rubber-to-metal bonded components. Through fea simulations and material behavior studies, we identified critical stress regions, implemented design improvements, and ensured long term performance under real world loading conditions.",
     buttonText: "View Case Study",
-    image: images.services.servicecase,
+    image: images.case_studies.CS1,
     width: "450px",
     height: "250px",
     logo: images.case_studies.BP,
@@ -43,7 +42,7 @@ const slidesData = [
     description:
       "Using Computational Fluid Dynamics (CFD) simulations, we analyzed and optimized airflow patterns within an industrial dehydrator system. The study identified bottlenecks, improved airflow, heat distribution and enhanced overall drying efficiency resulting in better product quality and reduced energy consumption.",
     buttonText: "View Case Study",
-    image: images.services.servicecase,
+    image: images.case_studies.CS2,
     width: "450px",
     height: "250px",
     logo: images.CSImage,
@@ -56,7 +55,7 @@ const slidesData = [
     description:
       "We have performed advanced Computational Fluid Dynamics (CFD) analysis to optimize the design of a radial vortex flow control device. By refining flow paths and reducing pressure losses, we enhanced hydraulic efficiency, improved operational stability and ensured reliable performance under varying system conditions.",
     buttonText: "View Case Study",
-    image: images.services.servicecase,
+    image: images.case_studies.CS3,
     width: "450px",
     height: "250px",
     logo: images.case_studies.Logo3,
@@ -120,27 +119,21 @@ const CaseStudies = () => {
       >
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Box
-              sx={{
-                width: "100%",
-                px: { xs: 2, lg: "300px" }, // responsive padding
-                borderRadius: "14px",
-              }}
-            >
+            <Box display="flex" justifyContent="center" px={{ xs: 2 }}>
               <Grid
                 size={12}
                 container
                 flexDirection={{ xs: "column", md: "row" }}
                 border={"1px solid #0273BD"}
                 p={{ xs: "8px", md: "50px" }}
-                // marginBottom={"80px"}
                 borderRadius={"8px"}
-                gap={{ xs: "40px", md: "0px" }}
                 sx={{
-                  minHeight: "400px", // Ensure consistent minimum height
-                  alignItems: "stretch", // Stretch content to fill height
+                  width: "1129px", // ✅ fixed width
+                  height: "550px", // ✅ fixed height
+                  position: "relative",
                 }}
               >
+                {/* Left Content */}
                 <Grid
                   flexDirection={"column"}
                   container
@@ -160,12 +153,7 @@ const CaseStudies = () => {
                       objectFit: "contain",
                     }}
                   />
-                  <Typography
-                    variant="h5"
-                    fontWeight={600}
-                    textAlign={"left"}
-                    // border={"1px solid red"}
-                  >
+                  <Typography variant="h5" fontWeight={600} textAlign={"left"}>
                     {slide.title}
                   </Typography>
                   <Typography variant="body1" textAlign={"left"}>
@@ -189,6 +177,8 @@ const CaseStudies = () => {
                     {slide.buttonText}
                   </Button>
                 </Grid>
+
+                {/* Right Image */}
                 <Grid
                   size={{ xs: 12, lg: 5 }}
                   container
@@ -212,18 +202,17 @@ const CaseStudies = () => {
           </SwiperSlide>
         ))}
         {/* Owl Carousel style dots */}
+        {/* Owl Carousel style dots + nav buttons */}
         <Box
           sx={{
-            width: "100%",
+            // width: "1123px",
             display: "flex",
             alignItems: "center",
+            // border: "2px solid black",
             justifyContent: "center",
-            // marginTop: -60,
-            py: "50px",
+            py: "20px",
             position: "relative",
             zIndex: "99999999",
-            // border: "1px solid red",
-            px: { xs: 2, lg: "300px" },
           }}
         >
           <Box
@@ -231,14 +220,15 @@ const CaseStudies = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              width: "100%",
-              maxWidth: "1440px", // limit width on large screens
+              width: "1123px",
+              // maxWidth: "1129px", // ✅ match the case study box width
             }}
           >
+            {/* ✅ Dots aligned with start of the box */}
             <Grid
               container
               gap="6px"
-              justifyContent="center"
+              justifyContent="flex-start"
               alignItems="center"
               sx={{ width: "auto" }}
             >
@@ -259,17 +249,18 @@ const CaseStudies = () => {
                       height: { xs: "10px", md: "12px" },
                       transition: "all 0.3s ease",
                       width: isActive
-                        ? { xs: "55px", md: "100px" } // active: 55px mobile, 100px desktop
-                        : { xs: "10px", md: "12px" }, // inactive: 10px mobile, 12px desktop
+                        ? { xs: "55px", md: "100px" }
+                        : { xs: "10px", md: "12px" },
                     }}
                   />
                 );
               })}
             </Grid>
-            {/* Navigation Buttons */}
+
+            {/* ✅ Buttons aligned with end of the box */}
             <Grid
               container
-              justifyContent="center"
+              justifyContent="flex-end"
               alignItems="center"
               gap="20px"
             >
@@ -282,9 +273,9 @@ const CaseStudies = () => {
                   textTransform: "capitalize",
                   borderRadius: "8px",
                   fontWeight: 600,
-                  width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
-                  height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
-                  minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                  width: { xs: 32, md: "fit-content" },
+                  height: { xs: 32, md: "fit-content" },
+                  minWidth: { xs: 32, md: "unset" },
                 }}
                 onClick={handlePrevSlide}
               >
@@ -299,9 +290,9 @@ const CaseStudies = () => {
                   textTransform: "capitalize",
                   borderRadius: "8px",
                   fontWeight: 600,
-                  width: { xs: 32, md: "fit-content" }, // 32px on mobile, auto on larger
-                  height: { xs: 32, md: "fit-cotent" }, // 32px on mobile, auto on larger
-                  minWidth: { xs: 32, md: "unset" }, // prevent MUI's default min width
+                  width: { xs: 32, md: "fit-content" },
+                  height: { xs: 32, md: "fit-content" },
+                  minWidth: { xs: 32, md: "unset" },
                 }}
                 onClick={handleNextSlide}
               >

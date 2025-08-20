@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Grid, Typography, Button, Box, Paper } from "@mui/material";
+import { Grid, Typography, Button, Box } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import images from "@/assets/images";
 
@@ -8,7 +8,7 @@ const DetailsSection: React.FC = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, xl: "300px" },
+        px: { xs: 2, md: "60px", xl: "300px" },
         py: 10,
         backgroundColor: "#f9f9f9",
         borderTopRightRadius: "10px",
@@ -19,30 +19,35 @@ const DetailsSection: React.FC = () => {
       <Grid
         container
         justifyContent="start"
+        alignItems={"center"}
         flexDirection={"column"}
         gap={"100px"}
         size={12}
       >
+        {/* grid 1 */}
         <Grid
           container
           direction={{ xs: "column-reverse", md: "row" }}
           alignItems="center"
           justifyContent={"space-between"}
           flexWrap={"nowrap"}
-          gap={{ xs: "20px", md: "0px" }}
+          gap={{ xs: "20px", md: "120px" }}
+          width={"100%"}
         >
-          <Grid container flex={1}>
+          <Grid container flex={1} justifyContent="start">
             <Image
               src={images.services.EFA1}
               alt="Finite Element Analysis"
               style={{
                 objectFit: "contain",
-                width: "480px",
-                height: "265px",
+                width: "100%", // ✅ responsive on mobile
+                height: "auto", // ✅ keep ratio
+                maxWidth: "480px", // ✅ same as web
+                maxHeight: "265px", // ✅ same as web
                 borderRadius: "29px",
               }}
-              width={300}
-              height={300}
+              width={480}
+              height={265}
             />
           </Grid>
           <Grid
@@ -51,7 +56,9 @@ const DetailsSection: React.FC = () => {
             justifyContent={"center"}
             gap={"20px"}
             height={"100%"}
-            width={"480px"}
+            // width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            flex={1}
+            // border={"1px solid red"}
           >
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
               Finite Element Analysis <br />
@@ -76,12 +83,16 @@ const DetailsSection: React.FC = () => {
             </Button>
           </Grid>
         </Grid>
+
+        {/* grid 2 */}
         <Grid
           container
           direction={{ xs: "column", md: "row" }}
           alignItems="center"
           justifyContent={"space-between"}
           flexWrap={"nowrap"}
+          gap={{ xs: "20px", md: "120px" }}
+          width={"100%"}
         >
           <Grid
             container
@@ -89,7 +100,8 @@ const DetailsSection: React.FC = () => {
             justifyContent={"center"}
             gap={"20px"}
             height={"100%"}
-            width={"480px"}
+            // width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            flex={1}
           >
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
               Finite Element Analysis <br />
@@ -113,40 +125,48 @@ const DetailsSection: React.FC = () => {
               Read More
             </Button>
           </Grid>
-          <Grid container height={"100%"} width={"480px"}>
+          <Grid container flex={1} justifyContent="end">
             <Image
               src={images.services.EFA1}
               alt="Finite Element Analysis"
               style={{
                 objectFit: "contain",
-                width: "480px",
-                height: "265px",
+                width: "100%", // ✅ responsive
+                height: "auto",
+                maxWidth: "480px", // ✅ web size
+                maxHeight: "265px",
                 borderRadius: "29px",
               }}
-              width={300}
-              height={300}
+              width={480}
+              height={265}
             />
           </Grid>
         </Grid>
+
+        {/* grid 3 */}
         <Grid
           container
           direction={{ xs: "column-reverse", md: "row" }}
           alignItems="center"
           justifyContent={"space-between"}
           flexWrap={"nowrap"}
+          gap={{ xs: "20px", md: "120px" }}
+          width={"100%"}
         >
-          <Grid container flex={1}>
+          <Grid container flex={1} justifyContent="start">
             <Image
               src={images.services.EFA1}
               alt="Finite Element Analysis"
               style={{
                 objectFit: "contain",
-                width: "480px",
-                height: "265px",
+                width: "100%", // ✅ responsive
+                height: "auto",
+                maxWidth: "480px", // ✅ web size
+                maxHeight: "265px",
                 borderRadius: "29px",
               }}
-              width={300}
-              height={300}
+              width={480}
+              height={265}
             />
           </Grid>
           <Grid
@@ -155,7 +175,8 @@ const DetailsSection: React.FC = () => {
             justifyContent={"center"}
             gap={"20px"}
             height={"100%"}
-            width={"480px"}
+            width={{ xs: "100%", md: "480px" }} // ✅ responsive text width
+            flex={1}
           >
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
               Finite Element Analysis <br />

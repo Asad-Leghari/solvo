@@ -52,34 +52,33 @@ const ProjectsSection = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 8 },
+        px: { xs: 2, md: "60px", xl: "300px" },
         py: 8,
         textAlign: "center",
-        maxWidth: "1400px", // keeps cards from being too wide
-        mx: "auto", // center container
       }}
     >
-      {/* Section Title */}
       <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
         Our <span style={{ color: "#1976d2" }}>Projects</span>
       </Typography>
-      <Typography variant="body1" sx={{ color: "text.secondary", mb: 6 }}>
+      <Typography variant="body1" sx={{ color: "black", mb: 6 }}>
         See how Solvo Products has helped its clients achieve their vision of
         digital innovation.
       </Typography>
 
-      {/* Projects Grid */}
-      <Grid container spacing={4} justifyContent="center">
+      <Grid
+        container
+        flexDirection={{ xs: "column", lg: "row" }}
+        justifyContent="center"
+        gap={"20px"}
+      >
         {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid flex={1} key={index}>
             <Card
               sx={{
                 borderRadius: 3,
                 p: 1,
                 boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
                 height: "100%",
-                maxWidth: 360, // makes each card narrower
-                mx: "auto", // center cards inside grid
               }}
             >
               {/* Grey Placeholder */}
@@ -134,15 +133,12 @@ const ProjectsSection = () => {
         ))}
       </Grid>
 
-      {/* Bottom Buttons */}
-      {/* Bottom Buttons */}
       <Grid
         container
         alignItems="center"
         justifyContent="space-between"
         sx={{ mt: 6 }}
       >
-        {/* Left Button */}
         <Button
           variant="contained"
           sx={{
@@ -158,7 +154,6 @@ const ProjectsSection = () => {
           View
         </Button>
 
-        {/* Right Buttons (Prev & Next) */}
         <Box sx={{ display: "flex", gap: 2 }}>
           <Button
             className="custom-swiper-prev-btn"
