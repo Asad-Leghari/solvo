@@ -1,0 +1,246 @@
+import Logo from "./images/Logo.png";
+import Hero from "./images/Hero.png";
+import Zap from "./images/zap.png";
+import Spiral from "./images/spiral.png";
+
+import LBI from "./images/home/leftBotImg.png";
+import LTI from "./images/home/leftTopImg.png";
+import RTI from "./images/home/rightbgimg.png";
+import DL from "./images/home/dotLine.png";
+
+import CH1 from "./images/home/case/1.png";
+import CH2 from "./images/home/case/2.png";
+import CH3 from "./images/home/case/3.png";
+import CH4 from "./images/home/case/4.png";
+import CH5 from "./images/home/case/5.png";
+import CH6 from "./images/home/case/6.png";
+
+import L1 from "./images/l1.png";
+import L2 from "./images/l2.png";
+import L3 from "./images/l3.png";
+import L4 from "./images/l4.png";
+import L5 from "./images/l5.png";
+
+import CAD from "./images/cad.png";
+import CFD from "./images/cfd.png";
+import FEA from "./images/fea.png";
+
+import CADM from "./images/CADM.png";
+import CFDM from "./images/CFDM.png";
+import FEAM from "./images/FEAM.png";
+
+import SA from "./images/SA.png";
+import CA from "./images/CA.png";
+import DA from "./images/DA.png";
+import NA from "./images/NA.png";
+import FF from "./images/FF.png";
+import TA from "./images/TA.png";
+
+import FFPic from "./images/FFPic.png";
+
+import EFA1 from "./images/services/EFA1.png";
+import CFD1 from "./images/services/CFD1.png";
+import CAD1 from "./images/services/CAD1.png";
+import clientimage from "./images/services/client.png";
+import servicecase from "./images/Services/servicecase.png";
+
+import Info1 from "./images/info-1.png";
+import Info2 from "./images/info-2.png";
+import InfoBg from "./images/info-bg.png";
+import InfoBg2 from "./images/info-bg2.png";
+
+import ContactImg from "./images/contactimg.png";
+import ContactFooterImg from "./images/contactFooterImg.png";
+import ContactFooterImg90 from "./images/contactImg90.png";
+
+import CSImage from "./images/cs-img.png";
+
+import Modeling3D from "./images/Services/CAD/3D Modeling.png";
+import Assembly from "./images/Services/CAD/Assembly.png";
+import Mold from "./images/Services/CAD/Mold.png";
+import ProductDesign from "./images/Services/CAD/Product Design.png";
+import ReverseEng from "./images/Services/CAD/Reverse Eng..png";
+import SheetMetal from "./images/Services/CAD/Sheet Metal.png";
+import Modeling3DIcon from "./images/Services/CAD/Model3D.png";
+import AssemblyIcon from "./images/Services/CAD/AssemblyDesignIcon.png";
+import MoldIcon from "./images/Services/CAD/MoldDesignIcon.png";
+import ProductDesignIcon from "./images/Services/CAD/ProductDesignIcon.png";
+import ReverseEngIcon from "./images/Services/CAD/ReverseEngineeringIcon.png";
+import SheetMetalIcon from "./images/Services/CAD/SheetMetalDesignIcon.png";
+
+import AirFlowAnalysis from "./images/Services/CFD/Airflow Analysis.png";
+import DesignOptimization from "./images/Services/CFD/Design optimisation.png";
+import HeatTransfer from "./images/Services/CFD/Heat Transfer.png";
+import Multiphase from "./images/Services/CFD/Multi Phase.png";
+import FluidStructureInteraction from "./images/Services/CFD/FSI.png";
+import TurboMachinery from "./images/Services/CFD/Turbo Machinery.png";
+import AirFlowAnalysisIcon from "./images/Services/CFD/AD.png";
+import DesignOptimizationIcon from "./images/Services/CFD/DOicon.png";
+import MultiphaseIcon from "./images/Services/CFD/MFFicon.png";
+import HeatTransferIcon from "./images/Services/CFD/HTAicon.png";
+import TurboMachineryIcon from "./images/Services/CFD/TMicon.png";
+
+import Composite from "./images/Services/FEA/Composite.png";
+import Dynamic from "./images/Services/FEA/Dynamic.png";
+import FatigueAndFracture from "./images/Services/FEA/Fatigue & Fracture.png";
+import NonLinear from "./images/Services/FEA/Non Linear.png";
+import StructuralAnalysis from "./images/Services/FEA/Structural Analysis1.png";
+import Thermal from "./images/Services/FEA/Thermal.png";
+import CompositeIcon from "./images/Services/FEA/CompositeIcon.png";
+import DynamicIcon from "./images/Services/FEA/DynamicIcon.png";
+import FatigueAndFractureIcon from "./images/Services/FEA/Fatigue.png";
+import NonLinearIcon from "./images/Services/FEA/Nonlinearicon.png";
+import StructuralAnalysisIcon from "./images/Services/FEA/SAicon.png";
+import ThermalIcon from "./images/Services/FEA/ThermaIcon.png";
+
+import CS1 from "./images/case-studies/CS1.jpg";
+import CS2 from "./images/case-studies/CS2.jpg";
+import CS3 from "./images/case-studies/CS3.png";
+import Logo3 from "./images/case-studies/L3.png";
+import BP from "./images/case-studies/bp.png";
+
+import R1 from "./images/reviews/R1.jpeg";
+import R2 from "./images/reviews/R2.jpeg";
+import R3 from "./images/reviews/R3.jpeg";
+
+const home = {
+  LBI,
+  LTI,
+  RTI,
+  DL,
+  CH1,
+  CH2,
+  CH3,
+  CH4,
+  CH5,
+  CH6,
+};
+
+const reviews = {
+  R1,
+  R2,
+  R3,
+};
+import bgsectionleft from "./images/bg-section-left.png";
+import bgsectionright from "./images/bg-section-right.png";
+
+import whoweare from "./images/who-we-are.png";
+
+// icons
+import audience from "./images/icons/audience.png";
+import handshake from "./images/icons/handshake.png";
+import idea from "./images/icons/idea.png";
+import quality_assurance from "./images/icons/quality-assurance.png";
+import verified from "./images/icons/verified.png";
+
+const case_studies = {
+  CS1,
+  CS2,
+  CS3,
+  BP,
+  Logo3,
+};
+
+const services = {
+  EFA1,
+  CAD1,
+  CFD1,
+  clientimage,
+  servicecase,
+  CAD: {
+    Modeling3D,
+    Assembly,
+    Mold,
+    ProductDesign,
+    ReverseEng,
+    SheetMetal,
+    icons: {
+      Modeling3DIcon,
+      AssemblyIcon,
+      MoldIcon,
+      ProductDesignIcon,
+      ReverseEngIcon,
+      SheetMetalIcon,
+    },
+  },
+  CFD: {
+    AirFlowAnalysis,
+    DesignOptimization,
+    HeatTransfer,
+    Multiphase,
+    TurboMachinery,
+    FluidStructureInteraction,
+    icons: {
+      AirFlowAnalysisIcon,
+      DesignOptimizationIcon,
+      HeatTransferIcon,
+      MultiphaseIcon,
+      TurboMachineryIcon,
+    },
+  },
+  FEA: {
+    Composite,
+    Dynamic,
+    FatigueAndFracture,
+    NonLinear,
+    StructuralAnalysis,
+    Thermal,
+    icons: {
+      CompositeIcon,
+      DynamicIcon,
+      FatigueAndFractureIcon,
+      NonLinearIcon,
+      StructuralAnalysisIcon,
+      ThermalIcon,
+    },
+  },
+};
+
+const images = {
+  home,
+  Logo,
+  Hero,
+  Zap,
+  Spiral,
+  L1,
+  L2,
+  L3,
+  L4,
+  L5,
+  CAD,
+  CFD,
+  FEA,
+  CADM,
+  CFDM,
+  FEAM,
+  SA,
+  CA,
+  DA,
+  NA,
+  FF,
+  TA,
+  FFPic,
+  Info1,
+  Info2,
+  InfoBg,
+  InfoBg2,
+  bgsectionleft,
+  bgsectionright,
+  ContactImg,
+  ContactFooterImg,
+  ContactFooterImg90,
+  CSImage,
+  services,
+  case_studies,
+  reviews,
+  whoweare,
+
+  // Icons
+  audience,
+  handshake,
+  idea,
+  quality_assurance,
+  verified,
+};
+
+export default images;

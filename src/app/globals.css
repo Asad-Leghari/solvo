@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@theme {
+  /* --color-white: #ffffff;
+  --color-white-800: rgba(255, 255, 255, 0.8);
+  --color-black: #0e1034; */
+  --color-primary: #0273bd;
+  /* --color-secondary: #f87565; */
+
+  /* --font-rubik: "Rubik", sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
+
+  --default-font-family: var(--font-rubik); */
+}
+
+html,
+body {
+  max-width: 100vw;
+  /* overflow-x: hidden; */
+  background-color: #fef7ff;
+  /* border: 1px solid red; */
+  /* font-size: 10px; */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* outline: 1px solid red; */
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  /* padding-bottom: 50px; */
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  padding-bottom: 40px;
+}
+
+/* Large screens (keep your original big size and position) */
+.spiral-image {
+  object-fit: contain !important;
+  width: 800px !important;
+  height: 1040px !important;
+  position: absolute !important;
+  top: -140% !important;
+  left: 200px !important;
+  opacity: 0.5;
+  /* transform: scaleX(-1); mirrored */
+}
+
+@media (max-width: 768px) {
+  .spiral-image {
+    top: -170% !important;
+    left: 10% !important; /* move right from center */
+    width: 330px !important;
+    height: 330px !important;
+    opacity: 0.2 !important;
+  }
+}
