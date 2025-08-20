@@ -1,4 +1,5 @@
 import images from "@/assets/images";
+import { Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -17,10 +18,12 @@ const BgSection = ({ heading, text }: BgSectionProps) => {
         width={500}
         className="object-cover absolute left-0 top-0 z-0 hidden md:block"
       />
-      <h1 className="text-[24px] md:text-[32px]">{heading}</h1>
-      <p className="w-[90%] md:w-[50%] text-center text-[14px] md:text-[24px] mt-2">
+      <Stack sx={{width:"60%", alignItems:"center", justifyContent:"center"}}>
+        <Typography variant="h5">{heading}</Typography>
+      <Typography variant="p">
         {text}
-      </p>
+      </Typography>
+      </Stack>
       <Image
         src={images.bgsectionright.src}
         alt="Background Image"

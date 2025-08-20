@@ -33,7 +33,7 @@ const SlidesComponent = () => {
       container
       flexDirection={isSmall ? "column" : "row"}
       gap={"10px"}
-      width={"100%"}
+      width={"91%"}
       flexWrap={"nowrap"}
       py={2}
     >

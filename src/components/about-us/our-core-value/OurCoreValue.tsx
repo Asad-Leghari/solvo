@@ -1,6 +1,6 @@
+"use client";
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import { Box, Card, CardContent, Typography, Grid, Stack, useTheme, useMediaQuery } from "@mui/material";
 import images from "@/assets/images";
 import Image from "next/image";
 
@@ -44,46 +44,29 @@ const coreValues = [
 ];
 
 const OurCoreValue = () => {
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <div className="flex flex-col items-center justify-center gap-3 !my-8">
-      <h1 className="text-[24px] md:text-[36px] leading-8">
-        Our <span className="text-primary">Core Value</span>
-      </h1>
-      <div className="w-[90%] md:w-[80%] grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-0 !mt-3 md:!mt-12">
-        {coreValues.map((value, index) => (
-          <Card
-            key={index}
-            sx={{
-              minWidth: 275,
-              boxShadow: "0px 4px 28px 0px #0000000F",
-              p: 0,
-            }}
-          >
-            <CardContent
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                textAlign: "center",
-                mt: 0,
-                rowGap: 4,
-                padding: "32px",
-              }}
-            >
-              <Image
-                src={value.icon}
-                alt={value.title}
-                height={64}
-                width={64}
-                className="w-16 h-16 mb-4"
-              />
-              <h2 className="text-lg font-semibold">{value.title}</h2>
-              <p className="text-sm text-gray-600">{value.description}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
+    <Stack width={"100%"} alignItems={"center"} padding={4} marginTop={2}>
+      <Stack width={"66%"} alignItems={"center"}>
+        <Typography variant="h5">Our <span style={{ color: "#0273BD" }}>Core Values</span></Typography>
+        <Stack direction={isSmall ? "column" : "row"} justifyContent={"center"} flexWrap={isSmall ? "nowrap" : "wrap"} marginTop={4}>
+          {
+            coreValues.map((value, idx) => {
+              return <Stack margin={1}>
+                <Card sx={{ height: "325px", width: "359px", alignItems: "center", padding: 3, borderRadius: "19px", boxShadow: "0px 4px 28px 0px #0000000F", }}>
+                  <Stack width={"100%"} height={"100%"} alignItems={"center"} spacing={2} justifyContent={"center"}>
+                    <img src={value.icon} style={{ height: "60px", width: "60px" }} />
+                    <Typography fontSize={"24px"} fontWeight={400}>{value.title}</Typography>
+                    <Typography variant="body1">{value.description}</Typography>
+                  </Stack>
+                </Card>
+              </Stack>
+            })
+          }
+        </Stack>
+      </Stack>
+    </Stack>
   );
 };
 

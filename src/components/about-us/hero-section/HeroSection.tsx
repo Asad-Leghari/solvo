@@ -1,25 +1,21 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 
 const HeroSection = () => {
   return (
     <Grid
-      container
-      flexDirection={"column"}
-      justifyContent={"start"}
-      gap={"28px"}
       sx={{
-        backgroundImage:
+        height:"604px",
+        display:"flex",
+        flexDirection:"column",
+        alignItems:"center",
+        paddingTop:"100px",
+         backgroundImage:
           "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
-        width: "100%",
-        paddingBottom: "200px",
-        py: "100px",
-        px: { xs: 2, xl: "300px" },
       }}
-      height={"734px"}
-      className="flex flex-col items-center justify-center py-16"
     >
-      <Typography variant="h4">
+     <Stack sx={{width:"62.5%", alignItems:"center"}} spacing={3}>
+       <Typography variant="h4">
         What is <span className="text-primary">Solvo Engineering</span>
       </Typography>
       <Typography variant="h6" textAlign={"center"}>
@@ -29,6 +25,7 @@ const HeroSection = () => {
         of our clients.
       </Typography>
       <Button variant="contained">let's Connect</Button>
+     </Stack>
     </Grid>
   );
 };
