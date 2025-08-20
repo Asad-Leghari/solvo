@@ -23,7 +23,7 @@ const AboutUs = () => {
       <WhoWeAre />
       <BgSection
         heading="Our Mission"
-        text="To be the leading CAE consulting firm, driving innovation and excellence to empower businesses, startups globally with advanced engineering solutions and technologies."
+        text="To be the leading CAE consulting firm, driving innovation and excellence to empower businesses, startups globally with advanced engineering solutions and technologies.To be the leading CAE consulting firm, driving innovation and excellence to empower businesses, startups globally with advanced engineering solutions and technologies."
       />
       <Reviews />
       <ExperienceCounter />

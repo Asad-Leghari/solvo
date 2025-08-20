@@ -24,7 +24,6 @@ const WhoWeAre = () => {
         justifyContent: "center",
         position: "relative",
         padding: "20px",
-        border: "1px solid red",
       }}
     >
       {/* Responsive Video */}
@@ -36,7 +35,7 @@ const WhoWeAre = () => {
           borderRadius: "20px",
           overflow: "hidden",
           position: "absolute",
-          top: "-336px",
+          top: "-200px",
           zIndex: 10,
         }}
         padding={"20px"}
@@ -49,7 +48,7 @@ const WhoWeAre = () => {
           loop
           playsInline
           style={{
-            width: "100%",
+            width: "1010px",
             height: isSmall ? "220px" : "420px",
             objectFit: "cover",
             borderRadius: "20px",
@@ -62,13 +61,14 @@ const WhoWeAre = () => {
         direction={isSmall ? "column" : "row"}
         sx={{
           width: "100%",
-          maxWidth: "1050px",
-          mt: { xs: "80px", md: "310px" },
+          // maxWidth: "1050px",
+          px: { xs: 2, xl: "300px" },
+          mt: { xs: "80px", md: "280px" },
           alignItems: "center",
           justifyContent: isSmall ? "center" : "space-between",
         }}
       >
-        <Stack>
+        <Stack sx={{ width: "62.5%" }}>
           <Typography variant="h5">
             Who We{" "}
             <Box component="span" sx={{ color: "primary.main" }}>
@@ -86,8 +86,8 @@ const WhoWeAre = () => {
           <Image
             src={images.whoweare.src}
             alt="Who We Are"
-            width={800}
-            height={800}
+            width={600}
+            height={600}
             style={{
               objectFit: "cover",
             }}
