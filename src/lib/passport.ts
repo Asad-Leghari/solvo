@@ -29,38 +29,11 @@ passport.use(
   )
 );
 
-// passport.use(
-//   new JwtStrategy(
-//     {
-//       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-//       secretOrKey: JWT_SECRET,
-//     },
-//     async (payload: { id: string }, done) => {
-//       console.log("👉 JWT payload received:", payload);
-//       await dbConnect();
-//       try {
-//         const user = await UserModel.findById(payload.id).select("-password");
-//         console.log("👉 User from DB:", user);
-//         if (!user) return done(null, false);
-//         return done(null, user);
-//       } catch (err) {
-//         console.error("❌ JWT strategy error:", err);
-//         return done(err as Error, false);
-//       }
-//     }
-//   )
-// );
-
-// export default passport;
-
 passport.use(
   new JwtStrategy(
     {
       jwtFromRequest: (req) => {
-        // ✅ Custom extractor for Next.js Request
         let token: string | null = null;
-
-        // In Next.js request, headers are a Map-like object
         const authHeader =
           (req as any)?.headers?.get?.("authorization") ||
           (req as any)?.headers?.authorization;
@@ -69,21 +42,21 @@ passport.use(
           token = authHeader.substring(7);
         }
 
-        console.log("👉 Extracted token:", token);
+        console.log("Extracted token:", token);
         return token;
       },
       secretOrKey: JWT_SECRET,
     },
     async (payload: { id: string }, done) => {
-      console.log("👉 JWT payload received:", payload);
+      console.log("JWT payload received:", payload);
       await dbConnect();
       try {
         const user = await UserModel.findById(payload.id).select("-password");
-        console.log("👉 User from DB:", user);
+        console.log("User from DB:", user);
         if (!user) return done(null, false);
         return done(null, user);
       } catch (err) {
-        console.error("❌ JWT strategy error:", err);
+        console.error("JWT strategy error:", err);
         return done(err as Error, false);
       }
     }

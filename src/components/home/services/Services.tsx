@@ -29,7 +29,6 @@ const Services = () => {
         </Typography>
       </Grid>
       <Box
-        // maxWidth="xl"
         sx={{
           display: "flex",
           flexDirection: "column",

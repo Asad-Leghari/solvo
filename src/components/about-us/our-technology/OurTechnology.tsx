@@ -30,9 +30,9 @@ const OurTechnology = () => {
         }}
         width={"100%"}
       >
-        <h1 className="text-[24px] md:text-[48px] leading-8">
+        <Typography variant="h5">
           Our <span style={{ color: "#0273bd" }}>Technology</span>
-        </h1>
+        </Typography>
       </Grid>
 
       {/* Scrolling Logos */}
