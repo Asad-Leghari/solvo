@@ -13,8 +13,7 @@ const OurTechnology = () => {
         flexDirection: "column",
         alignItems: "center",
         gap: "10px",
-        px: { xs: 2, xl: "300px" },
-        // border: "1px solid red",
+        px: { xs: 2, xl: "300px", lg: "100px" },
         width: "100%",
       }}
     >
@@ -41,7 +40,7 @@ const OurTechnology = () => {
         sx={{
           overflow: "hidden",
           position: "relative",
-          width: { xs: "90vw", sm: "65vw" },
+          width: { xs: "90vw", sm: "65vw", xl: "1132px", md: "1100px" },
           // border: "1px solid red",
           py: "50px",
         }}

@@ -52,7 +52,7 @@ const ProjectsSection = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 8 },
+        px: { xs: 2, md: 8, lg: "100px" },
         py: 8,
         textAlign: "center",
         maxWidth: "1400px", // keeps cards from being too wide
@@ -63,7 +63,7 @@ const ProjectsSection = () => {
       <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
         Our <span style={{ color: "#1976d2" }}>Projects</span>
       </Typography>
-      <Typography variant="body1" sx={{ color: "text.secondary", mb: 6 }}>
+      <Typography variant="body1" sx={{ color: "black", mb: 6 }}>
         See how Solvo Products has helped its clients achieve their vision of
         digital innovation.
       </Typography>

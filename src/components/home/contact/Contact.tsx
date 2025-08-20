@@ -75,7 +75,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
     >
       <Box
         sx={{
-          px: { xs: 2, lg: "300px" },
+          px: { xs: 2, xl: "300px", lg: "100px" },
           width: "100%",
         }}
       >

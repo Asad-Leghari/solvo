@@ -8,28 +8,27 @@ const WelcomeSection = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 6 },
+        px: { xs: 2, xl: "300px", lg: "90px" }, // ✅ responsive padding
         py: 8,
-        backgroundColor: "#FF000019",
+        backgroundColor: "#FEF7FF", // ✅ new background
         mt: 3,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        // border: "2px solid black",
       }}
     >
-      <Grid
-        container
-        spacing={15}
-        alignItems="center"
-        justifyContent={"center"}
-        // sx={{ bgColor: "#FF6F91" }}
-      >
+      <Grid container spacing={0} alignItems="center" justifyContent="center">
         {/* LEFT SIDE - TEXT */}
-        <Grid item xs={12} md={6}>
-          <Box sx={{ maxWidth: 650 }}>
-            {" "}
-            {/* 👈 keeps text wrapped */}
+        <Grid
+          container
+          sx={{
+            width: { xs: "100%", md: "650px" }, // ✅ fixed width on web, full width on mobile
+            height: { xs: "auto", md: "420px" }, // ✅ fixed height only on web
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Box sx={{ width: "100%" }}>
             <Typography
               variant="h5"
               sx={{
@@ -42,20 +41,12 @@ const WelcomeSection = () => {
                 our Partner In Serving Best Engineering Solutions
               </span>
             </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                mb: 2,
-              }}
-            >
-              Your Vision, Our Expertise
-            </Typography>
+
             <Typography
               variant="body1"
               sx={{
                 lineHeight: 1.8,
-                color: "text.secondary",
+                color: "black",
                 mb: 3,
               }}
             >
@@ -65,13 +56,14 @@ const WelcomeSection = () => {
               Expertise And Advanced Technology, We Ensure To Transform Your
               Vision Into Real-Time, Functional, And High-Performance Solutions.
             </Typography>
-            {/* Buttons like in your screenshot */}
+
+            {/* Buttons */}
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               <Button
                 variant="contained"
                 endIcon={<ArrowRightIcon />}
                 sx={{
-                  width: "30%",
+                  width: { xs: "auto", md: "30%" }, // ✅ auto on mobile, fixed on web
                   height: "40px",
                   borderRadius: "12px",
                   textTransform: "capitalize",
@@ -84,25 +76,27 @@ const WelcomeSection = () => {
           </Box>
         </Grid>
 
-        {/* RIGHT SIDE - GREY PLACEHOLDER */}
+        {/* RIGHT SIDE - IMAGE */}
         <Grid
-          item
-          xs={12}
-          md={6}
+          container
           sx={{
+            width: { xs: "100%", md: "423px" }, // ✅ fixed width on web
+            height: { xs: "auto", md: "366px" }, // ✅ fixed height on web
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            alignSelf: "center",
           }}
         >
           <Image
             src={images.services.clientimage}
             alt={"title"}
-            width={300}
-            height={280}
+            width={423}
+            height={366}
             style={{
               objectFit: "cover",
+              borderRadius: "12px",
+              maxWidth: "100%",
+              height: "auto",
             }}
           />
         </Grid>
