@@ -31,7 +31,7 @@ const WhoWeAre = () => {
         sx={{
           width: "100%",
           maxWidth: "1123px",
-          height: "587px", 
+          height: "587px",
           borderRadius: "20px",
           overflow: "hidden",
           position: "absolute",
@@ -61,13 +61,14 @@ const WhoWeAre = () => {
         direction={isSmall ? "column" : "row"}
         sx={{
           width: "100%",
-          maxWidth: "1050px",
+          // maxWidth: "1050px",
+          px: { xs: 2, xl: "300px" },
           mt: { xs: "80px", md: "280px" },
           alignItems: "center",
           justifyContent: isSmall ? "center" : "space-between",
         }}
       >
-        <Stack sx={{width:"62.5%"}}>
+        <Stack sx={{ width: "62.5%" }}>
           <Typography variant="h5">
             Who We{" "}
             <Box component="span" sx={{ color: "primary.main" }}>

@@ -23,7 +23,13 @@ const metrics = [
 const ExperienceCounter = () => {
   return (
     <>
-      <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={23} padding={5}>
+      <Stack
+        direction={"row"}
+        alignItems={"center"}
+        justifyContent={"center"}
+        gap={23}
+        padding={5}
+      >
         {metrics.map((metric, index) => (
           <Box
             key={index}
@@ -39,7 +45,7 @@ const ExperienceCounter = () => {
         ))}
       </Stack>
       <Box className="w-full flex justify-center">
-        <Divider sx={{ width: "60%", bgcolor: "#E0E0E0", mt: "20px" }} />
+        <Divider sx={{ width: "50%", bgcolor: "#E0E0E0", mt: "20px" }} />
       </Box>
     </>
   );

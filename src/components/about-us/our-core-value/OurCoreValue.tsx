@@ -1,6 +1,15 @@
 "use client";
 import React from "react";
-import { Box, Card, CardContent, Typography, Grid, Stack, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  Stack,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import images from "@/assets/images";
 import Image from "next/image";
 
@@ -49,21 +58,48 @@ const OurCoreValue = () => {
   return (
     <Stack width={"100%"} alignItems={"center"} padding={4} marginTop={2}>
       <Stack width={"66%"} alignItems={"center"}>
-        <Typography variant="h5">Our <span style={{ color: "#0273BD" }}>Core Values</span></Typography>
-        <Stack direction={isSmall ? "column" : "row"} justifyContent={"center"} flexWrap={isSmall ? "nowrap" : "wrap"} marginTop={4}>
-          {
-            coreValues.map((value, idx) => {
-              return <Stack margin={1}>
-                <Card sx={{ height: "325px", width: "359px", alignItems: "center", padding: 3, borderRadius: "19px", boxShadow: "0px 4px 28px 0px #0000000F", }}>
-                  <Stack width={"100%"} height={"100%"} alignItems={"center"} spacing={2} justifyContent={"center"}>
-                    <img src={value.icon} style={{ height: "60px", width: "60px" }} />
-                    <Typography fontSize={"24px"} fontWeight={400}>{value.title}</Typography>
+        <Typography variant="h5">
+          Our <span style={{ color: "#0273BD" }}>Core Values</span>
+        </Typography>
+        <Stack
+          direction={isSmall ? "column" : "row"}
+          justifyContent={"center"}
+          flexWrap={isSmall ? "nowrap" : "wrap"}
+          marginTop={4}
+        >
+          {coreValues.map((value, idx) => {
+            return (
+              <Stack key={idx} margin={1}>
+                <Card
+                  sx={{
+                    height: "325px",
+                    width: "359px",
+                    alignItems: "center",
+                    padding: 3,
+                    borderRadius: "19px",
+                    boxShadow: "0px 4px 28px 0px #0000000F",
+                  }}
+                >
+                  <Stack
+                    width={"100%"}
+                    height={"100%"}
+                    alignItems={"center"}
+                    spacing={2}
+                    justifyContent={"center"}
+                  >
+                    <img
+                      src={value.icon}
+                      style={{ height: "60px", width: "60px" }}
+                    />
+                    <Typography variant="h5" fontWeight={400}>
+                      {value.title}
+                    </Typography>
                     <Typography variant="body1">{value.description}</Typography>
                   </Stack>
                 </Card>
               </Stack>
-            })
-          }
+            );
+          })}
         </Stack>
       </Stack>
     </Stack>
