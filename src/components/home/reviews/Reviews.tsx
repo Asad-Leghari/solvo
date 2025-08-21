@@ -66,8 +66,6 @@ const Reviews = () => {
         bgcolor: "#E6FBFF",
         position: "relative",
         overflow: "hidden",
-        px: { xs: 2, md: "60px", xl: "300px" },
-        py: "40px",
       }}
     >
       {/* Background Spiral */}

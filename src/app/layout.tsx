@@ -34,7 +34,7 @@ export default function RootLayout({
           >
             <Navbar />
             <Box flex={1}>{children}</Box>
-            <Footer />
+            <Footer />/ 
           </Grid>
         </SolvoTheme>
       </body>
