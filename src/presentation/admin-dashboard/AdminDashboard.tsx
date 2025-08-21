@@ -93,7 +93,7 @@ const AdminDashboard = () => {
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 4 }}>
-        <Button
+        {/* <Button
           startIcon={<BuildIcon />}
           sx={{
             justifyContent: "flex-start",
@@ -108,7 +108,7 @@ const AdminDashboard = () => {
           onClick={() => setActiveTab("services")}
         >
           Services
-        </Button>
+        </Button> */}
 
         <Button
           startIcon={<GroupIcon />}
