@@ -10,21 +10,74 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  TextField,
   IconButton,
   Drawer,
-  Switch,
-  MenuItem,
+  useMediaQuery,
+  TextField,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
-import CollectionsIcon from "@mui/icons-material/Folder";
-import SettingsIcon from "@mui/icons-material/Settings";
+import BuildIcon from "@mui/icons-material/Build";
 import GroupIcon from "@mui/icons-material/Group";
+import ArticleIcon from "@mui/icons-material/Article";
+
+import UsersTable from "./tabs/UsersSection";
+import BlogsTable from "./tabs/BlogsSection";
+import ServicesTable from "./tabs/ServicesSection";
+import { useBlogStore } from "@/application/stores/blog/useBlogStore";
+import ServiceForm from "./form/ServiceForm";
+import UserForm from "./form/UserForm";
+import BlogForm from "./form/BlogForm";
 
 const AdminDashboard = () => {
+  const { createBlog } = useBlogStore();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"services" | "users" | "blogs">(
+    "services"
+  );
+  const [blogForm, setBlogForm] = useState({
+    title: "",
+    description: "",
+    image: "",
+    category: "",
+    createdBy: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBlogForm({
+      ...blogForm,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSave = async () => {
+    if (activeTab === "blogs") {
+      await createBlog(blogForm); // 🔥 create post
+      setBlogForm({
+        title: "",
+        description: "",
+        image: "",
+        category: "",
+        createdBy: "",
+      });
+    }
+    setFormOpen(false);
+  };
+
+  const isMobile = useMediaQuery("(max-width:600px)");
+
+  const renderTableBody = () => {
+    switch (activeTab) {
+      case "services":
+        return <ServicesTable />;
+      case "users":
+        return <UsersTable />;
+      case "blogs":
+        return <BlogsTable />;
+      default:
+        return null;
+    }
+  };
 
   const sidebarContent = (
     <Box
@@ -39,21 +92,22 @@ const AdminDashboard = () => {
         p: 2,
       }}
     >
-      {/* Sidebar Links */}
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 4 }}>
         <Button
-          startIcon={<CollectionsIcon />}
+          startIcon={<BuildIcon />}
           sx={{
             justifyContent: "flex-start",
             textTransform: "none",
-            color: "#333",
+            color: activeTab === "services" ? "#111" : "#333",
+            fontWeight: activeTab === "services" ? 600 : 400,
             borderRadius: "8px",
             px: 2,
             "&:hover": { bgcolor: "#f5f5f5" },
           }}
           fullWidth
+          onClick={() => setActiveTab("services")}
         >
-          Collections
+          Services
         </Button>
 
         <Button
@@ -61,33 +115,36 @@ const AdminDashboard = () => {
           sx={{
             justifyContent: "flex-start",
             textTransform: "none",
-            color: "#333",
+            color: activeTab === "users" ? "#111" : "#333",
+            fontWeight: activeTab === "users" ? 600 : 400,
             borderRadius: "8px",
             px: 2,
             "&:hover": { bgcolor: "#f5f5f5" },
           }}
           fullWidth
+          onClick={() => setActiveTab("users")}
         >
           Users
         </Button>
 
         <Button
-          startIcon={<SettingsIcon />}
+          startIcon={<ArticleIcon />}
           sx={{
             justifyContent: "flex-start",
             textTransform: "none",
-            color: "#333",
+            color: activeTab === "blogs" ? "#111" : "#333",
+            fontWeight: activeTab === "blogs" ? 600 : 400,
             borderRadius: "8px",
             px: 2,
             "&:hover": { bgcolor: "#f5f5f5" },
           }}
           fullWidth
+          onClick={() => setActiveTab("blogs")}
         >
-          Settings
+          Blogs
         </Button>
       </Box>
 
-      {/* Avatar */}
       <Box
         sx={{
           width: 40,
@@ -103,17 +160,14 @@ const AdminDashboard = () => {
 
   return (
     <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "#f9fafa" }}>
-      {/* Sidebar Desktop */}
+      {/* Sidebar for desktop */}
       <Box
-        sx={{
-          display: { xs: "none", md: "flex" },
-          flexDirection: "column",
-        }}
+        sx={{ display: { xs: "none", md: "flex" }, flexDirection: "column" }}
       >
         {sidebarContent}
       </Box>
 
-      {/* Sidebar Mobile (Drawer) */}
+      {/* Sidebar Drawer for mobile */}
       <Drawer
         anchor="left"
         open={sidebarOpen}
@@ -123,21 +177,18 @@ const AdminDashboard = () => {
         {sidebarContent}
       </Drawer>
 
-      {/* Main Content */}
-      <Box sx={{ flex: 1, p: { xs: 2, md: 3 } }}>
-        {/* Top Bar (mobile gets menu button) */}
+      {/* Main content */}
+      <Box sx={{ flex: 1, p: { xs: 1, sm: 2, md: 3 }, overflow: "hidden" }}>
+        {/* Header */}
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
+            justifyContent: "space-between",
             mb: 2,
-            flexWrap: "wrap",
-            gap: 2,
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            {/* Mobile Menu Button */}
             <IconButton
               onClick={() => setSidebarOpen(true)}
               sx={{ display: { md: "none" } }}
@@ -145,11 +196,14 @@ const AdminDashboard = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" sx={{ fontWeight: 600 }}>
-              Collections / users
+              Admin Dashboard /{" "}
+              <Box component="span" sx={{ fontWeight: 400 }}>
+                {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
+              </Box>
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+          <Box sx={{ display: "flex", gap: 1 }}>
             <Button
               variant="outlined"
               sx={{
@@ -163,6 +217,7 @@ const AdminDashboard = () => {
             >
               API Preview
             </Button>
+
             <Button
               variant="contained"
               sx={{
@@ -178,162 +233,219 @@ const AdminDashboard = () => {
           </Box>
         </Box>
 
-        {/* Search Bar */}
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            bgcolor: "white",
-            border: "1px solid #ddd",
-            borderRadius: "6px",
-            mb: 3,
-            px: 2,
-            py: 0.5,
-          }}
-        >
-          <SearchIcon sx={{ color: "#777" }} />
-          <TextField
-            placeholder='Search term or filter like created > "2022-01-01"...'
-            variant="standard"
-            InputProps={{ disableUnderline: true }}
-            sx={{ flex: 1, ml: 1 }}
-          />
-        </Box>
-
-        {/* Table */}
+        {/* Table wrapper with scroll */}
         <Box
           sx={{
             bgcolor: "white",
-            borderRadius: "6px",
+            borderRadius: 1,
             border: "1px solid #ddd",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-            overflowX: "auto", // ✅ scrollable on mobile
+            overflow: "auto", // scroll only table
+            maxHeight: "70vh", // table body scrollable
+            maxWidth: { md: "600px", xs: "400px", lg: "1070px", xl: "100%" },
           }}
         >
-          <Table sx={{ minWidth: 800 }}>
-            <TableHead>
-              <TableRow>
-                <TableCell padding="checkbox">
-                  <input type="checkbox" />
+          <Table
+            stickyHeader
+            sx={{
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+            }}
+          >
+            <TableHead sx={{ borderRadius: "20px" }}>
+              <TableRow
+                sx={{
+                  background: "linear-gradient(135deg, #f9fafb83, #eaeaea59)",
+                }}
+              >
+                <TableCell
+                  sx={{
+                    fontWeight: 700,
+                    color: "#222",
+                    fontSize: "0.95rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    borderBottom: "2px solid #ddd",
+                    py: 2,
+                  }}
+                >
+                  ID
                 </TableCell>
-                <TableCell>id</TableCell>
-                <TableCell>email</TableCell>
-                <TableCell>emailVisibility</TableCell>
-                <TableCell>verified</TableCell>
-                <TableCell>name</TableCell>
-                <TableCell>avatar</TableCell>
-                <TableCell>created</TableCell>
-                <TableCell>updated</TableCell>
-                <TableCell>...</TableCell>
+
+                {activeTab === "services" && (
+                  <>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Name
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Description
+                    </TableCell>
+                  </>
+                )}
+
+                {activeTab === "users" && (
+                  <>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Username
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Email
+                    </TableCell>
+                  </>
+                )}
+
+                {activeTab === "blogs" && (
+                  <>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Title
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Description
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Image
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Category
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Created By
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        color: "#222",
+                      }}
+                    >
+                      Created At
+                    </TableCell>
+                  </>
+                )}
               </TableRow>
             </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell colSpan={10} align="center" sx={{ py: 4 }}>
-                  No records found.
-                  <Box>
-                    <Button
-                      variant="outlined"
-                      sx={{
-                        mt: 2,
-                        textTransform: "none",
-                        borderRadius: "6px",
-                        borderColor: "#ddd",
-                        color: "#333",
-                        bgcolor: "white",
-                        "&:hover": { bgcolor: "#f5f5f5" },
-                      }}
-                      onClick={() => setFormOpen(true)}
-                    >
-                      + New record
-                    </Button>
-                  </Box>
-                </TableCell>
-              </TableRow>
+
+            <TableBody
+              sx={{
+                "& .MuiTableRow-root": {
+                  transition: "all 0.25s ease-in-out",
+                },
+                "& .MuiTableRow-root:nth-of-type(odd)": {
+                  bgcolor: "#fcfcfc",
+                },
+                "& .MuiTableRow-root:hover": {
+                  bgcolor: "#f5faff",
+                  transform: "scale(1.002)",
+                },
+                "& .MuiTableCell-root": {
+                  borderBottom: "1px solid #eee",
+                  color: "#333",
+                  fontSize: "0.9rem",
+                  py: 1.5,
+                  px: 2,
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  maxWidth: "200px",
+                },
+              }}
+            >
+              {renderTableBody()}
             </TableBody>
           </Table>
         </Box>
-
-        {/* Footer */}
-        <Typography
-          variant="caption"
-          sx={{ mt: 2, display: "block", color: "#777" }}
-        >
-          Total found: 0
-        </Typography>
       </Box>
 
-      {/* Right Side Drawer (Form) */}
+      {/* Drawer for new record */}
       <Drawer
         anchor="right"
         open={formOpen}
         onClose={() => setFormOpen(false)}
         PaperProps={{
-          sx: { width: { xs: "100%", sm: "500px" }, p: 3, bgcolor: "#fafafa" },
+          sx: {
+            width: { xs: "85%", sm: "60%", md: "500px" },
+            maxWidth: "400px",
+            p: { xs: 2, sm: 3 },
+            bgcolor: "#fafafa",
+          },
         }}
       >
-        <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
-          Create New Record
-        </Typography>
-
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <TextField label="ID" variant="outlined" fullWidth />
-          <TextField label="Email" type="email" variant="outlined" fullWidth />
-          <TextField
-            label="Email Visibility"
-            variant="outlined"
-            select
-            fullWidth
-          >
-            <MenuItem value="public">Public</MenuItem>
-            <MenuItem value="private">Private</MenuItem>
-          </TextField>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <Typography>Verified</Typography>
-            <Switch />
-          </Box>
-          <TextField label="Name" variant="outlined" fullWidth />
-          <TextField label="Avatar URL" variant="outlined" fullWidth />
-          <TextField
-            label="Created Date"
-            type="date"
-            InputLabelProps={{ shrink: true }}
-            fullWidth
-          />
-          <TextField
-            label="Updated Date"
-            type="date"
-            InputLabelProps={{ shrink: true }}
-            fullWidth
-          />
-        </Box>
-
-        <Box sx={{ display: "flex", gap: 2, mt: 4 }}>
-          <Button
-            variant="contained"
-            sx={{
-              textTransform: "none",
-              bgcolor: "#111",
-              "&:hover": { bgcolor: "#333" },
-            }}
-            fullWidth
-          >
-            Save
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              textTransform: "none",
-              borderColor: "#ddd",
-              color: "#333",
-              "&:hover": { bgcolor: "#f5f5f5" },
-            }}
-            onClick={() => setFormOpen(false)}
-            fullWidth
-          >
-            Cancel
-          </Button>
-        </Box>
+        {" "}
+        <Typography
+          variant="h6"
+          sx={{
+            mb: 2,
+            fontWeight: 600,
+            fontSize: { xs: "1.1rem", sm: "1.25rem" },
+          }}
+        >
+          {" "}
+          Create New {activeTab.charAt(0).toUpperCase() +
+            activeTab.slice(1)}{" "}
+          Record{" "}
+        </Typography>{" "}
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+          {" "}
+          {activeTab === "services" && <ServiceForm />}{" "}
+          {activeTab === "users" && <UserForm />}
+          {activeTab === "blogs" && (
+            <BlogForm blogForm={blogForm} handleChange={handleChange} />
+          )}
+        </Box>{" "}
       </Drawer>
     </Box>
   );
