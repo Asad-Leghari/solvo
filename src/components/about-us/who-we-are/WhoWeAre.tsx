@@ -40,6 +40,7 @@ const WhoWeAre = () => {
         }}
         paddingRight={isSmall ? 0 : 15}
         paddingLeft={isSmall ? 0 : 15}
+        mb={"100px"}
       >
         <Stack sx={{ width:  "100%"  }} >
           <Typography variant="h5">
