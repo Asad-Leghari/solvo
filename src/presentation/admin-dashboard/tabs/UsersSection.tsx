@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import {
-  TableBody,
   TableRow,
   TableCell,
   CircularProgress,

@@ -23,13 +23,46 @@ import ArticleIcon from "@mui/icons-material/Article";
 import UsersTable from "./tabs/UsersSection";
 import BlogsTable from "./tabs/BlogsSection";
 import ServicesTable from "./tabs/ServicesSection";
+import { useBlogStore } from "@/application/stores/blog/useBlogStore";
+import ServiceForm from "./form/ServiceForm";
+import UserForm from "./form/UserForm";
+import BlogForm from "./form/BlogForm";
 
 const AdminDashboard = () => {
+  const { createBlog } = useBlogStore();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"services" | "users" | "blogs">(
     "services"
   );
+  const [blogForm, setBlogForm] = useState({
+    title: "",
+    description: "",
+    image: "",
+    category: "",
+    createdBy: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBlogForm({
+      ...blogForm,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSave = async () => {
+    if (activeTab === "blogs") {
+      await createBlog(blogForm); // 🔥 create post
+      setBlogForm({
+        title: "",
+        description: "",
+        image: "",
+        category: "",
+        createdBy: "",
+      });
+    }
+    setFormOpen(false);
+  };
 
   const isMobile = useMediaQuery("(max-width:600px)");
 
@@ -391,7 +424,28 @@ const AdminDashboard = () => {
           },
         }}
       >
-        {/* ... form stays same ... */}
+        {" "}
+        <Typography
+          variant="h6"
+          sx={{
+            mb: 2,
+            fontWeight: 600,
+            fontSize: { xs: "1.1rem", sm: "1.25rem" },
+          }}
+        >
+          {" "}
+          Create New {activeTab.charAt(0).toUpperCase() +
+            activeTab.slice(1)}{" "}
+          Record{" "}
+        </Typography>{" "}
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+          {" "}
+          {activeTab === "services" && <ServiceForm />}{" "}
+          {activeTab === "users" && <UserForm />}
+          {activeTab === "blogs" && (
+            <BlogForm blogForm={blogForm} handleChange={handleChange} />
+          )}
+        </Box>{" "}
       </Drawer>
     </Box>
   );

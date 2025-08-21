@@ -56,8 +56,8 @@ const OurCoreValue = () => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Stack width={"100%"} alignItems={"center"} padding={4} marginTop={2}>
-      <Stack width={"66%"} alignItems={"center"}>
+    <Stack width={"100%"} alignItems={"center"}  marginTop={3} marginBottom={3}>
+      <Stack width={"100%"} alignItems={"center"}>
         <Typography variant="h5">
           Our <span style={{ color: "#0273BD" }}>Core Values</span>
         </Typography>
@@ -69,7 +69,7 @@ const OurCoreValue = () => {
         >
           {coreValues.map((value, idx) => {
             return (
-              <Stack key={idx} margin={1}>
+              <Stack key={idx} margin={1} >
                 <Card
                   sx={{
                     height: "325px",
@@ -78,6 +78,7 @@ const OurCoreValue = () => {
                     padding: 3,
                     borderRadius: "19px",
                     boxShadow: "0px 4px 28px 0px #0000000F",
+                    border:"2px solid red"
                   }}
                 >
                   <Stack
@@ -87,14 +88,20 @@ const OurCoreValue = () => {
                     spacing={2}
                     justifyContent={"center"}
                   >
-                    <img
+                 <Stack alignItems={"center"}>
+                     <img
                       src={value.icon}
                       style={{ height: "60px", width: "60px" }}
                     />
-                    <Typography variant="h5" fontWeight={400}>
+                 </Stack>
+                  <Stack textAlign={"center"}>
+                      <Typography variant="h5" fontWeight={400}>
                       {value.title}
                     </Typography>
-                    <Typography variant="body1">{value.description}</Typography>
+                  </Stack>
+                   <Stack textAlign={"center"}>
+                     <Typography variant="body1">{value.description}</Typography>
+                   </Stack>
                   </Stack>
                 </Card>
               </Stack>

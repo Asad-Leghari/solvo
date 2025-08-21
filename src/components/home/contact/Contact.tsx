@@ -94,7 +94,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
           </Typography>
 
           {/* ✅ Bullet Points */}
-          <Grid container flexDirection={"column"} gap={"8px"} mt={1}>
+          {/* <Grid container flexDirection={"column"} gap={"8px"} mt={1}>
             <Grid container alignItems="center" gap={"8px"}>
               <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
               <Typography variant="body1" sx={{ color: "#0273BD" }}>
@@ -107,7 +107,7 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
                 You’ll be talking to CAE Engineers (no account).
               </Typography>
             </Grid>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         <Grid container flexDirection={"column"} gap={"40px"} mt={"10px"}>
