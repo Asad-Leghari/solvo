@@ -146,6 +146,7 @@ import bgsectionleft from "./images/bg-section-left.png";
 import bgsectionright from "./images/bg-section-right.png";
 import bgdots from "./images/Dots.png";
 import bgdotsTilted from "./images/DotsTilted.png";
+import circles from "./images/Circles.png";
 import whoweare from "./images/who-we-are.png";
 
 // icons
@@ -258,6 +259,7 @@ const images = {
   whoweare,
   bgdots,
   bgdotsTilted,
+  circles,
 
   // Icons
   audience,

@@ -19,7 +19,7 @@ const BgSection = ({ heading, text }: BgSectionProps) => {
       sx={{
         bgcolor: "primary.main",
         color: "white",
-        py: 8, 
+        py: 8,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -28,12 +28,11 @@ const BgSection = ({ heading, text }: BgSectionProps) => {
         overflow: "hidden",
       }}
     >
-
       <Box
         sx={{
           position: "absolute",
           left: 0,
-          top: "4rem",
+          top: "0rem",
           zIndex: 0,
           display: { xs: "none", md: "block" },
         }}
@@ -66,7 +65,7 @@ const BgSection = ({ heading, text }: BgSectionProps) => {
         sx={{
           position: "absolute",
           right: 0,
-          top: "4rem",
+          top: 0,
           zIndex: 0,
           display: { xs: "none", md: "block" },
         }}
