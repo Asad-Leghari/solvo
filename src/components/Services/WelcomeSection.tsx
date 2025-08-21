@@ -18,7 +18,7 @@ const WelcomeSection = () => {
       }}
     >
       <Grid
-        flexDirection={{ xs: "column", xl: "row" }}
+        flexDirection={{ xs: "column", md: "row" }}
         container
         alignItems="center"
         justifyContent="center"
