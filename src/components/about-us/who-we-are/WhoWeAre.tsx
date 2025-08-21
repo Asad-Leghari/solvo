@@ -40,6 +40,7 @@ const WhoWeAre = () => {
         }}
         paddingRight={isSmall ? 0 : 15}
         paddingLeft={isSmall ? 0 : 15}
+        mb={"100px"}
       >
         <Stack sx={{ width:  "100%"  }} >
           <Typography variant="h5">
@@ -59,8 +60,8 @@ const WhoWeAre = () => {
           <Image
             src={images.whoweare.src}
             alt="Who We Are"
-            width={isSmall ? 700 : 300}
-            height={isSmall ? 700 : 300}
+            width={isSmall ? 700 : 400}
+            height={isSmall ? 700 : 400}
             style={{
               objectFit: "cover",
             }}
