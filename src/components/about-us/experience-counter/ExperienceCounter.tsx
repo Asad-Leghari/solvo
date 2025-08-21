@@ -1,4 +1,5 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
+"use client";
+import { Box, Divider, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 
 const metrics = [
@@ -21,27 +22,36 @@ const metrics = [
 ];
 
 const ExperienceCounter = () => {
+    const theme = useTheme();
+    const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <Stack
         direction={"row"}
         alignItems={"center"}
-        justifyContent={"center"}
-        gap={23}
-        padding={5}
+        justifyContent={isSmall ? "center" :"space-around"}
+        // gap={15}
+        paddingTop={3}
+        paddingBottom={3}
+        // paddingLeft={12}
+        // paddingRight={12}
+        width={"100%"}
       >
         {metrics.map((metric, index) => (
-          <Box
+          <Stack
             key={index}
-            display={"flex"}
-            flexDirection={"column"}
             alignItems={"center"}
+            justifyContent={"center"}
           >
-            <Typography fontSize={"36px"} color="#0273BD">
+            <Stack width={"100%"} alignItems={"center"}>
+              <Typography variant="h4" color="#0273BD">
               {metric.value}
             </Typography>
-            <Typography variant="body1">{metric.label}</Typography>
-          </Box>
+            </Stack>
+            <Stack width={"100%"} textAlign={"center"}>
+              <Typography variant="p">{metric.label}</Typography>
+            </Stack>
+          </Stack>
         ))}
       </Stack>
       <Box className="w-full flex justify-center">
@@ -49,6 +59,6 @@ const ExperienceCounter = () => {
       </Box>
     </>
   );
-};
+};  
 
 export default ExperienceCounter;

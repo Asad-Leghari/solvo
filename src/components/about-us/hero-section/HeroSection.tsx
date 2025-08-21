@@ -1,7 +1,10 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+"use client";
+import { Box, Button, Grid, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 
 const HeroSection = () => {
+   const theme = useTheme();
+    const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Grid
       sx={{
@@ -12,10 +15,10 @@ const HeroSection = () => {
         paddingTop: "100px",
         backgroundImage:
           "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
-        px: { xs: 2, xl: "300px" },
+
       }}
     >
-      <Stack sx={{ width: "100%", alignItems: "center" }} spacing={3}>
+      <Stack sx={{ width: "100%", alignItems: "center" }} spacing={3} paddingRight={isSmall ? 1:15} paddingLeft={isSmall ? 1:15}>
         <Typography variant="h4">
           What is <span className="text-primary">Solvo Engineering</span>
         </Typography>
