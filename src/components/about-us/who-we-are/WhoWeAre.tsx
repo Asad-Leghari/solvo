@@ -60,8 +60,8 @@ const WhoWeAre = () => {
           <Image
             src={images.whoweare.src}
             alt="Who We Are"
-            width={isSmall ? 700 : 300}
-            height={isSmall ? 700 : 300}
+            width={isSmall ? 700 : 400}
+            height={isSmall ? 700 : 400}
             style={{
               objectFit: "cover",
             }}
