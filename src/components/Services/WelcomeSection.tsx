@@ -18,7 +18,7 @@ const WelcomeSection = () => {
       }}
     >
       <Grid
-        flexDirection={{ xs: "column", xl: "row" }}
+        flexDirection={{ xs: "column", md: "row" }}
         container
         alignItems="center"
         justifyContent="center"
@@ -62,19 +62,29 @@ const WelcomeSection = () => {
           </Typography>
 
           {/* Buttons */}
-          <Button
-            variant="contained"
-            endIcon={<ArrowRightIcon />}
+          {/* Buttons */}
+          <Box
             sx={{
-              width: "fit-content", // ✅ auto on mobile, fixed on web
-              height: "40px",
-              borderRadius: "12px",
-              textTransform: "capitalize",
-              mb: "20px",
+              display: "flex",
+              justifyContent: { xs: "center", md: "flex-start" }, // ✅ center on mobile, left on web
+              width: "100%",
             }}
           >
-            View
-          </Button>
+            <Button
+              variant="contained"
+              endIcon={<ArrowRightIcon />}
+              sx={{
+                width: "fit-content",
+                height: "40px",
+                borderRadius: "12px",
+                textTransform: "capitalize",
+                mb: { xs: "30px", md: "20px" },
+                // border: "2px solid black",
+              }}
+            >
+              View
+            </Button>
+          </Box>
         </Grid>
 
         {/* RIGHT SIDE - IMAGE */}

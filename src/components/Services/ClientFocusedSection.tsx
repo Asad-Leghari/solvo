@@ -16,7 +16,14 @@ const ClientFocusedSection = () => {
         justifyContent: "center",
       }}
     >
-      <Grid container alignItems="center" justifyContent="center">
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+        }}
+      >
         <Grid
           flex={1.5}
           sx={{

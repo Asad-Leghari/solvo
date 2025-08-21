@@ -1,5 +1,6 @@
+"use client";
 import images from "@/assets/images";
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -9,32 +10,76 @@ interface BgSectionProps {
 }
 
 const BgSection = ({ heading, text }: BgSectionProps) => {
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <section className="bg-primary text-white !py-32 flex flex-col items-center justify-center relative overflow-hidden">
-      <Image
-        src={images.bgsectionleft.src}
-        alt="Background Image"
-        height={500}
-        width={500}
-        className="object-cover absolute left-0 top-16 z-0 hidden md:block"
-      />
+    <Box
+      component="section"
+      sx={{
+        bgcolor: "primary.main",
+        color: "white",
+        py: 8, 
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+
+      <Box
+        sx={{
+          position: "absolute",
+          left: 0,
+          top: "4rem",
+          zIndex: 0,
+          display: { xs: "none", md: "block" },
+        }}
+      >
+        <Image
+          src={images.bgsectionleft.src}
+          alt="Background Left"
+          height={500}
+          width={500}
+          style={{ objectFit: "cover" }}
+        />
+      </Box>
+
       <Stack
-        sx={{ width: "60%", alignItems: "center", justifyContent: "center" }}
-        gap={"10px"}
+        sx={{
+          width: isSmall ? "100%" : "60%",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "10px",
+          textAlign: "center",
+          position: "relative",
+          zIndex: 1,
+        }}
       >
         <Typography variant="h4">{heading}</Typography>
-        <Typography variant="body1" textAlign={"center"}>
-          {text}
-        </Typography>
+        <Typography variant="body1">{text}</Typography>
       </Stack>
-      <Image
-        src={images.bgsectionright.src}
-        alt="Background Image"
-        height={500}
-        width={500}
-        className="object-cover absolute right-0 top-16 z-0 hidden md:block"
-      />
-    </section>
+
+      <Box
+        sx={{
+          position: "absolute",
+          right: 0,
+          top: "4rem",
+          zIndex: 0,
+          display: { xs: "none", md: "block" },
+        }}
+      >
+        <Image
+          src={images.bgsectionright.src}
+          alt="Background Right"
+          height={500}
+          width={500}
+          style={{ objectFit: "cover" }}
+        />
+      </Box>
+    </Box>
   );
 };
 

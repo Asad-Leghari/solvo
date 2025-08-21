@@ -92,7 +92,24 @@ const Contact = ({ displayBottomImage = true }: ContactProps) => {
           <Typography variant="h5" textAlign={"start"} fontWeight={600}>
             How Can We <span style={{ color: "#0273BD" }}>Help You?</span>
           </Typography>
+
+          {/* ✅ Bullet Points */}
+          {/* <Grid container flexDirection={"column"} gap={"8px"} mt={1}>
+            <Grid container alignItems="center" gap={"8px"}>
+              <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
+              <Typography variant="body1" sx={{ color: "#0273BD" }}>
+                We will respond to you within 24 hours
+              </Typography>
+            </Grid>
+            <Grid container alignItems="center" gap={"8px"}>
+              <CheckCircleOutlineIcon sx={{ color: "#0273BD" }} />
+              <Typography variant="body1" sx={{ color: "#0273BD" }}>
+                You’ll be talking to CAE Engineers (no account).
+              </Typography>
+            </Grid>
+          </Grid> */}
         </Grid>
+
         <Grid container flexDirection={"column"} gap={"40px"} mt={"10px"}>
           <Grid
             container
