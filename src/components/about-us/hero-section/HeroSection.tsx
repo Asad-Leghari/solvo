@@ -6,7 +6,7 @@ const HeroSection = () => {
    const theme = useTheme();
     const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Grid
+    <Stack
       sx={{
         height: "604px",
         display: "flex",
@@ -30,7 +30,37 @@ const HeroSection = () => {
         </Typography>
         <Button variant="contained">let's Connect</Button>
       </Stack>
-    </Grid>
+            {/* Responsive Video */}
+      <Stack
+        sx={{
+          width: "100%",
+          // maxWidth: "1123px",
+          height: "587px",
+          borderRadius: "20px",
+          overflow: "hidden",
+          position: "absolute",
+          top: "450px",
+          zIndex: 10,
+          alignItems:"center"
+        }}
+        padding={"20px"}
+      >
+        <video
+          src="/videos/video.mp4"
+          controls
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            width: isSmall ? "100%" : "1109px",
+            height: isSmall ? "220px" : "420px",
+            objectFit: "cover",
+            borderRadius: "20px",
+          }}
+        />
+      </Stack>
+    </Stack>
   );
 };
 

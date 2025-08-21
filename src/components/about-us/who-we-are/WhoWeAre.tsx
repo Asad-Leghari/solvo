@@ -26,35 +26,6 @@ const WhoWeAre = () => {
         padding: isSmall ? "20px" :"0px",
       }}
     >
-      {/* Responsive Video */}
-      <Box
-        sx={{
-          width: "100%",
-          maxWidth: "1123px",
-          height: "587px",
-          borderRadius: "20px",
-          overflow: "hidden",
-          position: "absolute",
-          top: "-200px",
-          zIndex: 10,
-        }}
-        padding={"20px"}
-      >
-        <video
-          src="/videos/video.mp4"
-          controls
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{
-            width: isSmall ? "100%" : "1010px",
-            height: isSmall ? "220px" : "420px",
-            objectFit: "cover",
-            borderRadius: "20px",
-          }}
-        />
-      </Box>
 
       {/* Content Section */}
       <Stack
