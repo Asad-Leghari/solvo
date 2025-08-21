@@ -24,7 +24,7 @@ export const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => (
   <Grid
     container
     flexDirection={{ xs: "column", lg: "row" }}
-    justifyContent="center"
+    justifyContent="space-between"
     gap={"20px"}
   >
     {projects.map((project, index) => (

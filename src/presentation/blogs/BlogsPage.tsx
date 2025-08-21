@@ -16,11 +16,11 @@ const BlogsPage = () => {
     >
       <HeroSectionBlogs />
       <div className="w-full bg-white flex flex-col items-center justify-center rounded-2xl !py-8">
-        <div className="w-[95%] md:w-[90%]  xl:w-[80%]">
+        <div className="!px-[20px] md:!px-[60px]  xl:!px-[300px]">
           <LatestNews />
         </div>
         <div className="!my-10 w-full h-7 bg-[#fef7ff]" />
-        <div className="w-[95%] md:w-[90%] xl:w-[80%]">
+        <div className="!px-[20px] md:!px-[60px]  xl:!px-[300px]">
           <Articles />
         </div>
       </div>
