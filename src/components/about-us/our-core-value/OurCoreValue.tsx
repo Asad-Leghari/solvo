@@ -56,29 +56,31 @@ const OurCoreValue = () => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Stack width={"100%"} alignItems={"center"}  marginTop={3} marginBottom={3}>
+    <Stack width={"100%"} alignItems={"center"} marginTop={3} marginBottom={3}>
       <Stack width={"100%"} alignItems={"center"}>
         <Typography variant="h5">
           Our <span style={{ color: "#0273BD" }}>Core Values</span>
         </Typography>
-        <Stack
+        <Grid
+          container
           direction={isSmall ? "column" : "row"}
           justifyContent={"center"}
-          flexWrap={isSmall ? "nowrap" : "wrap"}
+          // flexWrap={isSmall ? "nowrap" : "wrap"}
           marginTop={4}
+          // border={"1px solid red"}
         >
           {coreValues.map((value, idx) => {
             return (
-              <Stack key={idx} margin={1} >
+              <Grid size={{ xs: 12, md: 3 }} key={idx} margin={1}>
                 <Card
                   sx={{
                     height: "325px",
-                    width: "359px",
+                    width: "100%",
                     alignItems: "center",
                     padding: 3,
                     borderRadius: "19px",
                     boxShadow: "0px 4px 28px 0px #0000000F",
-                    border:"2px solid red"
+                    // border:"2px solid red"
                   }}
                 >
                   <Stack
@@ -88,26 +90,28 @@ const OurCoreValue = () => {
                     spacing={2}
                     justifyContent={"center"}
                   >
-                 <Stack alignItems={"center"}>
-                     <img
-                      src={value.icon}
-                      style={{ height: "60px", width: "60px" }}
-                    />
-                 </Stack>
-                  <Stack textAlign={"center"}>
+                    <Stack alignItems={"center"}>
+                      <img
+                        src={value.icon}
+                        style={{ height: "60px", width: "60px" }}
+                      />
+                    </Stack>
+                    <Stack textAlign={"center"}>
                       <Typography variant="h5" fontWeight={400}>
-                      {value.title}
-                    </Typography>
-                  </Stack>
-                   <Stack textAlign={"center"}>
-                     <Typography variant="body1">{value.description}</Typography>
-                   </Stack>
+                        {value.title}
+                      </Typography>
+                    </Stack>
+                    <Stack textAlign={"center"}>
+                      <Typography variant="body1">
+                        {value.description}
+                      </Typography>
+                    </Stack>
                   </Stack>
                 </Card>
-              </Stack>
+              </Grid>
             );
           })}
-        </Stack>
+        </Grid>
       </Stack>
     </Stack>
   );
