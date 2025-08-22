@@ -73,7 +73,7 @@ const ProjectCards = () => {
                   sx={{
                     width: "100%",
                     maxWidth: 400,
-                    height: 500,
+                    // height: 500,
                     borderRadius: 3,
                     boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
                     display: "flex",
@@ -84,36 +84,38 @@ const ProjectCards = () => {
                   <Box
                     sx={{
                       width: "100%",
-                      height: 300,
+                      height: 321,
                       backgroundColor: "#e0e0e0",
                       borderRadius: 2,
                       mb: 1.25,
                     }}
                   />
 
-                  <CardContent
+                  <Box
                     sx={{
                       flex: 1,
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "flex-start",
+                      alignItems: "center",
                       justifyContent: "flex-start",
                       p: 0,
                     }}
                   >
                     <Typography
                       variant="subtitle1"
-                      sx={{ fontWeight: "bold", mb: 1 }}
+                      sx={{ fontWeight: "bold", mb: 0 }}
+                      gutterBottom={false}
                     >
                       {project.title}
                     </Typography>
                     <Typography
                       variant="body2"
-                      sx={{ color: "text.secondary" }}
+                      sx={{ color: "text.secondary", mb: 0 }}
+                      gutterBottom={false}
                     >
                       {project.description}
                     </Typography>
-                  </CardContent>
+                  </Box>
                 </Card>
               </Box>
             ))}
