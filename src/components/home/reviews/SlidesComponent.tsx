@@ -46,7 +46,7 @@ const SlidesComponent = () => {
       width={"100%"}
       flexWrap={"nowrap"}
       // border={"1px solid red"}
-      padding={isSmall ? 2.5 :15}
+      sx={{px: { xs: 2, md: "60px", xl: "300px" }}}
     >
       <Slide
         key={activeSlide}

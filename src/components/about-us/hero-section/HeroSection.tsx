@@ -15,7 +15,7 @@ const HeroSection = () => {
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Stack
-      sx={{
+      sx={{ 
         height: "604px",
         display: "flex",
         flexDirection: "column",
@@ -24,6 +24,8 @@ const HeroSection = () => {
         backgroundImage:
           "linear-gradient(181deg, #FFFFFF 27%, rgba(136, 216, 232, 0.2) 80%, rgba(136, 216, 232, 0.53) 100%)",
         position: "relative",
+        width:"100vw",
+        // border:"2px solid red"
       }}
     >
       <div className="absolute top-0 left-0 h-[247px] w-[106px] overflow-hidden z-0">
@@ -37,10 +39,8 @@ const HeroSection = () => {
       </div>
 
       <Stack
-        sx={{ width: "100%", alignItems: "center" }}
+        sx={{ width: "100%", alignItems: "center", px: { xs: 2, md: "60px", xl: "300px" } }}
         spacing={3}
-        paddingRight={isSmall ? 1 : 15}
-        paddingLeft={isSmall ? 1 : 15}
       >
         <Typography variant="h4">
           What is <span className="text-primary">Solvo Engineering</span>
@@ -65,8 +65,11 @@ const HeroSection = () => {
           top: "450px",
           zIndex: 10,
           alignItems: "center",
+          px: { xs: 2, md: "60px", xl: "300px" }
         }}
-        padding={"20px"}
+        // padding={"20px"}
+
+        
       >
         <video
           src="/videos/video.mp4"
@@ -76,7 +79,7 @@ const HeroSection = () => {
           loop
           playsInline
           style={{
-            width: isSmall ? "100%" : "1109px",
+            width: isSmall ? "100%" : "100%",
             height: isSmall ? "220px" : "420px",
             objectFit: "cover",
             borderRadius: "20px",

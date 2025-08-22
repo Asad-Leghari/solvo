@@ -11,7 +11,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <Grid
+    <Grid 
       container
       flexDirection={"column"}
       width={"100%"}

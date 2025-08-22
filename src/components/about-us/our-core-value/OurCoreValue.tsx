@@ -68,10 +68,14 @@ const OurCoreValue = () => {
           // flexWrap={isSmall ? "nowrap" : "wrap"}
           marginTop={4}
           // border={"1px solid red"}
+          sx={{px: { xs: 2, md: "60px", xl: "300px" }}}
+          spacing={4}
         >
           {coreValues.map((value, idx) => {
             return (
-              <Grid size={{ xs: 12, md: 3 }} key={idx} margin={1}>
+              <Grid 
+              size={{ xs: 12, md: 4}}
+               key={idx}>
                 <Card
                   sx={{
                     height: "325px",

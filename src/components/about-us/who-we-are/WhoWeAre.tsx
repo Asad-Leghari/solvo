@@ -23,7 +23,6 @@ const WhoWeAre = () => {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
-        padding: isSmall ? "20px" :"0px",
       }}
     >
 
@@ -37,9 +36,8 @@ const WhoWeAre = () => {
           mt: { xs: "80px", md: "280px" },
           alignItems: "center",
           justifyContent: isSmall ? "center" : "center",
+          px: { xs: 2, md: "60px", xl: "300px" }
         }}
-        paddingRight={isSmall ? 0 : 15}
-        paddingLeft={isSmall ? 0 : 15}
         mb={"100px"}
       >
         <Stack sx={{ width:  "100%"  }} >
