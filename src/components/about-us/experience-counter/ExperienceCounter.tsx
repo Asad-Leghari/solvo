@@ -30,13 +30,11 @@ const ExperienceCounter = () => {
         direction={"row"}
         alignItems={"center"}
         justifyContent={isSmall ? "center" :"space-between"}
-        // gap={15}
-        paddingTop={3}
-        paddingBottom={3}
-        // paddingLeft={12}
-        // paddingRight={12}
+        paddingTop={4}
+        paddingBottom={2}
         width={"100%"}
         sx={{px: { xs: 2, md: "60px", xl: "300px" }}}
+        // border={"2px solid red"}
       >
         {metrics.map((metric, index) => (
           <Stack

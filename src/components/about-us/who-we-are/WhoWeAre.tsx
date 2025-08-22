@@ -17,12 +17,13 @@ const WhoWeAre = () => {
   return (
     <Box
       sx={{
-        width: "100%",
+        width: "100vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
+        // border:"2px solid red"
       }}
     >
 
@@ -38,9 +39,9 @@ const WhoWeAre = () => {
           justifyContent: isSmall ? "center" : "center",
           px: { xs: 2, md: "60px", xl: "300px" }
         }}
-        mb={"100px"}
+        mb={"50px"}
       >
-        <Stack sx={{ width:  "100%"  }} >
+        <Stack sx={{ width:  "100%", marginTop:"50px" }} >
           <Typography variant="h5">
             Who We{" "}
             <Box component="span" sx={{ color: "primary.main" }}>
@@ -58,8 +59,8 @@ const WhoWeAre = () => {
           <Image
             src={images.whoweare.src}
             alt="Who We Are"
-            width={isSmall ? 700 : 400}
-            height={isSmall ? 700 : 400}
+            width={isSmall ? 700 : 450}
+            height={isSmall ? 700 : 450}
             style={{
               objectFit: "cover",
             }}
