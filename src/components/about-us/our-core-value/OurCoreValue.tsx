@@ -56,7 +56,7 @@ const OurCoreValue = () => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Stack width={"100%"} alignItems={"center"} marginTop={3} marginBottom={3}>
+    <Stack width={"100%"} alignItems={"center"} marginTop={3} marginBottom={6}>
       <Stack width={"100%"} alignItems={"center"}>
         <Typography variant="h5">
           Our <span style={{ color: "#0273BD" }}>Core Values</span>
