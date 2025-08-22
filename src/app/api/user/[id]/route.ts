@@ -8,7 +8,7 @@ export async function GET(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  console.log("👉 Headers:", Object.fromEntries(req.headers.entries()));
+  console.log("Headers:", Object.fromEntries(req.headers.entries()));
 
   const { id } = await params;
 
