@@ -23,7 +23,7 @@ const OurTechnology = () => {
         container
         flexDirection="column"
         alignItems="center"
-        gap="10px"
+        // gap="10px"
         pt={"60px"}
         sx={{
           px: { xs: 2, xl: "0px" },
