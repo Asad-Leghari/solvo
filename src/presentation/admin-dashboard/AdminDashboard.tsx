@@ -19,6 +19,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import BuildIcon from "@mui/icons-material/Build";
 import GroupIcon from "@mui/icons-material/Group";
 import ArticleIcon from "@mui/icons-material/Article";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from "@mui/material";
 
 import UsersTable from "./tabs/UsersSection";
 import BlogsTable from "./tabs/BlogsSection";
@@ -27,6 +33,7 @@ import { useBlogStore } from "@/application/stores/blog/useBlogStore";
 import ServiceForm from "./form/ServiceForm";
 import UserForm from "./form/UserForm";
 import BlogForm from "./form/BlogForm";
+import Link from "next/link";
 
 const AdminDashboard = () => {
   const { createBlog } = useBlogStore();
@@ -180,6 +187,7 @@ const AdminDashboard = () => {
       {/* Main content */}
       <Box sx={{ flex: 1, p: { xs: 1, sm: 2, md: 3 }, overflow: "hidden" }}>
         {/* Header */}
+        {/* Header */}
         <Box
           sx={{
             display: "flex",
@@ -218,18 +226,48 @@ const AdminDashboard = () => {
               API Preview
             </Button>
 
-            <Button
-              variant="contained"
-              sx={{
-                textTransform: "none",
-                borderRadius: "6px",
-                bgcolor: "#111",
-                "&:hover": { bgcolor: "#333" },
-              }}
-              onClick={() => setFormOpen(true)}
-            >
-              + New record
-            </Button>
+            {/* REPLACED MODAL BUTTONS WITH LINK BUTTONS */}
+            <Link href="/admin-dashboard/blog/new" passHref>
+              <Button
+                variant="contained"
+                sx={{
+                  textTransform: "none",
+                  borderRadius: "6px",
+                  bgcolor: "#111",
+                  "&:hover": { bgcolor: "#333" },
+                }}
+              >
+                + New Blog
+              </Button>
+            </Link>
+
+            <Link href="/admin-dashboard/user/new" passHref>
+              <Button
+                variant="contained"
+                sx={{
+                  textTransform: "none",
+                  borderRadius: "6px",
+                  bgcolor: "#111",
+                  "&:hover": { bgcolor: "#333" },
+                }}
+              >
+                + New User
+              </Button>
+            </Link>
+
+            <Link href="/admin-dashboard/services/new" passHref>
+              <Button
+                variant="contained"
+                sx={{
+                  textTransform: "none",
+                  borderRadius: "6px",
+                  bgcolor: "#111",
+                  "&:hover": { bgcolor: "#333" },
+                }}
+              >
+                + New Service
+              </Button>
+            </Link>
           </Box>
         </Box>
 
@@ -411,42 +449,66 @@ const AdminDashboard = () => {
       </Box>
 
       {/* Drawer for new record */}
-      <Drawer
-        anchor="right"
+      {/* Modal for new record */}
+      <Dialog
         open={formOpen}
         onClose={() => setFormOpen(false)}
+        fullWidth
+        maxWidth="md"
         PaperProps={{
           sx: {
-            width: { xs: "85%", sm: "60%", md: "500px" },
-            maxWidth: "400px",
-            p: { xs: 2, sm: 3 },
-            bgcolor: "#fafafa",
+            borderRadius: "16px",
+            p: 2,
           },
         }}
       >
-        {" "}
-        <Typography
-          variant="h6"
+        <DialogTitle
           sx={{
-            mb: 2,
-            fontWeight: 600,
-            fontSize: { xs: "1.1rem", sm: "1.25rem" },
+            fontWeight: 700,
+            textAlign: "center",
+            fontSize: "1.3rem",
+            pb: 1,
           }}
         >
-          {" "}
-          Create New {activeTab.charAt(0).toUpperCase() +
-            activeTab.slice(1)}{" "}
-          Record{" "}
-        </Typography>{" "}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-          {" "}
-          {activeTab === "services" && <ServiceForm />}{" "}
-          {activeTab === "users" && <UserForm />}
-          {activeTab === "blogs" && (
-            <BlogForm blogForm={blogForm} handleChange={handleChange} />
-          )}
-        </Box>{" "}
-      </Drawer>
+          Create New {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}{" "}
+          Record
+        </DialogTitle>
+
+        <DialogContent>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+              mt: 1,
+            }}
+          >
+            {activeTab === "services" && (
+              <ServiceForm onClose={() => setFormOpen(false)} />
+            )}
+            {activeTab === "users" && (
+              <UserForm onClose={() => setFormOpen(false)} />
+            )}
+            {activeTab === "blogs" && (
+              <BlogForm onClose={() => setFormOpen(false)} />
+            )}
+          </Box>
+        </DialogContent>
+
+        <DialogActions>
+          <Button
+            onClick={() => setFormOpen(false)}
+            sx={{
+              textTransform: "none",
+              borderRadius: "8px",
+              color: "#555",
+              "&:hover": { bgcolor: "#f5f5f5" },
+            }}
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

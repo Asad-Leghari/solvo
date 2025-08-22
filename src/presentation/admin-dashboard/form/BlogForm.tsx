@@ -2,7 +2,8 @@
 
 import { Box, TextField, Button } from "@mui/material";
 import { useBlogStore } from "@/application/stores/blog/useBlogStore";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import Editor, { EditorRef } from "../editor/Editor";
 
 interface BlogFormProps {
   onClose?: () => void;
@@ -10,10 +11,11 @@ interface BlogFormProps {
 
 const BlogForm = ({ onClose }: BlogFormProps) => {
   const { createBlog, loading } = useBlogStore();
+  const editorRef = useRef<EditorRef>(null);
 
   const [blogForm, setBlogForm] = useState({
     title: "",
-    description: "",
+    description: "", // stores JSON string from Editor.js
     image: "",
     category: "",
     createdBy: "",
@@ -23,9 +25,20 @@ const BlogForm = ({ onClose }: BlogFormProps) => {
     setBlogForm({ ...blogForm, [e.target.name]: e.target.value });
   };
 
+  const handleDescriptionChange = (value: string) => {
+    setBlogForm({ ...blogForm, description: value });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Optionally save latest editor content before submit
+    if (editorRef.current) {
+      const savedData = await editorRef.current.save();
+      blogForm.description = JSON.stringify(savedData);
+    }
+
     await createBlog(blogForm);
+
     setBlogForm({
       title: "",
       description: "",
@@ -45,43 +58,108 @@ const BlogForm = ({ onClose }: BlogFormProps) => {
         flexDirection: "column",
         gap: 2,
         width: "100%",
-        // maxWidth: "100%",
-        mx: "auto",
+        maxWidth: "700px",
+        mx: "auto", // centers horizontally
         p: 2,
       }}
     >
-      {/** Sexy reusable style for all text fields */}
-      {[
-        { label: "Title", name: "title" },
-        { label: "Description", name: "description" },
-        { label: "Image URL", name: "image" },
-        { label: "Category", name: "category" },
-        { label: "Created By", name: "createdBy" },
-      ].map((field) => (
-        <TextField
-          key={field.name}
-          label={field.label}
-          name={field.name}
-          value={(blogForm as any)[field.name]}
-          onChange={handleChange}
-          fullWidth
-          variant="outlined"
-          size="small"
-          InputProps={{
-            sx: {
-              borderRadius: "12px",
-              bgcolor: "#fafafa",
-              "&:hover": {
-                bgcolor: "#f0f0f0",
-              },
-              "&.Mui-focused": {
-                bgcolor: "white",
-                boxShadow: "0 0 0 2px rgba(0,0,0,0.2)",
-              },
+      <TextField
+        label="Title"
+        name="title"
+        value={blogForm.title}
+        onChange={handleChange}
+        fullWidth
+        size="small"
+        required
+        InputProps={{
+          sx: {
+            borderRadius: "12px",
+            bgcolor: "#fafafa",
+            "&:hover": { bgcolor: "#f0f0f0" },
+            "&.Mui-focused": {
+              bgcolor: "white",
+              boxShadow: "0 0 0 2px rgba(0,0,0,0.2)",
             },
-          }}
+          },
+        }}
+      />
+
+      <Box
+        sx={{
+          borderRadius: "12px",
+          bgcolor: "#fafafa",
+          p: 1,
+          minHeight: "200px",
+        }}
+      >
+        <Editor
+          ref={editorRef}
+          value={blogForm.description}
+          onChange={handleDescriptionChange}
+          placeholder="Write your blog content here..."
         />
-      ))}
+      </Box>
+
+      <TextField
+        label="Image URL"
+        name="image"
+        value={blogForm.image}
+        onChange={handleChange}
+        fullWidth
+        size="small"
+        required
+        InputProps={{
+          sx: {
+            borderRadius: "12px",
+            bgcolor: "#fafafa",
+            "&:hover": { bgcolor: "#f0f0f0" },
+            "&.Mui-focused": {
+              bgcolor: "white",
+              boxShadow: "0 0 0 2px rgba(0,0,0,0.2)",
+            },
+          },
+        }}
+      />
+      <TextField
+        label="Category"
+        name="category"
+        value={blogForm.category}
+        onChange={handleChange}
+        fullWidth
+        size="small"
+        required
+        InputProps={{
+          sx: {
+            borderRadius: "12px",
+            bgcolor: "#fafafa",
+            "&:hover": { bgcolor: "#f0f0f0" },
+            "&.Mui-focused": {
+              bgcolor: "white",
+              boxShadow: "0 0 0 2px rgba(0,0,0,0.2)",
+            },
+          },
+        }}
+      />
+      <TextField
+        label="Created By"
+        name="createdBy"
+        value={blogForm.createdBy}
+        onChange={handleChange}
+        fullWidth
+        size="small"
+        required
+        InputProps={{
+          sx: {
+            borderRadius: "12px",
+            bgcolor: "#fafafa",
+            "&:hover": { bgcolor: "#f0f0f0" },
+            "&.Mui-focused": {
+              bgcolor: "white",
+              boxShadow: "0 0 0 2px rgba(0,0,0,0.2)",
+            },
+          },
+        }}
+      />
 
       <Box sx={{ display: "flex", gap: 1.5, mt: 3 }}>
         <Button
