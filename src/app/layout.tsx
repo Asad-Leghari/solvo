@@ -32,9 +32,9 @@ export default function RootLayout({
             size={12}
             width={"100%"}
           >
-            <Navbar />
+            {/* <Navbar /> */}
             <Box flex={1}>{children}</Box>
-            <Footer />/ 
+            {/* <Footer />/  */}
           </Grid>
         </SolvoTheme>
       </body>
