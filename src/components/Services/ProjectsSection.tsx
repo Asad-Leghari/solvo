@@ -121,6 +121,7 @@ const ProjectsSection = () => {
       sx={{
         px: { xs: 2, md: "60px", xl: "300px" },
         py: 8,
+        width: "100%",
         textAlign: "center",
       }}
     >
