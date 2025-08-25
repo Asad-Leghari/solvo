@@ -2,10 +2,10 @@
 
 import Contact from "@/components/home/contact/Contact";
 import OurTechnology from "@/components/Services/OurTechnology";
-import ProjectsSection from "@/components/Services/ProjectsSection";
 import DetailsPart from "@/components/servicesinner/DetailsPart";
 import ExpertisePart from "@/components/servicesinner/ExpertisePart";
 import HeroSection from "@/components/servicesinner/HeroSection";
+import ProjectsSection from "@/components/servicesinner/ProjectsSection";
 import { Grid } from "@mui/material";
 
 const ServicesInner = () => {

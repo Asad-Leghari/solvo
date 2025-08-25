@@ -7,10 +7,11 @@ const ExpertisePart: React.FC = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: "60px", xl: "300px", lg: "60px" },
+        px: { xs: 2, md: "60px", xl: "300px" },
         py: 10,
         backgroundColor: "#88D8E833",
         width: "100%",
+        // border: "2px solid black",
       }}
     >
       {/* Heading */}
@@ -42,7 +43,17 @@ const ExpertisePart: React.FC = () => {
       </Typography>
 
       {/* Boxes */}
-      <Grid container spacing={2} justifyContent="center">
+      <Grid
+        container
+        spacing={1}
+        justifyContent="center"
+        sx={{
+          // px: { xs: 2, md: "60px", xl: "300px" },
+          // border: "2px solid black",
+          width: "100%",
+          justifyContent: "space-between",
+        }}
+      >
         {[
           "Design Optimization",
           "Design Optimization",
@@ -53,7 +64,8 @@ const ExpertisePart: React.FC = () => {
             key={index}
             sx={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "space-between",
+              // border: "2px solid black",
             }}
           >
             <Box

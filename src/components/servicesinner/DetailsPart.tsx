@@ -1,12 +1,12 @@
 import React from "react";
-import { Grid, Typography, Button, Box } from "@mui/material";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { Grid, Typography, Box } from "@mui/material";
+// import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const DetailsPart: React.FC = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: "60px", xl: "300px" },
+        px: { xs: 2, md: "40px", xl: "300px", lg: 2 },
         py: 10,
         backgroundColor: "#f9f9f9",
         borderTopRightRadius: "10px",
@@ -32,7 +32,7 @@ const DetailsPart: React.FC = () => {
           alignItems="center"
           justifyContent="center"
           flexWrap="nowrap"
-          gap={{ xs: "20px", md: "200px" }}
+          gap={{ xs: "20px", md: "300px" }}
           width="100%"
         >
           <Grid
@@ -84,7 +84,7 @@ const DetailsPart: React.FC = () => {
           alignItems="center"
           justifyContent="space-between"
           flexWrap="nowrap"
-          gap={{ xs: "20px", md: "120px" }}
+          gap={{ xs: "20px", md: "300px" }}
           width="100%"
         >
           <Grid container flex={1} justifyContent="start">
@@ -136,7 +136,7 @@ const DetailsPart: React.FC = () => {
           alignItems="center"
           justifyContent="space-between"
           flexWrap="nowrap"
-          gap={{ xs: "20px", md: "200px" }}
+          gap={{ xs: "20px", md: "300px" }}
           width="100%"
         >
           <Grid
