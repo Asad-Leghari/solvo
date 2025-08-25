@@ -12,6 +12,9 @@ import {
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import images from "@/assets/images";
+// import ourprojectsvg from "@/assets/images/Services/our project section.svg";
+import Image from "next/image";
 
 interface Project {
   category: string;
@@ -125,6 +128,23 @@ const ProjectsSection = () => {
         textAlign: "center",
       }}
     >
+      <Box
+        sx={{
+          position: "absolute",
+          left: 0,
+          top: "0rem",
+          zIndex: 0,
+          display: { xs: "none", md: "block" },
+        }}
+      >
+        <Image
+          src={images.ourprojectsvg}
+          alt="Background Left"
+          height={500}
+          width={500}
+          style={{ objectFit: "cover" }}
+        />
+      </Box>
       <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
         Our <span style={{ color: "#1976d2" }}>Projects</span>
       </Typography>

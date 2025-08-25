@@ -49,6 +49,9 @@ import CFD1 from "./images/Services/CAD/Assembly.png";
 import CAD1 from "./images/Services/CAD/Mold.png";
 import clientimage from "./images/Services/CAD/Product Design.png";
 import servicecase from "./images/Services/CAD/Reverse Eng..png";
+import ourprojectsvg from "./images/Services/our project section.svg";
+
+// import idea from "./images/Services/idea (1).png"
 
 import Info1 from "./images/info-1.png";
 import Info2 from "./images/info-2.png";
@@ -170,6 +173,7 @@ const services = {
   CFD1,
   clientimage,
   servicecase,
+  ourprojectsvg, // add this
   CAD: {
     Modeling3D,
     Assembly,
