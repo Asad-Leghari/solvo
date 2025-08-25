@@ -20,11 +20,12 @@ async function uploadToCloudinary(file: File, folder = "solvo/blogs") {
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   await dbConnect();
+  const { id } = await params;
   try {
-    const blog = await BlogModel.findById(params.id).populate(
+    const blog = await BlogModel.findById(id).populate(
       "createdBy",
       "username email"
     );
@@ -45,7 +46,7 @@ export async function GET(
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
@@ -54,6 +55,7 @@ export async function PUT(
   }
 
   await dbConnect();
+  const { id } = await params;
   try {
     const updateData: Record<string, any> = {};
     let createdBy: string | undefined;
@@ -98,7 +100,7 @@ export async function PUT(
       updateData.createdBy = createdBy;
     }
 
-    const blog = await BlogModel.findByIdAndUpdate(params.id, updateData, {
+    const blog = await BlogModel.findByIdAndUpdate(id, updateData, {
       new: true,
       runValidators: true,
     }).populate("createdBy", "username email");
@@ -120,17 +122,17 @@ export async function PUT(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
   } catch (err) {
     return err as NextResponse;
   }
-
+  const { id } = await params;
   await dbConnect();
   try {
-    const deletedBlog = await BlogModel.deleteOne({ _id: params.id });
+    const deletedBlog = await BlogModel.deleteOne({ _id: id });
     if (!deletedBlog.deletedCount) {
       return NextResponse.json(
         { success: false, error: "Blog not found", data: null },

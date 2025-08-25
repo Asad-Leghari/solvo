@@ -20,11 +20,12 @@ async function uploadToCloudinary(file: File, folder = "solvo/ourprojects") {
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   await dbConnect();
+  const { id } = await params;
   try {
-    const ourprojects = await OurprojectsModel.findById(params.id);
+    const ourprojects = await OurprojectsModel.findById(id);
     if (!ourprojects) {
       return NextResponse.json(
         { success: false, error: "OurProjects not found", data: null },
@@ -42,7 +43,7 @@ export async function GET(
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
@@ -51,6 +52,7 @@ export async function PUT(
   }
 
   await dbConnect();
+  const { id } = await params;
   try {
     const updateData: Record<string, any> = {};
 
@@ -79,7 +81,7 @@ export async function PUT(
     }
 
     const ourprojects = await OurProjectsModel.findByIdAndUpdate(
-      params.id,
+      id,
       updateData,
       { new: true, runValidators: true }
     );
@@ -101,7 +103,7 @@ export async function PUT(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
@@ -110,9 +112,10 @@ export async function DELETE(
   }
 
   await dbConnect();
+  const { id } = await params;
   try {
     const deletedOurProjects = await OurProjectsModel.deleteOne({
-      _id: params.id,
+      _id: id,
     });
     if (!deletedOurProjects.deletedCount) {
       return NextResponse.json(

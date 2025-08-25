@@ -19,11 +19,12 @@ async function uploadToCloudinary(file: File, folder = "solvo/services") {
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   await dbConnect();
+  const { id } = await params;
   try {
-    const service = await ServicesModel.findById(params.id);
+    const service = await ServicesModel.findById(id);
     if (!service) {
       return NextResponse.json(
         { success: false, error: "Service not found", data: null },
@@ -41,7 +42,7 @@ export async function GET(
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
@@ -50,6 +51,7 @@ export async function PUT(
   }
 
   await dbConnect();
+  const { id } = await params;
   try {
     const updateData: Record<string, any> = {};
 
@@ -77,11 +79,10 @@ export async function PUT(
       if (body.image !== undefined) updateData.image = body.image?.trim();
     }
 
-    const service = await ServicesModel.findByIdAndUpdate(
-      params.id,
-      updateData,
-      { new: true, runValidators: true }
-    );
+    const service = await ServicesModel.findByIdAndUpdate(id, updateData, {
+      new: true,
+      runValidators: true,
+    });
 
     if (!service) {
       return NextResponse.json(
@@ -100,7 +101,7 @@ export async function PUT(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
@@ -109,8 +110,9 @@ export async function DELETE(
   }
 
   await dbConnect();
+  const { id } = await params;
   try {
-    const deletedService = await ServicesModel.deleteOne({ _id: params.id });
+    const deletedService = await ServicesModel.deleteOne({ _id: id });
     if (!deletedService.deletedCount) {
       return NextResponse.json(
         { success: false, error: "Service not found", data: null },

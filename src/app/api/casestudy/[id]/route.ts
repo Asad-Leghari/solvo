@@ -19,11 +19,12 @@ async function uploadToCloudinary(file: File, folder = "solvo/casestudy") {
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   await dbConnect();
+  const { id } = await params;
   try {
-    const casestudy = await CasestudyModel.findById(params.id);
+    const casestudy = await CasestudyModel.findById(id);
     if (!casestudy) {
       return NextResponse.json(
         { success: false, error: "casestudy not found", data: null },
@@ -41,7 +42,7 @@ export async function GET(
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
@@ -50,6 +51,7 @@ export async function PUT(
   }
 
   await dbConnect();
+  const { id } = await params;
   try {
     const updateData: Record<string, any> = {};
 
@@ -77,11 +79,10 @@ export async function PUT(
       if (body.image !== undefined) updateData.image = body.image?.trim();
     }
 
-    const casestudy = await CasestudyModel.findByIdAndUpdate(
-      params.id,
-      updateData,
-      { new: true, runValidators: true }
-    );
+    const casestudy = await CasestudyModel.findByIdAndUpdate(id, updateData, {
+      new: true,
+      runValidators: true,
+    });
 
     if (!casestudy) {
       return NextResponse.json(
@@ -100,18 +101,18 @@ export async function PUT(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await authenticateJWT(req);
   } catch (err) {
     return err as NextResponse;
   }
-
+  const { id } = await params;
   await dbConnect();
   try {
     const deletedcasestudy = await CasestudyModel.deleteOne({
-      _id: params.id,
+      _id: id,
     });
     if (!deletedcasestudy.deletedCount) {
       return NextResponse.json(
